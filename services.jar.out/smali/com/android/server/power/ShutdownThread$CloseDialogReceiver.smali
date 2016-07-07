@@ -3,8 +3,8 @@
 .source "ShutdownThread.java"
 
 # interfaces
-.implements Landroid/content/DialogInterface$OnDismissListener;
 .implements Landroid/content/DialogInterface$OnClickListener;
+.implements Landroid/content/DialogInterface$OnDismissListener;
 
 
 # annotations

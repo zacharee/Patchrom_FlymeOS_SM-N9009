@@ -1432,6 +1432,8 @@
 
     iput-boolean v0, p0, Landroid/media/MediaScanner;->mPrivateStorageIsMounted:Z
 
+    invoke-direct/range {p0 .. p0}, Landroid/media/MediaScanner;->mzSetLocaleIfNeeded()V
+
     return-void
 .end method
 

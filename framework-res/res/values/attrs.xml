@@ -2481,6 +2481,7 @@
     <attr name="neverEncrypt" format="boolean" />
     <attr name="cantSaveState" format="boolean" />
     <attr name="primaryUserOnly" format="boolean" />
+    <attr name="needAccessControl" format="boolean" />
     <attr name="parentIsDeviceDefault" format="boolean" />
     <attr name="parentIsThemeHoloDark" format="boolean" />
     <attr name="parentIsDeviceDefaultDark" format="boolean" />

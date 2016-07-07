@@ -1117,6 +1117,9 @@
 
     .restart local v4    # "version":I
     :cond_f
+
+    invoke-static/range {p0 .. p1}, Landroid/app/Notification$FlymeInject;->initNotificationExt(Landroid/app/Notification;Landroid/os/Parcel;)V
+
     return-void
 .end method
 
@@ -1840,6 +1843,8 @@
     iget-wide v6, p0, Landroid/app/Notification;->threadId:J
 
     iput-wide v6, p1, Landroid/app/Notification;->threadId:J
+
+    invoke-static/range {p0 .. p1}, Landroid/app/Notification$FlymeInject;->cloneIntoFlyme(Landroid/app/Notification;Landroid/app/Notification;)V
 
     return-void
 .end method
@@ -3046,5 +3051,8 @@
 
     .line 1908
     :cond_e
+
+    invoke-static/range {p0 .. p2}, Landroid/app/Notification$FlymeInject;->writeToParcelFlyme(Landroid/app/Notification;Landroid/os/Parcel;I)V
+
     return-void
 .end method

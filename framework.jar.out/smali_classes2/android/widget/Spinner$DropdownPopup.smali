@@ -340,6 +340,8 @@
     .line 1224
     invoke-virtual {p0, v4}, Landroid/widget/Spinner$DropdownPopup;->setHorizontalOffset(I)V
 
+    invoke-direct/range {p0 .. p0}, Landroid/widget/Spinner$DropdownPopup;->mzSetHorizontalOffset()V
+
     .line 1225
     :cond_1
     return-void

@@ -10,6 +10,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/widget/ListView$ArrowScrollFocusResult;,
+        Landroid/widget/ListView$FlymeInjector;,
+        Landroid/widget/ListView$DividerFilter;,
+        Landroid/widget/ListView$MzScrollSelectionRunnable;,
+        Landroid/widget/ListView$OnDragSelectListener;,
         Landroid/widget/ListView$FocusSelector;,
         Landroid/widget/ListView$FixedViewInfo;
     }
@@ -343,6 +347,8 @@
     move-result v6
 
     iput-boolean v6, p0, Landroid/widget/ListView;->mIsDeviceDefaultTheme:Z
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/ListView$FlymeInjector;->initExtFlymeFields(Landroid/widget/ListView;)V
 
     return-void
 .end method
@@ -8030,6 +8036,12 @@
     add-int/lit8 v31, v28, 0x1
 
     .local v31, "nextIndex":I
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Landroid/widget/ListView;->mAreAllItemsSelectable:Z
+
+    if-nez v0, :cond_flyme_0
+
     move/from16 v0, v28
 
     invoke-interface {v4, v0}, Landroid/widget/ListAdapter;->isEnabled(I)Z
@@ -8557,6 +8569,12 @@
     add-int/lit8 v36, v28, -0x1
 
     .local v36, "previousIndex":I
+    move-object/from16 v0, p0
+
+    iget-boolean v0, v0, Landroid/widget/ListView;->mAreAllItemsSelectable:Z
+
+    if-nez v0, :cond_flyme_1
+
     move/from16 v0, v28
 
     invoke-interface {v4, v0}, Landroid/widget/ListAdapter;->isEnabled(I)Z
@@ -8597,6 +8615,7 @@
     if-ge v0, v1, :cond_23
 
     :cond_1d
+    :cond_flyme_1
     sub-int v40, v39, v10
 
     move/from16 v0, v40

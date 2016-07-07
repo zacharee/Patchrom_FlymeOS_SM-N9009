@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="config_statusBarIcons">
+        <item>ime</item>
+        <item>sync_failing</item>
+        <item>sync_active</item>
+        <item>cast</item>
+        <item>location</item>
+        <item>bluetooth</item>
+        <item>nfc</item>
+        <item>tty</item>
+        <item>speakerphone</item>
+        <item>zen</item>
+        <item>mute</item>
+        <item>volume</item>
+        <item>wifi</item>
+        <item>cdma_eri</item>
+        <item>data_connection</item>
+        <item>phone_evdo_signal</item>
+        <item>phone_signal</item>
+        <item>battery</item>
+        <item>alarm_clock</item>
+        <item>secure</item>
+        <item>clock</item>
+        <item>smart_network</item>
+        <item>felica_lock</item>
+        <item>popup</item>
+        <item>volte</item>
+        <item>glove</item>
+        <item>gesture</item>
+        <item>smart_scroll</item>
+        <item>face</item>
+        <item>gps</item>
+        <item>lbs</item>
+        <item>wearable_gear</item>
+        <item>nfc_on</item>
+        <item>com.samsung.rcs</item>
+        <item>vowifi</item>
+        <item>wifi_p2p</item>
+        <item>wifi_ap</item>
+        <item>wifi_oxygen</item>
+        <item>phone_signal_second_sub</item>
+        <item>toddler</item>
+        <item>ims_volte</item>
+        <item>keyguard_wakeup</item>
+        <item>safezone</item>
+        <item>wimax</item>
+        <item>smart_bonding</item>
+        <item>private_mode</item>
+    </string-array>
+</resources>

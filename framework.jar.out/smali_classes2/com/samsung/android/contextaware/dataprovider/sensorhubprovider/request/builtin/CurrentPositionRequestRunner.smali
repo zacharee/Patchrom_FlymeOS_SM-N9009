@@ -3,9 +3,9 @@
 .source "CurrentPositionRequestRunner.java"
 
 # interfaces
+.implements Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/request/builtin/ICurrentPositionRequest;
 .implements Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/request/builtin/ISensorHubRequestParser;
 .implements Lcom/samsung/android/contextaware/manager/ICurrrentPositionObserver;
-.implements Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/request/builtin/ICurrentPositionRequest;
 
 
 # annotations

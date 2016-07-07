@@ -3,8 +3,8 @@
 .source "ContextProvider.java"
 
 # interfaces
-.implements Lcom/samsung/android/contextaware/manager/ISensorHubResetObserver;
 .implements Lcom/samsung/android/contextaware/manager/IApPowerObserver;
+.implements Lcom/samsung/android/contextaware/manager/ISensorHubResetObserver;
 
 
 # instance fields

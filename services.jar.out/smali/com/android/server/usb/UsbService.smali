@@ -174,6 +174,8 @@
     iput-object v3, p0, Lcom/android/server/usb/UsbService;->mDeviceManager:Lcom/android/server/usb/UsbDeviceManager;
 
     :cond_1
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/usb/UsbService;->initExtFlymeFields(Landroid/content/Context;)V
+
     invoke-direct {p0, v6}, Lcom/android/server/usb/UsbService;->setCurrentUser(I)V
 
     new-instance v2, Landroid/content/IntentFilter;

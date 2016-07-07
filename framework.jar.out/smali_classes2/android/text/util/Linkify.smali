@@ -1213,7 +1213,7 @@
     if-eqz v1, :cond_14
 
     .line 351
-    invoke-static {v0, p0}, Landroid/text/util/Linkify;->gatherTelLinks(Ljava/util/ArrayList;Landroid/text/Spannable;)V
+    invoke-static {v0, p0}, Landroid/text/util/Linkify;->mzGatherTelLinks(Ljava/util/ArrayList;Landroid/text/Spannable;)Z
 
     .line 356
     :cond_14
@@ -1253,6 +1253,10 @@
 
     .line 366
     :cond_16
+    move/from16 v1, p1
+
+    invoke-static {v0, p0, v1}, Landroid/text/util/Linkify;->mzGatherLinksDateTime(Ljava/util/ArrayList;Landroid/text/Spannable;I)V
+
     invoke-static {v0}, Landroid/text/util/Linkify;->pruneOverlaps(Ljava/util/ArrayList;)V
 
     .line 368

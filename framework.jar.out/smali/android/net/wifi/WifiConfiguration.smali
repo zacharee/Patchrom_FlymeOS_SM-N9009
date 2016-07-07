@@ -23,19 +23,7 @@
 
 
 # static fields
-.field public static final WAPI_ASCII_PASSWORD:I = 0x0
-
-.field public static final WAPI_HEX_PASSWORD:I = 0x1
-
 .field public static final pskEncryName:Ljava/lang/String; = "pskencry"
-
-.field public static final wapiAsCertVarName:Ljava/lang/String; = "wapi_as_cert"
-
-.field public static final wapiCertIndexVarName:Ljava/lang/String; = "cert_index"
-
-.field public static final wapiPskTypeVarName:Ljava/lang/String; = "psk_key_type"
-
-.field public static final wapiUserCertVarName:Ljava/lang/String; = "wapi_user_cert"
 
 .field public static final wepEncryName:Ljava/lang/String; = "wepencry"
 
@@ -215,14 +203,6 @@
 .field public adhocMode:Ljava/lang/String;
 
 .field public preSharedKeyEncry:Ljava/lang/String;
-
-.field public wapiAsCert:Ljava/lang/String;
-
-.field public wapiCertIndex:I
-
-.field public wapiPskType:I
-
-.field public wapiUserCert:Ljava/lang/String;
 
 .field public wepKeyEncry:Ljava/lang/String;
 
@@ -796,6 +776,8 @@
 
     iput v2, p0, Landroid/net/wifi/WifiConfiguration;->simnum:I
 
+    invoke-direct/range {p0 .. p0}, Landroid/net/wifi/WifiConfiguration;->initFlymeExtFields()V
+
     return-void
 .end method
 
@@ -1349,6 +1331,8 @@
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->expiration:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->expiration:Ljava/lang/String;
+
+    invoke-direct/range {p0 .. p1}, Landroid/net/wifi/WifiConfiguration;->initFlymeExtFields(Landroid/net/wifi/WifiConfiguration;)V
 
     const/4 v1, 0x0
 
@@ -4278,6 +4262,12 @@
 
     .line 1492
     :cond_1c
+    move-object/from16 v0, p0
+
+    move-object/from16 v1, v29
+
+    invoke-direct {v0, v1}, Landroid/net/wifi/WifiConfiguration;->toStringExt(Ljava/lang/StringBuilder;)V
+
     const-string v31, "\nEnterprise config:\n"
 
     move-object/from16 v0, v29

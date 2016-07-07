@@ -3,8 +3,8 @@
 .source "MenuItemImpl.java"
 
 # interfaces
-.implements Landroid/view/MenuItem;
 .implements Landroid/view/ElasticMenuItem;
+.implements Landroid/view/MenuItem;
 
 
 # static fields

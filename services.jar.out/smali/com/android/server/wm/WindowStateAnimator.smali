@@ -3778,6 +3778,8 @@
     invoke-virtual/range {v27 .. v29}, Landroid/graphics/RectF;->offset(FF)V
 
     :cond_2e
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/wm/WindowStateAnimator;->moveShownFrameIfNeed()V
+
     move-object/from16 v0, p0
 
     iget v0, v0, Lcom/android/server/wm/WindowStateAnimator;->mAlpha:F
@@ -10460,6 +10462,8 @@
 
     .line 1467
     :cond_1
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/wm/WindowStateAnimator;->updateSurfaceWindowCropForMeizu()V
+
     iget-object v0, v15, Lcom/android/server/wm/WindowState;->mAttrs:Landroid/view/WindowManager$LayoutParams;
 
     move-object/from16 v17, v0

@@ -4,6 +4,10 @@
 
 
 # static fields
+.field public static final CONTENT_TYPE_B_PUSH_SI:Ljava/lang/String; = "application/vnd.wap.sic"
+
+.field public static final CONTENT_TYPE_B_PUSH_SL:Ljava/lang/String; = "application/vnd.wap.slc"
+
 .field public static final CONTENT_MIME_TYPE_B_DRM_RIGHTS_WBXML:Ljava/lang/String; = "application/vnd.oma.drm.rights+wbxml"
 
 .field public static final CONTENT_MIME_TYPE_B_DRM_RIGHTS_XML:Ljava/lang/String; = "application/vnd.oma.drm.rights+xml"

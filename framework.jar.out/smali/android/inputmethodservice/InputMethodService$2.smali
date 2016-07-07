@@ -101,6 +101,10 @@
     iput v2, v1, Landroid/inputmethodservice/InputMethodService;->visibleTop:I
 
     .line 445
+    iget-object v1, p0, Landroid/inputmethodservice/InputMethodService$2;->this$0:Landroid/inputmethodservice/InputMethodService;
+
+    invoke-static {v1}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->updateCoverHeight(Landroid/inputmethodservice/InputMethodService;)V
+
     return-void
 
     .line 436

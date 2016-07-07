@@ -983,6 +983,10 @@
 
     .line 457
     .local v2, "touchedWin":Lcom/android/server/wm/WindowState;
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v2}, Lcom/android/server/wm/DragState;->mzNotifyDropLw(Lcom/android/server/wm/WindowState;)V
+
     if-nez v2, :cond_2
 
     .line 460
@@ -1573,6 +1577,10 @@
     .line 409
     .end local v13    # "touchedBinder":Landroid/os/IBinder;
     :cond_2
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v14}, Lcom/android/server/wm/DragState;->mzNotifyMoveLw(Lcom/android/server/wm/WindowState;)V
+
     :try_start_2
     move-object/from16 v0, p0
 

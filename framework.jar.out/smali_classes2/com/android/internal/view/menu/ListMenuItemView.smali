@@ -11,6 +11,8 @@
 
 
 # instance fields
+.field private mMzTextColor:Landroid/content/res/ColorStateList;
+
 .field private isDeviceDefault:I
 
 .field private mBackground:Landroid/graphics/drawable/Drawable;

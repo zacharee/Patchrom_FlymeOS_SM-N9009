@@ -4585,6 +4585,7 @@
     invoke-static {v3, v4}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
     :cond_5
+    :cond_flyme_0
     if-eqz v0, :cond_0
 
     const/4 v3, -0x1
@@ -7293,7 +7294,7 @@
 
     .prologue
     .line 3101
-    invoke-direct {p0}, Lcom/android/server/InputMethodManagerService;->calledFromValidUser()Z
+    invoke-virtual {p0}, Lcom/android/server/InputMethodManagerService;->calledFromValidUser()Z
 
     move-result v0
 
@@ -8407,7 +8408,7 @@
 
     .line 1681
     :cond_0
-    invoke-direct {p0}, Lcom/android/server/InputMethodManagerService;->calledFromValidUser()Z
+    invoke-virtual {p0}, Lcom/android/server/InputMethodManagerService;->calledFromValidUser()Z
 
     move-result v0
 
@@ -16684,7 +16685,7 @@
     invoke-static/range {v24 .. v25}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2820
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->calledFromValidUser()Z
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/InputMethodManagerService;->calledFromValidUser()Z
 
     move-result v4
 

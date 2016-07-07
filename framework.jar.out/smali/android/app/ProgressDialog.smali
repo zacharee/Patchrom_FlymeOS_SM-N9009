@@ -991,6 +991,8 @@
 
     invoke-virtual {v0, p1}, Landroid/widget/TextView;->setText(Ljava/lang/CharSequence;)V
 
+    invoke-direct/range {p0 .. p0}, Landroid/app/ProgressDialog;->mzSetMessageViewVisibility()V
+
     goto :goto_1
 
     .line 352

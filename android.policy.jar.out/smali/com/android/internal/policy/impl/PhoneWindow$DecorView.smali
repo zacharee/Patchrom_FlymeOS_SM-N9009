@@ -28,6 +28,10 @@
 
 
 # instance fields
+.field private mMzDragInStatusBar:Z
+
+.field private mMzStatusBarRect:Landroid/graphics/Rect;
+
 .field boundaryTouchX:F
 
 .field initialTouchX:F

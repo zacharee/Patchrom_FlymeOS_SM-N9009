@@ -83,6 +83,18 @@
     :cond_1
     iget-object v6, p0, Landroid/widget/AbsListView$PerformClick;->this$0:Landroid/widget/AbsListView;
 
+    invoke-virtual {v6}, Landroid/widget/AbsListView;->mzPerformClick()Z
+
+    move-result v6
+
+    if-eqz v6, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
+    iget-object v6, p0, Landroid/widget/AbsListView$PerformClick;->this$0:Landroid/widget/AbsListView;
+
     iget-object v0, v6, Landroid/widget/AbsListView;->mAdapter:Landroid/widget/ListAdapter;
 
     .local v0, "adapter":Landroid/widget/ListAdapter;

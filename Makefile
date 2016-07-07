@@ -21,7 +21,7 @@ DENSITY := xxhdpi
 # It depends on the device's resolution, such as 480x854, 540x960, 720x1280, 1080x1920.
 # The default value is nothing.
 #-----------------------------------------------------------------------------
-RESOLUTION := 0x0
+RESOLUTION := 1080x1920
 
 ##############################################################################
 # The value decides whether use prebuilt image or pack from the BOOT or RECOVERY directory in the vendor directory.
@@ -40,23 +40,27 @@ vendor_modify_images := boot
 # The default value is app or pri-app which not need to configure.
 # You can configure the directory name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-#vendor_remove_dirs := vendor/operator/app
+vendor_remove_dirs := chn_sipdb container finder_cp preloadedkiosk res wallpaper
 
 ##############################################################################
 # The value decides the file which you want to remove in the vendor directory for the ota package.
 # The default value is nothing.
 # You can configure the file name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-#vendor_remove_files := bin/zchgd
+vendor_remove_files := recovery-from-boot.bak
 
 ##############################################################################
 # The value decides the vendor apk which you want to save in the vendor directory for the ota package.
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/pri-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth KeyChain HTMLViewer UserDictionaryProvider BackupRestoreConfirmation \
-                     FusedLocation PrintSpooler SharedStorageBackup  ExternalStorageProvider InputDevices \
-                     ProxyHandler Shell DefaultContainerService
+vendor_saved_apps := Bluetooth BadgeProvider ClipboardSaveService ClipboardUIService FilterInstaller FilterManager FilterProvider FlashAnnotate FlashAnnotateSvc \
+                     KeyChain SecHTMLViewer UserDictionaryProvider BackupRestoreConfirmation minimode-res MultiWindowTrayService NfcNci \
+                     NSFusedLocation OCRSeg PopupuiReceiver ResourceManager SamsungCamera2 SamsungCameraFilter SamsungTTS SmartcardManager \
+		     SmartcardService SmartClipProvider SmartClipServiceHMR SNote4.1Preload SPenKeeper SPenSdk3 Stk TimeService SPrintSpooler \
+		     SharedStorageBackup  ExternalStorageProvider InputDevices ProxyHandler Shell DefaultContainerService WritingBuddyService \
+		     MtpApplication SecSettingsProvider GearManagerStub GlanceView SettingSearchProvider ShareShotService WfdBroker BestFace \
+                     Eraser MusicCommonUtility PicAction Pinboard Samsungservice2_xxhdpi SecMediaProvider
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -89,14 +93,14 @@ vendor_modify_jars := android.policy com.gsma.services.nfc com.qti.dpmframework 
 # You can configure the board system file path which relative to the system directory in the board release.
 # You should add "lib64/libwebviewchromium.so" for 64 bit system.
 #-----------------------------------------------------------------------------
-board_saved_files := lib/libwebviewchromium.so
+board_saved_files := lib/libwebviewchromium.so bin/bootanimation bin/shutdownanimation media/bootanimation.zip
 
 ##############################################################################
 # The value decides which board system apk you want to remove.
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-#board_remove_apps := LogReport
+board_remove_apps := LogReport MediaProvider
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -141,8 +145,8 @@ board_saved_files := lib/libwebviewchromium.so
 # The default value is Nexus-5_Unofficial.
 # You should configure the property according to your device and your ID with replace the "Nexus-5_Unofficial".
 override_property += \
-    ro.flyme.romer=Unofficial \
-    ro.product.model_romer=Nexus-5_Unofficial
+    ro.flyme.romer=bo1318 \
+    ro.product.model_romer=SM-N9009_bo1318
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.

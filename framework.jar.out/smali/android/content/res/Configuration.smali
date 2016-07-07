@@ -278,6 +278,8 @@
 
 
 # instance fields
+.field public themeChanged:I
+
 .field public FlipFont:I
 
 .field public arrange:I
@@ -957,6 +959,8 @@
     const/high16 v1, 0x20000000
 
     or-int/2addr v0, v1
+
+    or-int/lit16 v0, v0, 0x4000
 
     and-int/2addr v0, p0
 
@@ -2992,6 +2996,10 @@
 
     .line 1184
     :cond_13
+    invoke-static {p0, p1, v0}, Landroid/content/res/Configuration$FlymeInject;->diff(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
+
+    move-result v0
+
     return v0
 .end method
 
@@ -3208,6 +3216,8 @@
     iget v2, p0, Landroid/content/res/Configuration;->densityDpi:I
 
     add-int v0, v1, v2
+
+    invoke-static {p0, v0}, Landroid/content/res/Configuration$FlymeInject;->hashCode(Landroid/content/res/Configuration;I)I
 
     mul-int/lit8 v1, v0, 0x1f
 
@@ -3489,6 +3499,8 @@
 
     iput v0, p0, Landroid/content/res/Configuration;->seq:I
 
+    invoke-static/range {p0 .. p1}, Landroid/content/res/Configuration$FlymeInject;->readFromParcel(Landroid/content/res/Configuration;Landroid/os/Parcel;)V
+
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
     move-result v0
@@ -3662,6 +3674,8 @@
 
     iput v0, p0, Landroid/content/res/Configuration;->seq:I
 
+    invoke-static/range {p0 .. p1}, Landroid/content/res/Configuration$FlymeInject;->setTo(Landroid/content/res/Configuration;Landroid/content/res/Configuration;)V
+
     iget v0, p1, Landroid/content/res/Configuration;->FlipFont:I
 
     iput v0, p0, Landroid/content/res/Configuration;->FlipFont:I
@@ -3724,6 +3738,8 @@
     iput v1, p0, Landroid/content/res/Configuration;->seq:I
 
     iput v1, p0, Landroid/content/res/Configuration;->FlipFont:I
+
+    invoke-static/range {p0 .. p0}, Landroid/content/res/Configuration$FlymeInject;->setToDefaults(Landroid/content/res/Configuration;)V
 
     return-void
 .end method
@@ -5201,6 +5217,10 @@
     iput v2, p0, Landroid/content/res/Configuration;->FlipFont:I
 
     :cond_1a
+    invoke-static {p0, p1, v0}, Landroid/content/res/Configuration$FlymeInject;->updateFrom(Landroid/content/res/Configuration;Landroid/content/res/Configuration;I)I
+
+    move-result v0
+
     return v0
 
     .end local v1    # "deltaScreenLayoutDir":I
@@ -5321,6 +5341,8 @@
     iget v0, p0, Landroid/content/res/Configuration;->seq:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-static/range {p0 .. p1}, Landroid/content/res/Configuration$FlymeInject;->writeToParcel(Landroid/content/res/Configuration;Landroid/os/Parcel;)V
 
     iget v0, p0, Landroid/content/res/Configuration;->FlipFont:I
 

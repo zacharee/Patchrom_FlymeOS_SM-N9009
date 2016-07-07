@@ -3,8 +3,8 @@
 .source "VpnProfile.java"
 
 # interfaces
-.implements Ljava/lang/Cloneable;
 .implements Landroid/os/Parcelable;
+.implements Ljava/lang/Cloneable;
 
 
 # static fields

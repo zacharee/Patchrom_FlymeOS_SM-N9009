@@ -3,8 +3,8 @@
 .source "SallyService.java"
 
 # interfaces
-.implements Landroid/view/Window$Callback;
 .implements Landroid/view/KeyEvent$Callback;
+.implements Landroid/view/Window$Callback;
 
 
 # static fields

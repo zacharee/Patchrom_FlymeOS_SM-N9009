@@ -3,8 +3,8 @@
 .source "SensorHubProvider.java"
 
 # interfaces
-.implements Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/ISensorHubParser;
 .implements Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/ISensorHubCmdProtocol;
+.implements Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/ISensorHubParser;
 .implements Lcom/samsung/android/contextaware/dataprovider/sensorhubprovider/ISensorHubRequest;
 
 

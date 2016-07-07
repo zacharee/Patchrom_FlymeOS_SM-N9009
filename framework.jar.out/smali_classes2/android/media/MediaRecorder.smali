@@ -58,6 +58,8 @@
 
 
 # instance fields
+.field private mIsVideoRecord:Z
+
 .field private mAudioSource:I
 
 .field private mEventHandler:Landroid/media/MediaRecorder$EventHandler;
@@ -831,7 +833,7 @@
 
     .end local v8    # "file":Ljava/io/RandomAccessFile;
     :goto_2
-    invoke-direct {p0}, Landroid/media/MediaRecorder;->_prepare()V
+    invoke-direct {p0}, Landroid/media/MediaRecorder;->hook_prepare()V
 
     return-void
 

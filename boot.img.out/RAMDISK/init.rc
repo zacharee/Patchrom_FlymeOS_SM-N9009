@@ -430,6 +430,14 @@ on post-fs-data
     # Set indication (checked by vold) that we have finished this action
     #setprop vold.post_fs_data_done 1
 
+    # Flyme kuangqianbo for samba server and client {@
+    mkdir /data/misc/samba 0775 system system
+    mkdir /data/misc/samba/remote 0775 system system
+    mkdir /data/misc/samba/lib 0775 system system
+    mkdir /data/misc/samba/private 0775 system system
+    mkdir /data/misc/samba/tmp 0775 system system
+    mkdir /data/misc/samba/var 0775 system system
+    # @}
 
 # Separate location for storing security policy files on data
 #start SEC_PRODUCT_FEATURE_COMMON_SUPPORT_SE_FOR_ANDROID

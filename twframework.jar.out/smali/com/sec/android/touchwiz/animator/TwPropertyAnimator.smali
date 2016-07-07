@@ -3,8 +3,8 @@
 .source "TwPropertyAnimator.java"
 
 # interfaces
-.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 .implements Landroid/animation/Animator$AnimatorListener;
+.implements Landroid/animation/ValueAnimator$AnimatorUpdateListener;
 
 
 # annotations

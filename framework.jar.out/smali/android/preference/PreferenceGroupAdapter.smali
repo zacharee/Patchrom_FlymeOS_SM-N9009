@@ -21,6 +21,8 @@
 
 
 # instance fields
+.field private mIsThemeLight:Z
+
 .field private mCntPreferenceCategory:I
 
 .field private mHandler:Landroid/os/Handler;

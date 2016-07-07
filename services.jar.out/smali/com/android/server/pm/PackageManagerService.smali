@@ -3115,6 +3115,8 @@
 
     invoke-virtual {v0, v2}, Ljava/util/HashSet;->add(Ljava/lang/Object;)Z
 
+    invoke-static/range {v24 .. v24}, Lcom/android/server/pm/InjectorPMS;->mzAddAlreadyDexOpted(Ljava/util/HashSet;)V
+
     invoke-virtual/range {v43 .. v43}, Ljava/io/File;->list()[Ljava/lang/String;
 
     move-result-object v44
@@ -76050,6 +76052,10 @@
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 
+    invoke-static/range {p1 .. p1}, Lcom/android/server/pm/InjectorPMS;->getAccessActivityInfo(Landroid/content/ComponentName;)Landroid/content/pm/ActivityInfo;
+
+    move-result-object v7
+
     goto/16 :goto_0
 .end method
 
@@ -86647,7 +86653,7 @@
 
     move/from16 v1, v22
 
-    invoke-direct {v0, v15, v9, v1}, Lcom/android/server/pm/PackageManagerService;->performBootDexOpt(Landroid/content/pm/PackageParser$Package;II)V
+    invoke-direct {v0, v15, v9, v1}, Lcom/android/server/pm/PackageManagerService;->mzperformBootDexOpt(Landroid/content/pm/PackageParser$Package;II)V
 
     goto :goto_6
 

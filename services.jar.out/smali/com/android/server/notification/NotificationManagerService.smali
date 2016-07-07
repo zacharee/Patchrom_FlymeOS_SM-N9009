@@ -489,6 +489,8 @@
 
     iput-object v0, p0, Lcom/android/server/notification/NotificationManagerService;->mInternalService:Lcom/android/server/notification/NotificationManagerInternal;
 
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->initServiceAquireLock()V
+
     new-instance v0, Lcom/android/server/notification/NotificationManagerService$PickupPlayer;
 
     invoke-direct {v0, p0, v3}, Lcom/android/server/notification/NotificationManagerService$PickupPlayer;-><init>(Lcom/android/server/notification/NotificationManagerService;Lcom/android/server/notification/NotificationManagerService$1;)V
@@ -1974,6 +1976,10 @@
     move-object/from16 v27, v0
 
     invoke-virtual/range {v27 .. v27}, Landroid/media/AudioManager;->getRingerMode()I
+
+    move-result v27
+
+    invoke-virtual/range {p0 .. p0}, Lcom/android/server/notification/NotificationManagerService;->isVibrateOn()Z
 
     move-result v27
 

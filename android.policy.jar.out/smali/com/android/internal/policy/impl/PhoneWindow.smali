@@ -1807,6 +1807,8 @@
 
     .line 3933
     :cond_3
+    invoke-static/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindow$FlymeInjector;->setWindowAttributesToActionbar(Lcom/android/internal/policy/impl/PhoneWindow;)V
+
     move-object/from16 v0, p0
 
     iget-object v0, v0, Lcom/android/internal/policy/impl/PhoneWindow;->mDecorContentParent:Lcom/android/internal/widget/DecorContentParent;
@@ -2689,6 +2691,8 @@
     move-result-object v19
 
     invoke-interface/range {v18 .. v19}, Lcom/android/internal/widget/DecorContentParent;->setIcon(Landroid/graphics/drawable/Drawable;)V
+
+    invoke-static/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindow$FlymeInjector;->mzSetDefaultIcon(Lcom/android/internal/policy/impl/PhoneWindow;)V
 
     .line 3942
     move-object/from16 v0, p0

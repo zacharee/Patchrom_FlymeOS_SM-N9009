@@ -3,9 +3,9 @@
 .source "SubPhoneWindow.java"
 
 # interfaces
-.implements Landroid/view/View$OnTouchListener;
 .implements Landroid/view/View$OnClickListener;
 .implements Landroid/view/View$OnHoverListener;
+.implements Landroid/view/View$OnTouchListener;
 
 
 # annotations

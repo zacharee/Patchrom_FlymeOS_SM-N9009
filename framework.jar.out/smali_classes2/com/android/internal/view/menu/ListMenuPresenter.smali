@@ -3,8 +3,8 @@
 .source "ListMenuPresenter.java"
 
 # interfaces
-.implements Lcom/android/internal/view/menu/MenuPresenter;
 .implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Lcom/android/internal/view/menu/MenuPresenter;
 
 
 # annotations

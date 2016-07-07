@@ -3,8 +3,8 @@
 .source "CaPassiveCurrentPositionManager.java"
 
 # interfaces
-.implements Lcom/samsung/android/contextaware/utilbundle/IUtilManager;
 .implements Lcom/samsung/android/contextaware/utilbundle/IPassiveCurrentPositionObservable;
+.implements Lcom/samsung/android/contextaware/utilbundle/IUtilManager;
 
 
 # static fields

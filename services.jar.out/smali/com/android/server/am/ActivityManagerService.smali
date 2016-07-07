@@ -3,8 +3,8 @@
 .source "ActivityManagerService.java"
 
 # interfaces
-.implements Lcom/android/server/Watchdog$Monitor;
 .implements Lcom/android/internal/os/BatteryStatsImpl$BatteryCallback;
+.implements Lcom/android/server/Watchdog$Monitor;
 
 
 # annotations
@@ -3157,6 +3157,8 @@
     iget-object v1, p0, Lcom/android/server/am/ActivityManagerService;->mHandler:Lcom/android/server/am/ActivityManagerService$MainHandler;
 
     invoke-virtual {v0, v1}, Lcom/android/server/Watchdog;->addThread(Landroid/os/Handler;)V
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/am/InjectorAMS;->setup(Lcom/android/server/am/ActivityManagerService;)V
 
     invoke-static {}, Lcom/sec/android/app/CscFeature;->getInstance()Lcom/sec/android/app/CscFeature;
 
@@ -12171,6 +12173,8 @@
     move-object/from16 v1, p1
 
     invoke-virtual {v0, v1}, Ljava/util/ArrayList;->remove(Ljava/lang/Object;)Z
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService;->mzBroadcastRecentTasksChanged()V
 
     move-object/from16 v0, p0
 
@@ -38819,7 +38823,7 @@
 
     invoke-virtual {v8, v9, p1}, Ljava/util/ArrayList;->add(ILjava/lang/Object;)V
 
-    invoke-virtual {p0, p1, v9}, Lcom/android/server/am/ActivityManagerService;->notifyTaskPersisterLocked(Lcom/android/server/am/TaskRecord;Z)V
+    invoke-virtual {p0, p1, v9}, Lcom/android/server/am/ActivityManagerService;->mznotifyTaskPersisterLocked(Lcom/android/server/am/TaskRecord;Z)V
 
     goto :goto_1
 
@@ -38929,7 +38933,7 @@
 
     :cond_a
     :goto_4
-    if-eqz v2, :cond_b
+    if-eqz v2, :cond_flyme_0
 
     iget v8, p1, Lcom/android/server/am/TaskRecord;->userId:I
 
@@ -39051,6 +39055,12 @@
     iput-object v8, p1, Lcom/android/server/am/TaskRecord;->multiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
 
     goto/16 :goto_1
+
+    :cond_flyme_0
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService;->mzBroadcastRecentTasksChanged()V
+
+    return-void
 .end method
 
 .method final appDiedLocked(Lcom/android/server/am/ProcessRecord;)V
@@ -71234,6 +71244,8 @@
     invoke-static/range {p2 .. p2}, Landroid/os/UserHandle;->getUserId(I)I
 
     move-result v15
+
+    return v15
 
     .local v15, "callingUserId":I
     move/from16 v0, p3

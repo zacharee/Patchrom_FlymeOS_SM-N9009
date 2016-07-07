@@ -16,6 +16,24 @@
 
 
 # static fields
+.field private static final AUTO_MODE:Ljava/lang/String; = "auto"
+
+.field public static final BAIDU_LOCATION_PACKAGENAME:Ljava/lang/String; = "com.baidu.map.location"
+
+.field private static final BAIDU_MODE:Ljava/lang/String; = "baidu"
+
+.field private static final CAMPED_NETWORK_STATE_CHANGED:Ljava/lang/String; = "android.intent.action.CAMPED_NETWORK_STATE_CHANGED"
+
+.field public static final GOOGLE_LOCATION_PACKAGENAME:Ljava/lang/String; = "com.google.android.gms"
+
+.field private static final GOOGLE_MODE:Ljava/lang/String; = "google"
+
+.field private static final PROPERTY_CAMPED_KEY:Ljava/lang/String; = "gsm.camped.operator.number"
+
+.field private static final PROPERTY_OPERATOR_NUMBER_KEY:Ljava/lang/String; = "gsm.operator.numeric"
+
+.field private static final SIM_STATE_CHANGED:Ljava/lang/String; = "android.intent.action.SIM_STATE_CHANGED"
+
 .field private static final ACCESS_COARSE_LOCATION:Ljava/lang/String; = "android.permission.ACCESS_COARSE_LOCATION"
 
 .field private static final ACCESS_FINE_LOCATION:Ljava/lang/String; = "android.permission.ACCESS_FINE_LOCATION"
@@ -114,6 +132,8 @@
 
 
 # instance fields
+.field private mMzModeObserver:Lcom/android/server/LocationManagerService$MzNetworkProviderModeSettingsObserver;
+
 .field cellProvider:Lcom/samsung/location/CellGeofenceProvider;
 
 .field private isBlackListRequest:Z

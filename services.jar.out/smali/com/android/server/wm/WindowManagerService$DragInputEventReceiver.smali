@@ -68,11 +68,11 @@
 
     invoke-static/range {p1 .. p1}, Lcom/android/server/wm/InjectorWMS;->hookOnInputEvent(Landroid/view/InputEvent;)Z
 
-    move-result v7
+    move-result v8
 
-    if-eqz v7, :cond_flyme_0
+    if-eqz v8, :cond_flyme_0
 
-    invoke-virtual {p0, p1, v3}, Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
+    invoke-virtual {p0, p1, v4}, Lcom/android/server/wm/WindowManagerService$DragInputEventReceiver;->finishInputEvent(Landroid/view/InputEvent;Z)V
 
     return-void
 

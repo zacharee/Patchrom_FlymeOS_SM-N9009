@@ -3,8 +3,8 @@
 .source "RestrictionsPinActivity.java"
 
 # interfaces
-.implements Landroid/view/View$OnClickListener;
 .implements Landroid/text/TextWatcher;
+.implements Landroid/view/View$OnClickListener;
 .implements Landroid/widget/TextView$OnEditorActionListener;
 
 

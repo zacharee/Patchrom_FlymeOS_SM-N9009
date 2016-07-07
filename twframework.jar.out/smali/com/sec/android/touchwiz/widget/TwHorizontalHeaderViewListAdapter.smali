@@ -3,8 +3,8 @@
 .source "TwHorizontalHeaderViewListAdapter.java"
 
 # interfaces
-.implements Landroid/widget/WrapperListAdapter;
 .implements Landroid/widget/Filterable;
+.implements Landroid/widget/WrapperListAdapter;
 
 
 # static fields

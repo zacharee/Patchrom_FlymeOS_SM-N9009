@@ -3,8 +3,8 @@
 .source "PreferenceActivity.java"
 
 # interfaces
-.implements Landroid/preference/PreferenceManager$OnPreferenceTreeClickListener;
 .implements Landroid/preference/PreferenceFragment$OnPreferenceStartFragmentCallback;
+.implements Landroid/preference/PreferenceManager$OnPreferenceTreeClickListener;
 
 
 # annotations
@@ -2619,6 +2619,8 @@
     .end local v20    # "initialTitleStr":Ljava/lang/CharSequence;
     :cond_3
     :goto_6
+    invoke-direct/range {p0 .. p0}, Landroid/preference/PreferenceActivity;->mzSetScrollPanelVisibility()V
+
     invoke-virtual/range {p0 .. p0}, Landroid/preference/PreferenceActivity;->getIntent()Landroid/content/Intent;
 
     move-result-object v21

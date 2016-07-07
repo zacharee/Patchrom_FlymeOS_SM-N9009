@@ -7594,6 +7594,8 @@
     if-eqz v4, :cond_3a
 
     :cond_39
+    invoke-static/range {v40 .. v40}, Lcom/android/server/am/InjectorAMS;->setCurrentBroadcastRecord(Lcom/android/server/am/BroadcastRecord;)V
+
     move-object/from16 v0, p0
 
     iget-object v7, v0, Lcom/android/server/am/BroadcastQueue;->mService:Lcom/android/server/am/ActivityManagerService;
@@ -7643,7 +7645,7 @@
 
     const/16 v16, 0x0
 
-    invoke-virtual/range {v7 .. v16}, Lcom/android/server/am/ActivityManagerService;->startProcessLocked(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZZ)Lcom/android/server/am/ProcessRecord;
+    invoke-virtual/range {v7 .. v16}, Lcom/android/server/am/ActivityManagerService;->mzstartProcessLocked(Ljava/lang/String;Landroid/content/pm/ApplicationInfo;ZILjava/lang/String;Landroid/content/ComponentName;ZZZ)Lcom/android/server/am/ProcessRecord;
 
     move-result-object v4
 

@@ -310,6 +310,8 @@
     :cond_4
     invoke-static {p1, v1, p2}, Landroid/content/res/Resources;->updateSystemConfiguration(Landroid/content/res/Configuration;Landroid/util/DisplayMetrics;Landroid/content/res/CompatibilityInfo;)V
 
+    invoke-direct {p0, v0}, Landroid/app/ResourcesManager;->mzFreeCaches(I)V
+
     .line 417
     invoke-static {}, Landroid/app/ApplicationPackageManager;->configurationChanged()V
 

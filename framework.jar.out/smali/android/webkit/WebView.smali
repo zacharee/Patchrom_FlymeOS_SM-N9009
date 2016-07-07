@@ -3,15 +3,18 @@
 .source "WebView.java"
 
 # interfaces
-.implements Landroid/view/ViewTreeObserver$OnGlobalFocusChangeListener;
-.implements Landroid/view/ViewGroup$OnHierarchyChangeListener;
 .implements Landroid/view/ViewDebug$HierarchyHandler;
+.implements Landroid/view/ViewGroup$OnHierarchyChangeListener;
+.implements Landroid/view/ViewTreeObserver$OnGlobalFocusChangeListener;
 
 
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/webkit/WebView$1;,
+        Landroid/webkit/WebView$ReaderTitleAndNumCallBack;,
+        Landroid/webkit/WebView$ReaderCallBack;,
+        Landroid/webkit/WebView$ReaderModeListener;,
         Landroid/webkit/WebView$SmartClipHandler;,
         Landroid/webkit/WebView$FindListenerDistributor;,
         Landroid/webkit/WebView$PrivateAccess;,

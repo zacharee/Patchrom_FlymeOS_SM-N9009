@@ -1043,6 +1043,9 @@
 
     .end local v4    # "positionListener":Landroid/widget/Editor$PositionListener;
     :pswitch_1
+
+    invoke-direct/range {p0 .. p0}, Landroid/widget/Editor$HandleView;->hideOptionWrapper()V
+
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getRawX()F
 
     move-result v8
@@ -1275,6 +1278,8 @@
     const/4 v12, 0x0
 
     iput-boolean v12, p0, Landroid/widget/Editor$HandleView;->mIsDragging:Z
+
+    invoke-direct/range {p0 .. p0}, Landroid/widget/Editor$HandleView;->showOptionWrapper()V
 
     .line 4752
     iget-object v12, p0, Landroid/widget/Editor$HandleView;->this$0:Landroid/widget/Editor;
@@ -1515,8 +1520,6 @@
 
     invoke-virtual {p0, v12}, Landroid/widget/Editor$HandleView;->showNewActionPopupWindow(I)V
 
-    invoke-direct/range {p0 .. p0}, Landroid/widget/Editor$HandleView;->showOptionWrapper()V
-
     goto/16 :goto_0
 
     .line 4797
@@ -1628,6 +1631,16 @@
     if-eqz p2, :cond_0
 
     :cond_3
+    invoke-direct/range {p0 .. p1}, Landroid/widget/Editor$HandleView;->injectPositionAtCursorOffset(I)Z
+
+    move-result v6
+
+    if-eqz v6, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
     if-eqz v4, :cond_4
 
     invoke-virtual {p0, p1}, Landroid/widget/Editor$HandleView;->updateSelection(I)V

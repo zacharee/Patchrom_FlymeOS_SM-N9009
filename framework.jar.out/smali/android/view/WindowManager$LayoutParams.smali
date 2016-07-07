@@ -1678,6 +1678,8 @@
 
     iput v0, p0, Landroid/view/WindowManager$LayoutParams;->multiWindowFlags:I
 
+    invoke-static/range {p0 .. p1}, Landroid/view/WindowManager$LayoutParams$FlymeInjector;->readFromParcel(Landroid/view/WindowManager$LayoutParams;Landroid/os/Parcel;)V
+
     return-void
 
     :cond_0
@@ -2425,6 +2427,13 @@
 
     .line 2378
     :cond_24
+
+    invoke-static {p0, p1, v0}, Landroid/view/WindowManager$LayoutParams$FlymeInjector;->copyFrom(Landroid/view/WindowManager$LayoutParams;Landroid/view/WindowManager$LayoutParams;I)I
+
+    move-result v2
+
+    or-int/2addr v0, v2
+
     return v0
 .end method
 
@@ -3258,6 +3267,8 @@
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
     :cond_18
+    invoke-static {p0, v0}, Landroid/view/WindowManager$LayoutParams$FlymeInjector;->toString(Landroid/view/WindowManager$LayoutParams;Ljava/lang/StringBuilder;)V
+
     const/16 v1, 0x7d
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(C)Ljava/lang/StringBuilder;
@@ -3498,6 +3509,8 @@
     iget v0, p0, Landroid/view/WindowManager$LayoutParams;->multiWindowFlags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
+
+    invoke-static/range {p0 .. p1}, Landroid/view/WindowManager$LayoutParams$FlymeInjector;->writeToParcel(Landroid/view/WindowManager$LayoutParams;Landroid/os/Parcel;)V
 
     return-void
 

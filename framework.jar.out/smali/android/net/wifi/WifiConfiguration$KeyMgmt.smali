@@ -48,8 +48,6 @@
     .line 170
     const/16 v0, 0xa
 
-    add-int/lit8 v0, v0, 0x2
-
     new-array v0, v0, [Ljava/lang/String;
 
     const/4 v1, 0x0

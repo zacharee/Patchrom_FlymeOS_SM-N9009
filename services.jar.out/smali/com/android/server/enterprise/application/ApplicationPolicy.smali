@@ -3,8 +3,8 @@
 .source "ApplicationPolicy.java"
 
 # interfaces
-.implements Lcom/android/server/enterprise/EnterpriseServiceCallback;
 .implements Lcom/android/server/enterprise/EnterpriseContainerSubscriber;
+.implements Lcom/android/server/enterprise/EnterpriseServiceCallback;
 
 
 # annotations

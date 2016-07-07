@@ -5,8 +5,8 @@
 # interfaces
 .implements Landroid/text/TextWatcher;
 .implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
-.implements Landroid/widget/Filter$FilterListener;
 .implements Landroid/view/ViewTreeObserver$OnTouchModeChangeListener;
+.implements Landroid/widget/Filter$FilterListener;
 .implements Landroid/widget/RemoteViewsAdapter$RemoteAdapterConnectionCallback;
 
 
@@ -188,6 +188,82 @@
 
 
 # instance fields
+.field protected mActionItemListener:Landroid/view/ActionMode$OnActionItemDragListener;
+
+.field mCanNfcShare:Z
+
+.field protected mCenterContent:Z
+
+.field mCheckForLittleTap:Landroid/widget/AbsListView$MzCheckForLittleTap;
+
+.field protected mCheckRegionRect:Landroid/graphics/Rect;
+
+.field protected mChoiceModeMZ:I
+
+.field mCurrentDragChild:Landroid/view/View;
+
+.field protected mDefaultCheckWidth:I
+
+.field mDelaySpringBack:Ljava/lang/Runnable;
+
+.field mDelaySpringBackEnabled:Z
+
+.field mDelayUpdate:Ljava/lang/Runnable;
+
+.field protected mDragAndDropId:J
+
+.field protected mDragAndDropPosition:I
+
+.field protected mDragOffsetX:I
+
+.field protected mDragOffsetY:I
+
+.field mDragShawdowView:Landroid/view/View;
+
+.field protected mDragViewBackground:I
+
+.field protected mDragViewBackgroundDelete:I
+
+.field protected mDragViewBackgroundFilter:I
+
+.field protected mDragViewhasTransient:Z
+
+.field protected mEnableForEditTextPreference:Z
+
+.field mEnableLoadAllItems:Z
+
+.field mEnablePressStateOnCheck:Z
+
+.field mHasActionDrop:Z
+
+.field mHoldDistance:I
+
+.field mHoldIndicator:Lcom/meizu/widget/MzListHoldIndicator;
+
+.field mHoldIndicatorOffset:I
+
+.field mInCheckRegion:Z
+
+.field mIsFlingToScroll:Z
+
+.field mIsListAtWindowTop:Z
+
+.field mIsThemeLight:Z
+
+.field protected mItemDragListener:Landroid/widget/AbsListView$OnItemDragListener;
+
+.field protected mListItemHeight:I
+
+.field mListWindowTop:I
+
+.field mMultiChoiceDelayRunnable:Ljava/lang/Runnable;
+
+.field protected mOnTouchOutOfItemListener:Landroid/widget/AbsListView$onTouchOutOfItemListener;
+
+.field mShadowBuilder:Landroid/widget/AbsListView$ListViewDragShadowBuilder;
+
+.field protected mShouldDelaySpringBack:Z
+
 .field protected AIR_VIEW_WINSET:Z
 
 .field private HOVERSCROLL_DELAY:I
@@ -5847,6 +5923,9 @@
 
     .end local v2    # "resolved":Z
     :cond_5
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->initExtFlymeFields(Landroid/widget/AbsListView;)V
+
     return-void
 
     .end local v3    # "value":Landroid/util/TypedValue;
@@ -6622,6 +6701,16 @@
     .locals 5
 
     .prologue
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnTouchCancel(Landroid/widget/AbsListView;)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
     const/4 v4, -0x1
 
     const/4 v3, 0x0
@@ -10569,6 +10658,18 @@
     .line 4055
     .local v5, "overscroll":Z
     :goto_0
+    invoke-static {p0, p2}, Landroid/widget/AbsListView$FlymeInjector;->mzStartScrollIfNeeded2(Landroid/widget/AbsListView;I)Z
+
+    move-result v7
+
+    if-nez v7, :cond_flyme_0
+
+    const/4 v7, 0x0
+
+    return v7
+
+    :cond_flyme_0
+
     if-nez v5, :cond_0
 
     iget v7, p0, Landroid/widget/AbsListView;->mTouchSlop:I
@@ -10708,6 +10809,8 @@
     .line 4090
     :cond_6
     invoke-direct {p0, p1, p2, p3}, Landroid/widget/AbsListView;->scrollIfNeeded(IILandroid/view/MotionEvent;)V
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzStartScrollIfNeeded(Landroid/widget/AbsListView;)V
 
     move v7, v8
 
@@ -12883,6 +12986,8 @@
 
     :cond_4
     :goto_1
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsListView$FlymeInjector;->mzDispatchDraw(Landroid/widget/AbsListView;Landroid/graphics/Canvas;)V
+
     return-void
 
     .end local v0    # "clipToPadding":Z
@@ -24634,6 +24739,8 @@
 
     .local v0, "touchMode":I
     :goto_0
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsListView$FlymeInjector;->mzOnWindowFocusChanged(Landroid/widget/AbsListView;Z)V
+
     if-nez p1, :cond_6
 
     invoke-virtual {p0, v1}, Landroid/widget/AbsListView;->setChildrenDrawingCacheEnabled(Z)V
@@ -25227,6 +25334,18 @@
     .param p3, "longPressId"    # J
 
     .prologue
+    invoke-static/range {p0 .. p4}, Landroid/widget/AbsListView$FlymeInjector;->mzPerformLongPress(Landroid/widget/AbsListView;Landroid/view/View;IJ)Z
+
+    move-result v0
+
+    if-eqz v0, :cond_flyme_0
+
+    const/4 v6, 0x1
+
+    return v6
+
+    :cond_flyme_0
+
     const/4 v1, 0x3
 
     const/4 v7, 0x0
@@ -25418,6 +25537,8 @@
 
     .line 3967
     :cond_2
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzPointToPosition(Landroid/widget/AbsListView;)V
+
     invoke-virtual {v4, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v6
@@ -27487,6 +27608,10 @@
     .param p1, "choiceMode"    # I
 
     .prologue
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsListView$FlymeInjector;->mzSetChoiceMode(Landroid/widget/AbsListView;I)I
+
+    move-result p1
+
     const/4 v4, 0x3
 
     const/4 v3, 0x0

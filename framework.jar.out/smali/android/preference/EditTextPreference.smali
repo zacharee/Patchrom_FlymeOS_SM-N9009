@@ -179,6 +179,8 @@
 
     invoke-virtual {v0, v2}, Landroid/widget/EditText;->setText(Ljava/lang/CharSequence;)V
 
+    invoke-direct/range {p0 .. p0}, Landroid/preference/EditTextPreference;->mzSetEditTextSelection()V
+
     invoke-virtual {v0}, Landroid/widget/EditText;->length()I
 
     move-result v2

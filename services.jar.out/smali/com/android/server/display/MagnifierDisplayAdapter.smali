@@ -3,8 +3,8 @@
 .source "MagnifierDisplayAdapter.java"
 
 # interfaces
-.implements Lcom/android/server/display/MagnifierSurfaceControl$Listener;
 .implements Lcom/android/internal/util/DumpUtils$Dump;
+.implements Lcom/android/server/display/MagnifierSurfaceControl$Listener;
 
 
 # static fields

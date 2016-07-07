@@ -1309,10 +1309,12 @@
 
     invoke-virtual {v5, v8, v10}, Landroid/view/SurfaceControl;->setPosition(FF)V
 
+    invoke-static/range {p3 .. p6}, Lcom/android/server/wm/InjectorWMS;->setInitXandY(FFFF)V
+
     .end local v6    # "xPos":I
     .end local v7    # "yPos":I
     :goto_1
-    const v8, 0x3f350481    # 0.7071f
+    const/high16 v8, 0x3f800000    # 1.0f
 
     invoke-virtual {v5, v8}, Landroid/view/SurfaceControl;->setAlpha(F)V
 

@@ -419,6 +419,8 @@
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    invoke-direct {p0, v1}, Lcom/android/server/BluetoothManagerService;->mzAddFilterAction(Landroid/content/IntentFilter;)V
+
     invoke-static {}, Lcom/sec/android/app/CscFeature;->getInstance()Lcom/sec/android/app/CscFeature;
 
     move-result-object v3
@@ -1633,6 +1635,9 @@
     .end local v3    # "intentRadio1":Landroid/content/Intent;
     :cond_3
     :goto_2
+
+    invoke-virtual/range {p0 .. p2}, Lcom/android/server/BluetoothManagerService;->mzChangeBluetoothName(II)V
+
     return-void
 
     .line 1883
@@ -5996,6 +6001,18 @@
 
     invoke-static {v5, v6}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
 
+    invoke-direct/range {p0 .. p1}, Lcom/android/server/BluetoothManagerService;->isCanDisable(Z)Z
+
+    move-result v6
+
+    if-nez v6, :cond_flyme_0
+
+    const/4 v5, 0x0
+
+    return v5
+
+    :cond_flyme_0
+
     .line 813
     :cond_3
     iget-object v5, p0, Lcom/android/server/BluetoothManagerService;->mReceiver:Landroid/content/BroadcastReceiver;
@@ -7375,6 +7392,10 @@
     move-result v0
 
     .local v0, "callingAppId":I
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/BluetoothManagerService;->mzGetAppIdByBluetooth()I
+
+    move-result v0
+
     const/16 v2, 0x403
 
     if-eq v0, v2, :cond_2

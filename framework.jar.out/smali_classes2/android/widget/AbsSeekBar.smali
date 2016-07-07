@@ -11,6 +11,10 @@
 .end annotation
 
 # static fields
+.field public static final SEEK_BAR_SCROLL_MODE_COMMON:I = 0x0
+
+.field public static final SEEK_BAR_SCROLL_MODE_SLOW:I = 0x1
+
 .field private static DEFAULT_ACTIVATED_COLOR:Landroid/content/res/ColorStateList; = null
 
 .field private static DEFAULT_NORMAL_COLOR:Landroid/content/res/ColorStateList; = null
@@ -435,6 +439,8 @@
     move-result-object v3
 
     sput-object v3, Landroid/widget/AbsSeekBar;->OVERLAP_ACTIVATED_COLOR:Landroid/content/res/ColorStateList;
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->initExtFlymeFields(Landroid/widget/AbsSeekBar;)V
 
     return-void
 .end method
@@ -2414,6 +2420,8 @@
 
     .line 306
     :cond_0
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzDrawThumb(Landroid/widget/AbsSeekBar;Landroid/graphics/Canvas;)V
+
     iget-object v0, p0, Landroid/widget/AbsSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -3608,6 +3616,8 @@
 
     invoke-virtual {p0, v3}, Landroid/widget/AbsSeekBar;->invalidate(Landroid/graphics/Rect;)V
 
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->invalidateThumb(Landroid/widget/AbsSeekBar;)V
+
     :cond_8
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->onStartTrackingTouch()V
 
@@ -3632,6 +3642,8 @@
 
     :goto_1
     invoke-virtual {p0}, Landroid/widget/AbsSeekBar;->invalidate()V
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzSetInDragoning(Landroid/widget/AbsSeekBar;)V
 
     goto/16 :goto_0
 

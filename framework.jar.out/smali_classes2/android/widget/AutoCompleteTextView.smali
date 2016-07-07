@@ -183,6 +183,8 @@
 
     iput-object v3, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
+    invoke-direct/range {p0 .. p4}, Landroid/widget/AutoCompleteTextView;->mzInitPopupWindow(Landroid/content/Context;Landroid/util/AttributeSet;II)V
+
     iget-object v3, p0, Landroid/widget/AutoCompleteTextView;->mPopup:Landroid/widget/ListPopupWindow;
 
     const/16 v4, 0x10

@@ -329,7 +329,7 @@
 
     move-object/from16 v2, p0
 
-    iput-wide v0, v2, Landroid/widget/NumberPicker;->mLongPressUpdateInterval:J
+    iput-wide v0, v2, Landroid/widget/NumberPicker;->mLastDownEventTime:J
 
     .line 308
     new-instance v18, Landroid/util/SparseArray;

@@ -3,8 +3,8 @@
 .source "MagnifierSurfaceControl.java"
 
 # interfaces
-.implements Lcom/android/internal/util/DumpUtils$Dump;
 .implements Landroid/hardware/display/DisplayManager$DisplayListener;
+.implements Lcom/android/internal/util/DumpUtils$Dump;
 
 
 # annotations

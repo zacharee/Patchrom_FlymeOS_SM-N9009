@@ -3,9 +3,9 @@
 .source "ViewRootImpl.java"
 
 # interfaces
-.implements Landroid/view/ViewParent;
-.implements Landroid/view/View$AttachInfo$Callbacks;
 .implements Landroid/view/HardwareRenderer$HardwareDrawCallbacks;
+.implements Landroid/view/View$AttachInfo$Callbacks;
+.implements Landroid/view/ViewParent;
 
 
 # annotations
@@ -7901,6 +7901,10 @@
 
     iput-boolean v4, v0, Landroid/view/ViewRootImpl;->mOrientationChanged:Z
 
+    invoke-direct/range {p0 .. p0}, Landroid/view/ViewRootImpl;->mzSetLayoutRequested()Z
+
+    move-result v46
+
     if-eqz v46, :cond_f
 
     move-object/from16 v0, p0
@@ -10323,12 +10327,13 @@
 
     iget-boolean v4, v0, Landroid/view/ViewRootImpl;->mStopped:Z
 
-    if-eqz v4, :cond_59
+    if-nez v4, :cond_flyme_0
 
     if-eqz v35, :cond_5e
 
     .line 1957
     :cond_59
+    :goto_flyme_0
     and-int/lit8 v4, v56, 0x1
 
     if-eqz v4, :cond_6f
@@ -10529,6 +10534,7 @@
     .end local v49    # "measureAgain":Z
     .end local v69    # "width":I
     :cond_5e
+    :cond_flyme_1
     :goto_1c
     if-eqz v46, :cond_74
 
@@ -10546,6 +10552,14 @@
     .line 2031
     .local v32, "didLayout":Z
     :goto_1d
+    move-object/from16 v0, p0
+
+    move/from16 v1, v46
+
+    invoke-direct {v0, v1}, Landroid/view/ViewRootImpl;->mzSetDidLayout(Z)Z
+
+    move-result v32
+
     if-nez v32, :cond_60
 
     move-object/from16 v0, p0
@@ -11627,6 +11641,15 @@
     move-exception v4
 
     goto/16 :goto_1f
+
+    :cond_flyme_0
+    invoke-virtual/range {p0 .. p0}, Landroid/view/ViewRootImpl;->needRefreshWhenStopped()Z
+
+    move-result v4
+
+    if-eqz v4, :cond_flyme_1
+
+    goto/16 :goto_flyme_0
 .end method
 
 .method private postSendWindowContentChangedCallback(Landroid/view/View;I)V
@@ -19290,6 +19313,8 @@
     .param p2, "force"    # Z
 
     .prologue
+    invoke-virtual/range {p0 .. p1}, Landroid/view/ViewRootImpl;->updateConfigurationForOrientation(Landroid/content/res/Configuration;)V
+
     const/4 v9, 0x1
 
     const/high16 v8, 0x3f800000    # 1.0f

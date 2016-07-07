@@ -6,6 +6,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Lcom/android/server/net/NetworkPolicyManagerService$MzInjector;,
         Lcom/android/server/net/NetworkPolicyManagerService$VideoCallBroadcastReceiver;
     }
 .end annotation
@@ -1939,6 +1940,10 @@
     move-result-object v1
 
     invoke-virtual {v10, v1}, Landroid/app/Notification$Builder;->setContentIntent(Landroid/app/PendingIntent;)Landroid/app/Notification$Builder;
+
+    sget v1, Lcom/flyme/internal/R$drawable;->mz_stat_sys_traffic_warn:I
+
+    invoke-virtual {v10, v1}, Landroid/app/Notification$Builder;->setSmallIcon(I)Landroid/app/Notification$Builder;
 
     :goto_3
     :try_start_0
@@ -8279,7 +8284,7 @@
 
     move-wide/from16 v2, v18
 
-    invoke-direct {v0, v1, v4, v2, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->enqueueNotification(Landroid/net/NetworkPolicy;IJ)V
+    invoke-direct {v0, v1, v4, v2, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->mzEnqueueNotification(Landroid/net/NetworkPolicy;IJ)V
 
     move-object/from16 v0, v16
 
@@ -8287,7 +8292,7 @@
 
     move-object/from16 v0, p0
 
-    invoke-direct {v0, v4}, Lcom/android/server/net/NetworkPolicyManagerService;->notifyOverLimitLocked(Landroid/net/NetworkTemplate;)V
+    #invoke-direct {v0, v4}, Lcom/android/server/net/NetworkPolicyManagerService;->notifyOverLimitLocked(Landroid/net/NetworkTemplate;)V
 
     goto :goto_1
 
@@ -8326,7 +8331,7 @@
 
     move-wide/from16 v2, v18
 
-    invoke-direct {v0, v1, v4, v2, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->enqueueNotification(Landroid/net/NetworkPolicy;IJ)V
+    invoke-direct {v0, v1, v4, v2, v3}, Lcom/android/server/net/NetworkPolicyManagerService;->mzEnqueueNotification(Landroid/net/NetworkPolicy;IJ)V
 
     goto :goto_1
 
@@ -8593,6 +8598,10 @@
 
     :cond_3
     :goto_2
+    invoke-static {v4, v3}, Lcom/android/server/net/NetworkPolicyManagerService$MzInjector;->flymeChangeUidRules(II)I
+
+    move-result v4
+
     if-nez v4, :cond_8
 
     iget-object v7, p0, Lcom/android/server/net/NetworkPolicyManagerService;->mUidRules:Landroid/util/SparseIntArray;

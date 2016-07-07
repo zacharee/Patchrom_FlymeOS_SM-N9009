@@ -4,9 +4,9 @@
 
 # interfaces
 .implements Landroid/view/View$OnClickListener;
+.implements Landroid/view/View$OnHoverListener;
 .implements Landroid/view/View$OnLongClickListener;
 .implements Landroid/view/View$OnTouchListener;
-.implements Landroid/view/View$OnHoverListener;
 
 
 # annotations

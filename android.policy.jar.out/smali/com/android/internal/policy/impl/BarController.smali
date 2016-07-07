@@ -687,7 +687,9 @@
     if-eqz v1, :cond_4
 
     :cond_1
-    or-int/2addr p2, v4
+    const/high16 v1, 0x40000000    # 2.0f
+
+    or-int/2addr p2, v1
 
     .end local v0    # "fl":I
     :cond_2

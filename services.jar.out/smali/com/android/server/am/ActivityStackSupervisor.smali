@@ -19497,6 +19497,16 @@
     .line 2002
     .end local v50    # "e":Landroid/os/RemoteException;
     :cond_1f
+    move-object/from16 v0, p2
+
+    move-object/from16 v1, p4
+
+    move/from16 v2, p11
+
+    invoke-static {v0, v1, v2}, Lcom/android/server/am/InjectorAMS;->hookActivityInfoBeforeCreatingActivityRecord(Landroid/content/Intent;Landroid/content/pm/ActivityInfo;I)Landroid/content/pm/ActivityInfo;
+
+    move-result-object p4
+
     new-instance v25, Lcom/android/server/am/ActivityRecord;
 
     move-object/from16 v0, p0

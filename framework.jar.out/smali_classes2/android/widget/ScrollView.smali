@@ -6,6 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/ScrollView$FlymeInjector;,
+        Landroid/widget/ScrollView$MzDelaySpringBack;,
         Landroid/widget/ScrollView$HoverScrollHandler;,
         Landroid/widget/ScrollView$SavedState;
     }
@@ -57,6 +59,28 @@
 
 
 # instance fields
+.field mCurrentOverScrollDistance:I
+
+.field mDelaySpringBack:Ljava/lang/Runnable;
+
+.field mDelaySpringBackEnabled:Z
+
+.field mFling:Z
+
+.field mHoldDistance:I
+
+.field mHoldIndicator:Lcom/meizu/widget/MzListHoldIndicator;
+
+.field mHoldIndicatorOffset:I
+
+.field mIsListAtWindowTop:Z
+
+.field mListWindowTop:I
+
+.field mRestoreOffset:I
+
+.field protected mShouldDelaySpringBack:Z
+
 .field private HOVERSCROLL_DELAY:I
 
 .field private HOVERSCROLL_SPEED:F
@@ -5732,6 +5756,9 @@
 
     .line 2520
     :cond_4
+
+    invoke-static/range {p0 .. p1}, Landroid/widget/ScrollView$FlymeInjector;->mzDraw(Landroid/widget/ScrollView;Landroid/graphics/Canvas;)V
+
     return-void
 .end method
 
@@ -7188,6 +7215,7 @@
     invoke-virtual {p0}, Landroid/widget/ScrollView;->postInvalidateOnAnimation()V
 
     :cond_9
+    :cond_flyme_1
     invoke-virtual {p0}, Landroid/widget/ScrollView;->stopNestedScroll()V
 
     goto/16 :goto_1

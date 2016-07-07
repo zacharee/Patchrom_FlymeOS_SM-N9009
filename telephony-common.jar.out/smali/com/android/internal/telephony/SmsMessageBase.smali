@@ -35,6 +35,8 @@
 
 
 # instance fields
+.field protected destinationAddress:Lcom/android/internal/telephony/SmsAddress;
+
 .field protected bearerData:[B
 
 .field protected callbackNumber:Ljava/lang/String;

@@ -15,6 +15,10 @@
 
 
 # static fields
+.field public static final MEIZU_CONTROL_PACKAGE_PERMISSIONS:Ljava/lang/String; = "android.permission.MEIZU_CONTROL_PACKAGE_PERMISSIONS"
+
+.field public static final MEIZU_FINDPHONE_CHANGED:Ljava/lang/String; = "android.permission.send.MEIZU_FINDPHONE_CHANGED"
+
 .field public static final ACCESS:Ljava/lang/String; = "com.sec.knox.container.keyguard.ACCESS"
 
 .field public static final ACCESS_ALL_EXTERNAL_STORAGE:Ljava/lang/String; = "android.permission.ACCESS_ALL_EXTERNAL_STORAGE"

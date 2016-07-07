@@ -18,6 +18,26 @@
 
 
 # static fields
+.field public static final ACTION_WIFI_AP_DEVICE_STATE_CHANGE:Ljava/lang/String; = "com.meizu.action.wifi_ap_device_state_change"
+
+.field public static final ACTION_WIFI_AP_WPS_EVENT:Ljava/lang/String; = "com.meizu.action.wifi_ap_wps_event"
+
+.field public static final AP_WPS_EVENT_FAILED:I = 0x2
+
+.field public static final AP_WPS_EVENT_PBC_ACTIVE:I = 0x0
+
+.field public static final AP_WPS_EVENT_SUCCESS:I = 0x1
+
+.field public static final AP_WPS_EVENT_TIMEOUT:I = 0x3
+
+.field public static final AP_WPS_EVENT_UNKNOWN:I = -0x1
+
+.field public static final EXTRA_AP_WPS_EVENT:Ljava/lang/String; = "event_extra"
+
+.field public static final EXTRA_STA_ADDRESS:Ljava/lang/String; = "sta_address"
+
+.field public static final EXTRA_STA_STATE:Ljava/lang/String; = "sta_state"
+
 .field public static final ACTION_FRAME_VS_WES_RECEIVED_ACTION:Ljava/lang/String; = "android.net.wifi.ACTION_FRAME_VS_WES_RECEIVED_ACTION"
 
 .field public static final ACTION_MSAP_GAS_REQ_STATUS:Ljava/lang/String; = "android.net.wifi.MSAP_GAS_REQ_STATUS"
@@ -5086,6 +5106,8 @@
     .end local v3    # "wifiEnableWarningIntent":Landroid/content/Intent;
     :cond_3
     :try_start_0
+    invoke-direct/range {p0 .. p0}, Landroid/net/wifi/WifiManager;->mzEnforceWifiPermission()V
+
     iget-object v4, p0, Landroid/net/wifi/WifiManager;->mService:Landroid/net/wifi/IWifiManager;
 
     invoke-interface {v4, p1}, Landroid/net/wifi/IWifiManager;->setWifiEnabled(Z)Z

@@ -1078,6 +1078,8 @@
 
     invoke-virtual {p0, p2, p3}, Landroid/inputmethodservice/InputMethodService;->onStartInput(Landroid/view/inputmethod/EditorInfo;Z)V
 
+    invoke-static/range {p0 .. p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->removeHideSelfMessage(Landroid/inputmethodservice/InputMethodService;)V
+
     iget-boolean v0, p0, Landroid/inputmethodservice/InputMethodService;->minimized:Z
 
     if-eqz v0, :cond_1
@@ -1128,7 +1130,7 @@
     :cond_3
     iget v0, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesVisibility:I
 
-    if-nez v0, :cond_2
+    if-nez v0, :cond_flyme_0
 
     iput-boolean v3, p0, Landroid/inputmethodservice/InputMethodService;->mCandidatesViewStarted:Z
 
@@ -3138,6 +3140,8 @@
     const/4 v2, -0x2
 
     invoke-virtual {v0, v1, v2}, Landroid/view/Window;->setLayout(II)V
+
+    invoke-static/range {p0 .. p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->initMzHandler(Landroid/inputmethodservice/InputMethodService;)V
 
     new-instance v10, Landroid/content/IntentFilter;
 
@@ -5654,6 +5658,8 @@
     invoke-virtual {p0, v8}, Landroid/inputmethodservice/InputMethodService;->startExtractingText(Z)V
 
     :cond_7
+    invoke-static/range {p0 .. p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->updateCoverViewShown(Landroid/inputmethodservice/InputMethodService;)V
+
     invoke-virtual {p0}, Landroid/inputmethodservice/InputMethodService;->getContentResolver()Landroid/content/ContentResolver;
 
     move-result-object v5

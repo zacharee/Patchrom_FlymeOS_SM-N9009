@@ -4074,9 +4074,16 @@
 
     .line 815
     .local v1, "dr":Landroid/graphics/drawable/Drawable;
+    invoke-static/range {p1 .. p1}, Landroid/app/ApplicationPackageManager$FlymeInjector;->isFlymeCalendarPkg(Ljava/lang/String;)Z
+
+    move-result v9
+
+    if-eqz v9, :cond_flyme_0
+
     if-nez v1, :cond_0
 
     .line 818
+    :cond_flyme_0
     if-nez p3, :cond_2
 
     .line 820
@@ -4113,7 +4120,7 @@
     iput v9, v7, Landroid/content/res/Resources;->mUserId:I
 
     .line 832
-    invoke-virtual {v7, p2}, Landroid/content/res/Resources;->getDrawable(I)Landroid/graphics/drawable/Drawable;
+    invoke-static/range {p0 .. p3}, Landroid/app/ApplicationPackageManager$FlymeInjector;->getFlymeThemeDrawable(Landroid/app/ApplicationPackageManager;Ljava/lang/String;ILandroid/content/pm/ApplicationInfo;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v1
 

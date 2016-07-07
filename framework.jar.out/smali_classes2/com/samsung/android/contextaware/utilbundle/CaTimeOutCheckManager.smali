@@ -3,8 +3,8 @@
 .source "CaTimeOutCheckManager.java"
 
 # interfaces
-.implements Ljava/lang/Runnable;
 .implements Lcom/samsung/android/contextaware/utilbundle/ITimeOutCheckObserverable;
+.implements Ljava/lang/Runnable;
 
 
 # instance fields

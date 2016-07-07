@@ -1632,6 +1632,7 @@
     <public type="attr" name="hoverPopupPickerLineColorOnBottom" id="0x0101065d" />
     <public type="attr" name="hoverPopupPickerSpaceColor" id="0x0101065e" />
     <public type="attr" name="hoverPopupBottomBgColor" id="0x0101065f" />
+    <public type="attr" name="needAccessControl" id="0x01010660" />
     <public type="id" name="background" id="0x01020000" />
     <public type="id" name="checkbox" id="0x01020001" />
     <public type="id" name="content" id="0x01020002" />

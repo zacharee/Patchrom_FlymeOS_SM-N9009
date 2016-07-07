@@ -13,6 +13,8 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/widget/TextView$7;,
+        Landroid/widget/TextView$FlymeInjector;,
+        Landroid/widget/TextView$MzInputShownChangeListener;,
         Landroid/widget/TextView$StylusEventListener;,
         Landroid/widget/TextView$TouchMonitorListener;,
         Landroid/widget/TextView$PenSelectVibrator;,
@@ -30,6 +32,10 @@
 
 
 # static fields
+.field static final ID_COPY_ALL:I
+
+.field static final ID_START_SELECTING:I = #android:id@startSelectingText#t
+
 .field private static final ACTION_DELETE_TEXT:I = 0x2
 
 .field private static final ACTION_INIT:I = 0x0
@@ -148,6 +154,24 @@
 
 
 # instance fields
+.field mAutoLinkMaskIncludeDateTime:Z
+
+.field private mCurrentCursorVisible:Z
+
+.field mCursorWidth:I
+
+.field public mEmojiAlphaEnabled:Z
+
+.field private mHintPadding:I
+
+.field mInputShownChangeListener:Landroid/view/inputmethod/InputMethodManager$InputShownChangeListener;
+
+.field mPasswordUseMonospaceFont:Z
+
+.field mTempCoords:[I
+
+.field private mTempCurosrRect:Landroid/graphics/Rect;
+
 .field private final HOVER_INTERVAL:I
 
 .field private TOUCH_DELTA:F
@@ -550,6 +574,10 @@
     const-wide/16 v2, 0x0
 
     sput-wide v2, Landroid/widget/TextView;->mLastHoveredTime:J
+
+    sget v1, Lcom/flyme/internal/R$id;->copyAll:I
+
+    sput v1, Landroid/widget/TextView;->ID_COPY_ALL:I
 
     return-void
 .end method
@@ -3931,6 +3959,8 @@
     invoke-virtual {v0, v1}, Landroid/widget/TextView;->setTransformationMethod(Landroid/text/method/TransformationMethod;)V
 
     :cond_a
+    invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->initExtFlymeFields(Landroid/widget/TextView;Landroid/content/Context;)V
+
     if-nez v47, :cond_b
 
     if-nez v48, :cond_b
@@ -24755,6 +24785,11 @@
     iput-boolean v1, p0, Landroid/widget/TextView;->mPreDrawListenerDetached:Z
 
     :cond_3
+
+    const/4 v0, 0x1
+
+    invoke-static {p0, v0}, Landroid/widget/TextView$FlymeInjector;->updateCurrentCursorVisbilityOnFocusOrInputTypeChanged(Landroid/widget/TextView;Z)V
+
     return-void
 
     :cond_4
@@ -31497,6 +31532,18 @@
     .local v1, "clipdata":Landroid/sec/clipboard/data/list/ClipboardDataText;
     sparse-switch p1, :sswitch_data_0
 
+    invoke-static/range {p0 .. p1}, Landroid/widget/TextView$FlymeInjector;->mzOnTextContextMenuItem(Landroid/widget/TextView;I)Z
+
+    move-result v11
+
+    if-eqz v11, :cond_flyme_0
+
+    const/4 v9, 0x1
+
+    return v9
+
+    :cond_flyme_0
+
     move v9, v10
 
     :cond_1
@@ -36654,6 +36701,8 @@
     invoke-direct {p0, p1}, Landroid/widget/TextView;->logLetterMode(I)V
 
     :cond_5
+    invoke-static/range {p0 .. p0}, Landroid/widget/TextView$FlymeInjector;->updateCurrentCursorVisbilityOnFocusOrInputTypeChangedIfHasFocus(Landroid/widget/TextView;)V
+
     invoke-static {}, Landroid/view/inputmethod/InputMethodManager;->peekInstance()Landroid/view/inputmethod/InputMethodManager;
 
     move-result-object v1
@@ -39007,6 +39056,8 @@
     invoke-virtual {p0, v4, v3}, Landroid/widget/TextView;->onSelectionChanged(II)V
 
     :cond_c
+    invoke-static/range {p0 .. p6}, Landroid/widget/TextView$FlymeInjector;->editorOnSelectionChanged(Landroid/widget/TextView;Landroid/text/Spanned;Ljava/lang/Object;IIII)V
+
     instance-of v6, p2, Landroid/text/style/UpdateAppearance;
 
     if-nez v6, :cond_d

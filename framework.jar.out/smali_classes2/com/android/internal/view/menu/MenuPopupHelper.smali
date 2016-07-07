@@ -3,11 +3,11 @@
 .source "MenuPopupHelper.java"
 
 # interfaces
-.implements Landroid/widget/AdapterView$OnItemClickListener;
+.implements Landroid/view/View$OnAttachStateChangeListener;
 .implements Landroid/view/View$OnKeyListener;
 .implements Landroid/view/ViewTreeObserver$OnGlobalLayoutListener;
+.implements Landroid/widget/AdapterView$OnItemClickListener;
 .implements Landroid/widget/PopupWindow$OnDismissListener;
-.implements Landroid/view/View$OnAttachStateChangeListener;
 .implements Lcom/android/internal/view/menu/MenuPresenter;
 
 
@@ -1065,9 +1065,9 @@
 
     if-eqz v0, :cond_flyme_0
 
-    const/4 v2, 0x1
+    const/4 v4, 0x1
 
-    return v2
+    return v4
 
     :cond_flyme_0
 
@@ -1250,7 +1250,7 @@
     :cond_4
     iget-object v5, p0, Lcom/android/internal/view/menu/MenuPopupHelper;->mPopup:Landroid/widget/ListPopupWindow;
 
-    invoke-virtual {v5}, Landroid/widget/ListPopupWindow;->show()V
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/view/menu/MenuPopupHelper;->mzShowListPopupWindow()V
 
     iget-object v5, p0, Lcom/android/internal/view/menu/MenuPopupHelper;->mPopup:Landroid/widget/ListPopupWindow;
 

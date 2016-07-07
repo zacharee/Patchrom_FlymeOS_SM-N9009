@@ -3,9 +3,9 @@
 .source "ContextComponent.java"
 
 # interfaces
-.implements Lcom/samsung/android/contextaware/manager/IContextProvider;
-.implements Lcom/samsung/android/contextaware/manager/IContextObservable;
 .implements Lcom/samsung/android/contextaware/manager/ICmdProcessResultObservable;
+.implements Lcom/samsung/android/contextaware/manager/IContextObservable;
+.implements Lcom/samsung/android/contextaware/manager/IContextProvider;
 
 
 # instance fields

@@ -4147,6 +4147,8 @@
     invoke-virtual {v1, v2}, Landroid/widget/RemoteViews;->setStringMap(Ljava/util/Map;)V
 
     :cond_5
+    invoke-static {p0, v0}, Landroid/app/Notification$FlymeInject;->buildUnstyledFlyme(Landroid/app/Notification$Builder;Landroid/app/Notification;)V
+
     return-object v0
 .end method
 

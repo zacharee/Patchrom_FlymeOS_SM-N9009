@@ -516,6 +516,22 @@
 
     .line 362
     :cond_b
+    const-string/jumbo v5, "valueArrayInterpolator"
+
+    invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_flyme_0
+
+    new-instance v2, Landroid/view/animation/ValueArrayInterpolator;
+
+    invoke-direct {v2, p0, p1, v0}, Landroid/view/animation/ValueArrayInterpolator;-><init>(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;Landroid/util/AttributeSet;)V
+
+    goto/16 :goto_flyme_0
+
+    :cond_flyme_0
+
     const-string v5, "backEaseIn"
 
     invoke-virtual {v3, v5}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z

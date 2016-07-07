@@ -3,8 +3,8 @@
 .source "TwGridViewEx.java"
 
 # interfaces
-.implements Landroid/view/ScaleGestureDetector$OnScaleGestureListener;
 .implements Landroid/animation/Animator$AnimatorListener;
+.implements Landroid/view/ScaleGestureDetector$OnScaleGestureListener;
 
 
 # annotations

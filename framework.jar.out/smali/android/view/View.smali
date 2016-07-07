@@ -11,6 +11,7 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/view/View$FlymeInjector;,
         Landroid/view/View$MoreInfoHPW;,
         Landroid/view/View$SendViewStateChangedAccessibilityEvent;,
         Landroid/view/View$MatchLabelForPredicate;,
@@ -834,6 +835,20 @@
 
 
 # instance fields
+.field protected mDragSurface:Landroid/view/Surface;
+
+.field private mIgnoreIm:Z
+
+.field protected mShadowBuilder:Landroid/view/View$DragShadowBuilder;
+
+.field protected mhScrollBarPaddingLeft:I
+
+.field protected mhScrollBarPaddingRight:I
+
+.field protected mvScrollBarPaddingBottom:I
+
+.field protected mvScrollBarPaddingTop:I
+
 .field private final DEBUG_ELASTIC:Z
 
 .field private final isElasticEnabled:Z
@@ -28357,6 +28372,18 @@
     invoke-virtual {v2, v5, v6, v7, v8}, Landroid/widget/ScrollBarDrawable;->setBounds(IIII)V
 
     :cond_8
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v6}, Landroid/view/View;->mzSetScrollBarPaddingTop(I)I
+
+    move-result v6
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v8}, Landroid/view/View;->mzSetScrollBarPaddingBottom(I)I
+
+    move-result v8
+
     move-object/from16 v2, p0
 
     move-object/from16 v3, p1

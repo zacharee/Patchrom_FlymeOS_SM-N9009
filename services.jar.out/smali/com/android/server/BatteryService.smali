@@ -920,6 +920,9 @@
 
     .line 564
     :cond_2
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$MzInjector;->registerBootCompleted(Lcom/android/server/BatteryService;)V
+
     return-void
 .end method
 
@@ -5296,6 +5299,14 @@
     .locals 3
 
     .prologue
+    sget-boolean v0, Lcom/android/server/BatteryService$MzInjector;->mEnableScreen:Z
+
+    if-nez v0, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
     iget-object v1, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
 
     iget v1, v1, Landroid/os/BatteryProperties;->batteryLevel:I
@@ -5328,6 +5339,9 @@
 
     .line 750
     :cond_1
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$MzInjector;->writeMessageToFileIfNoPowerLocked(Lcom/android/server/BatteryService;)V
+
     const-string v1, "eng"
 
     sget-object v2, Landroid/os/Build;->TYPE:Ljava/lang/String;
@@ -5391,6 +5405,14 @@
     .locals 3
 
     .prologue
+    sget-boolean v1, Lcom/android/server/BatteryService$MzInjector;->mEnableScreen:Z
+
+    if-nez v1, :cond_flyme_0
+
+    return-void
+
+    :cond_flyme_0
+
     iget-object v1, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
 
     iget v1, v1, Landroid/os/BatteryProperties;->batteryTemperature:I
@@ -5398,6 +5420,8 @@
     iget v2, p0, Lcom/android/server/BatteryService;->mShutdownBatteryTemperature:I
 
     if-le v1, v2, :cond_0
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$MzInjector;->writeMessageToFileIfOverTempLocked(Lcom/android/server/BatteryService;)V
 
     iget-object v1, p0, Lcom/android/server/BatteryService;->mBatteryProps:Landroid/os/BatteryProperties;
 
@@ -5926,6 +5950,8 @@
     invoke-direct {p0}, Lcom/android/server/BatteryService;->updateBatteryWarningLevelLocked()V
 
     invoke-direct {p0, v1}, Lcom/android/server/BatteryService;->registerContentObserver(Landroid/content/ContentResolver;)V
+
+    invoke-static {}, Lcom/android/server/BatteryService$MzInjector;->setSystemReady()V
 
     monitor-exit v3
 

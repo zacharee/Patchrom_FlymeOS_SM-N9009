@@ -4,8 +4,8 @@
 
 # interfaces
 .implements Lcom/samsung/android/contextaware/utilbundle/ICurrentPositionObservable;
-.implements Lcom/samsung/android/contextaware/utilbundle/IUtilManager;
 .implements Lcom/samsung/android/contextaware/utilbundle/ITimeOutCheckObserver;
+.implements Lcom/samsung/android/contextaware/utilbundle/IUtilManager;
 
 
 # static fields

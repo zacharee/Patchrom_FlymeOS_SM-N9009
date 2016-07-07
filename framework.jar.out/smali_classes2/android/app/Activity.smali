@@ -3,11 +3,11 @@
 .source "Activity.java"
 
 # interfaces
-.implements Landroid/view/LayoutInflater$Factory2;
-.implements Landroid/view/Window$Callback;
-.implements Landroid/view/KeyEvent$Callback;
-.implements Landroid/view/View$OnCreateContextMenuListener;
 .implements Landroid/content/ComponentCallbacks2;
+.implements Landroid/view/KeyEvent$Callback;
+.implements Landroid/view/LayoutInflater$Factory2;
+.implements Landroid/view/View$OnCreateContextMenuListener;
+.implements Landroid/view/Window$Callback;
 .implements Landroid/view/Window$OnWindowDismissedCallback;
 
 
@@ -27,6 +27,16 @@
 
 
 # static fields
+.field mAccessControlManager:Lmeizu/security/AccessControlManager;
+
+.field private mActionBarToTop:Z
+
+.field mActionModeHeaderHidden:Z
+
+.field mDisableStatusBarIconTheme:Z
+
+.field mTopRegionMainColor:Ljava/lang/Integer;
+
 .field private static final DEBUG:Z = false
 
 .field private static final DEBUG_LIFECYCLE:Z = false
@@ -4738,6 +4748,8 @@
     :goto_2
     invoke-virtual {v3, v1, v2}, Landroid/app/FragmentManagerImpl;->restoreAllState(Landroid/os/Parcelable;Ljava/util/ArrayList;)V
 
+    invoke-static/range {p0 .. p1}, Landroid/app/Activity$FlymeInject;->resetActionModeHeaderState(Landroid/app/Activity;Landroid/os/Bundle;)V
+
     .end local v1    # "p":Landroid/os/Parcelable;
     :cond_2
     iget-object v2, p0, Landroid/app/Activity;->mFragments:Landroid/app/FragmentManagerImpl;
@@ -6321,6 +6333,8 @@
     const/4 v0, 0x1
 
     iput-boolean v0, p0, Landroid/app/Activity;->mCalled:Z
+
+    invoke-static/range {p0 .. p0}, Landroid/app/Activity$FlymeInject;->mzAccessControl(Landroid/app/Activity;)V
 
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 

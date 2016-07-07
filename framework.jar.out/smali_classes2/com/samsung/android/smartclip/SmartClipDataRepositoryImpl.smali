@@ -3,8 +3,8 @@
 .source "SmartClipDataRepositoryImpl.java"
 
 # interfaces
-.implements Lcom/samsung/android/smartclip/SmartClipDataRepository;
 .implements Landroid/os/Parcelable;
+.implements Lcom/samsung/android/smartclip/SmartClipDataRepository;
 
 
 # static fields

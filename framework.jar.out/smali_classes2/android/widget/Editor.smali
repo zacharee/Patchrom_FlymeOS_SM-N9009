@@ -45,6 +45,10 @@
 
 
 # static fields
+.field public static final HIDE_OPTION:I = 0x2711
+
+.field public static final SHOW_OPTION:I = 0x2712
+
 .field public static final ACTION_SEC_TRANSLATE:Ljava/lang/String; = "com.sec.android.app.translator.TRANSLATE_FOR_NON_ACTIVITY"
 
 .field public static final ACTION_SEC_TRANSLATE_RESULT:Ljava/lang/String; = "com.sec.android.app.translator.TRANSLATE_RESULT"
@@ -95,6 +99,26 @@
 
 
 # instance fields
+.field public mCursorOffsetX:I
+
+.field public mEnableDragSelection:Z
+
+.field public mHandler:Landroid/widget/Editor$OptionHandle;
+
+.field public mIsInDragSelectionMode:Z
+
+.field public mLastLayoutHeight:I
+
+.field public mLastScrollTime:J
+
+.field public mOptionWrapper:Landroid/widget/Editor$OptionWrapper;
+
+.field public mSelectionActionModeCallback:Landroid/widget/Editor$SelectionActionModeCallback;
+
+.field public mSelectonActionModeRunnable:Ljava/lang/Runnable;
+
+.field public mStartActionModeResult:Z
+
 .field private mActionModeMenu:Landroid/view/Menu;
 
 .field mBlink:Landroid/widget/Editor$Blink;
@@ -399,6 +423,8 @@
     move-result-object v2
 
     iput-object v2, p0, Landroid/widget/Editor;->mCaller:Ljava/lang/CharSequence;
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->initExtFlymeFields(Landroid/widget/Editor;)V
 
     return-void
 
@@ -5781,6 +5807,13 @@
     invoke-virtual {p0}, Landroid/widget/Editor;->stopSelectionActionMode()V
 
     :cond_4
+
+    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->mzIsCursorVisible(Landroid/widget/Editor;)Z
+
+    move-result v5
+
+    if-eqz v5, :cond_flyme_0
+
     invoke-direct {p0, p1, p5}, Landroid/widget/Editor;->drawCursor(Landroid/graphics/Canvas;I)V
 
     :cond_flyme_0
@@ -7958,6 +7991,18 @@
     .locals 10
 
     .prologue
+    iget-object v0, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
+
+    if-eqz v0, :cond_flyme_0
+
+    invoke-virtual/range {p0 .. p0}, Landroid/widget/Editor;->startSelectionActionModeMz()Z
+
+    move-result v7
+
+    return v7
+
+    :cond_flyme_0
+
     const/4 v9, 0x0
 
     const/4 v6, 0x1
@@ -8191,6 +8236,8 @@
     .locals 3
 
     .prologue
+    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->removeSelectonActionModeRunnable(Landroid/widget/Editor;)V
+
     iget-object v1, p0, Landroid/widget/Editor;->mSelectionActionMode:Landroid/view/ActionMode;
 
     if-eqz v1, :cond_1
@@ -8204,6 +8251,8 @@
 
     :cond_0
     :goto_0
+    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->hideSelectionModifierCursorController(Landroid/widget/Editor;)V
+
     return-void
 
     :catch_0

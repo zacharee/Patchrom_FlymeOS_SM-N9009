@@ -1173,6 +1173,18 @@
 
     .line 1145
     :cond_1
+    invoke-direct/range {p0 .. p0}, Lcom/android/internal/telephony/SMSDispatcher;->mzCheckSimState()Z
+
+    move-result v9
+
+    if-nez v9, :cond_flyme_0
+
+    const/4 v7, 0x1
+
+    return v7
+
+    :cond_flyme_0
+
     iget-object v9, p0, Lcom/android/internal/telephony/SMSDispatcher;->mPremiumSmsRule:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v9}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I
