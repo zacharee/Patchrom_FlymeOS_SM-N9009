@@ -1,0 +1,11 @@
+--- a/TelephonyProvider/smali/com/android/providers/telephony/TelephonyProvider$DatabaseHelper.smali	2016-07-07 10:08:09.157809000 +0800
++++ b/TelephonyProvider/smali/com/android/providers/telephony/TelephonyProvider$DatabaseHelper.smali	2016-07-07 10:08:39.965809000 +0800
+@@ -92,7 +92,7 @@
+     invoke-static {v0}, Lcom/android/providers/telephony/TelephonyProvider;->access$100(Ljava/lang/String;)V
+ 
+     .line 193
+-    const-string v0, "CREATE TABLE siminfo(_id INTEGER PRIMARY KEY AUTOINCREMENT,icc_id TEXT NOT NULL,sim_id INTEGER DEFAULT -1,display_name TEXT,name_source INTEGER DEFAULT 0,color INTEGER DEFAULT 0,number TEXT,display_number_format INTEGER NOT NULL DEFAULT 1,data_roaming INTEGER DEFAULT 0,mcc INTEGER DEFAULT 0,mnc INTEGER DEFAULT 0);"
++    const-string v0, "CREATE TABLE siminfo(_id INTEGER PRIMARY KEY AUTOINCREMENT,icc_id TEXT NOT NULL,sim_id INTEGER DEFAULT -1,display_name TEXT,name_source INTEGER DEFAULT 0,color INTEGER DEFAULT 0,number TEXT,display_number_format INTEGER NOT NULL DEFAULT 1,data_roaming INTEGER DEFAULT 0,mcc INTEGER DEFAULT 0,mnc INTEGER DEFAULT 0,sub_state INTEGER DEFAULT 1);"
+ 
+     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+ 
