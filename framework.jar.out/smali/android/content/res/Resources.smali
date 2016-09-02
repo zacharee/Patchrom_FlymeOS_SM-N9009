@@ -8576,7 +8576,6 @@
     return-object v2
 
     :cond_flyme_0
-
     :try_start_0
     iget-object v2, p0, Landroid/content/res/Resources;->mAssets:Landroid/content/res/AssetManager;
 

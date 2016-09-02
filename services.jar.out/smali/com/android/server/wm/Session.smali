@@ -1309,8 +1309,6 @@
 
     invoke-virtual {v5, v8, v10}, Landroid/view/SurfaceControl;->setPosition(FF)V
 
-    invoke-static/range {p3 .. p6}, Lcom/android/server/wm/InjectorWMS;->setInitXandY(FFFF)V
-
     .end local v6    # "xPos":I
     .end local v7    # "yPos":I
     :goto_1
@@ -1363,6 +1361,9 @@
 
     :try_start_4
     invoke-virtual {v5, v8, v10}, Landroid/view/SurfaceControl;->setPosition(FF)V
+
+    invoke-static/range {p3 .. p6}, Lcom/android/server/wm/InjectorWMS;->setInitXandY(FFFF)V
+
     :try_end_4
     .catchall {:try_start_4 .. :try_end_4} :catchall_1
 

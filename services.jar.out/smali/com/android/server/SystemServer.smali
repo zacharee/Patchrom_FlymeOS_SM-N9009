@@ -7160,9 +7160,11 @@
 
     move-result-object v67
 
+    :try_end_85
+    .catch Ljava/lang/Throwable; {:try_start_85 .. :try_end_85} :catch_39
+
     .line 1605
     .local v67, "constructor":Ljava/lang/reflect/Constructor;
-
     goto/16 :goto_44
 
     .line 1607

@@ -1706,7 +1706,6 @@
     return v5
 
     :cond_flyme_0
-
     if-nez v2, :cond_0
 
     .end local v1    # "cb":Landroid/view/Window$Callback;
@@ -4461,7 +4460,6 @@
     return v1
 
     :cond_flyme_0
-
     if-ne v0, v1, :cond_0
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->mActionMode:Landroid/view/ActionMode;

@@ -91,7 +91,6 @@
     return-void
 
     :cond_flyme_0
-
     invoke-virtual {p0}, Landroid/text/style/URLSpan;->getURL()Ljava/lang/String;
 
     move-result-object v3

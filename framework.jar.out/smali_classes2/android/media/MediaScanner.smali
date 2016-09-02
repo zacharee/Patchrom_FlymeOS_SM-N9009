@@ -7392,6 +7392,8 @@
     .prologue
     .line 1986
     :try_start_0
+    invoke-direct/range {p0 .. p0}, Landroid/media/MediaScanner;->mzSetLocaleIfNeeded()V
+
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
     move-result-wide v32
@@ -9269,6 +9271,8 @@
     .prologue
     .line 2099
     :try_start_0
+    invoke-direct/range {p0 .. p0}, Landroid/media/MediaScanner;->mzSetLocaleIfNeeded()V
+
     invoke-static {p1}, Landroid/media/MediaScanner;->encodeStringResource(Ljava/lang/String;)Ljava/lang/String;
 
     move-result-object v12

@@ -76,9 +76,8 @@
 
     return-void
 
-    :cond_flyme_0
-
     .line 832
+    :cond_flyme_0
     move-object v0, p1
 
     check-cast v0, Landroid/view/MotionEvent;

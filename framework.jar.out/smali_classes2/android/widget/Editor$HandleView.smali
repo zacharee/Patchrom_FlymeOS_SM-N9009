@@ -1043,7 +1043,6 @@
 
     .end local v4    # "positionListener":Landroid/widget/Editor$PositionListener;
     :pswitch_1
-
     invoke-direct/range {p0 .. p0}, Landroid/widget/Editor$HandleView;->hideOptionWrapper()V
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/MotionEvent;->getRawX()F
@@ -1640,7 +1639,6 @@
     return-void
 
     :cond_flyme_0
-
     if-eqz v4, :cond_4
 
     invoke-virtual {p0, p1}, Landroid/widget/Editor$HandleView;->updateSelection(I)V

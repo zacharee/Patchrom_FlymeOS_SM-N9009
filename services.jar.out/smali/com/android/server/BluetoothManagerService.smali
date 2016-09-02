@@ -411,6 +411,8 @@
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
 
+    invoke-direct {p0, v1}, Lcom/android/server/BluetoothManagerService;->mzAddFilterAction(Landroid/content/IntentFilter;)V
+
     const-string v3, "android.intent.action.CLOSE_SYSTEM_DIALOGS"
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
@@ -418,8 +420,6 @@
     const-string v3, "com.sktelecom.dmc.intent.action.DCMO_BT_SET"
 
     invoke-virtual {v1, v3}, Landroid/content/IntentFilter;->addAction(Ljava/lang/String;)V
-
-    invoke-direct {p0, v1}, Lcom/android/server/BluetoothManagerService;->mzAddFilterAction(Landroid/content/IntentFilter;)V
 
     invoke-static {}, Lcom/sec/android/app/CscFeature;->getInstance()Lcom/sec/android/app/CscFeature;
 
@@ -1635,7 +1635,6 @@
     .end local v3    # "intentRadio1":Landroid/content/Intent;
     :cond_3
     :goto_2
-
     invoke-virtual/range {p0 .. p2}, Lcom/android/server/BluetoothManagerService;->mzChangeBluetoothName(II)V
 
     return-void

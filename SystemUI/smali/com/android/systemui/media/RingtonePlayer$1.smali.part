@@ -1,0 +1,40 @@
+
+.method public setOnCompletionListener(Landroid/app/INotificationPlayerOnCompletionListener;)Landroid/os/IBinder;
+    .locals 2
+    .param p1, "l"    # Landroid/app/INotificationPlayerOnCompletionListener;
+
+    .prologue
+    .line 165
+    invoke-static {}, Landroid/os/Binder;->getCallingUid()I
+
+    move-result v0
+
+    const/16 v1, 0x3e8
+
+    if-eq v0, v1, :cond_10
+
+    .line 166
+    new-instance v0, Ljava/lang/SecurityException;
+
+    const-string v1, "setOnCompletionListener only available from system UID."
+
+    invoke-direct {v0, v1}, Ljava/lang/SecurityException;-><init>(Ljava/lang/String;)V
+
+    throw v0
+
+    .line 169
+    :cond_10
+    iget-object v0, p0, Lcom/android/systemui/media/RingtonePlayer$1;->this$0:Lcom/android/systemui/media/RingtonePlayer;
+
+    # getter for: Lcom/android/systemui/media/RingtonePlayer;->mAsyncPlayer:Lcom/android/systemui/media/NotificationPlayer;
+    invoke-static {v0}, Lcom/android/systemui/media/RingtonePlayer;->access$400(Lcom/android/systemui/media/RingtonePlayer;)Lcom/android/systemui/media/NotificationPlayer;
+
+    move-result-object v0
+
+    invoke-virtual {v0, p1}, Lcom/android/systemui/media/NotificationPlayer;->setOnCompletionListener(Landroid/app/INotificationPlayerOnCompletionListener;)Landroid/os/IBinder;
+
+    move-result-object v0
+
+    return-object v0
+.end method
+

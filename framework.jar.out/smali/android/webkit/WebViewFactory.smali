@@ -534,7 +534,6 @@
     throw v3
 
     :cond_flyme_0
-
     const-wide/16 v6, 0x10
 
     const-string v3, "WebViewFactory.getProvider()"
@@ -803,10 +802,9 @@
 
     move-result v5
 
-    :goto_flyme_0
-
     .line 274
     .local v5, "primaryArchIs64bit":Z
+    :goto_flyme_0
     iget-object v6, v1, Landroid/content/pm/ApplicationInfo;->secondaryCpuAbi:Ljava/lang/String;
 
     invoke-static {v6}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
@@ -935,7 +933,6 @@
     goto :goto_0
 
     :cond_flyme_0
-
     const/4 v5, 0x0
 
     goto :goto_flyme_0

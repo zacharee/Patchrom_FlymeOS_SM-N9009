@@ -18,8 +18,6 @@
 
 
 # static fields
-.field protected mMeasureWithLargestChild:Z
-
 .field public static final DISPLAY_HOME_AS_UP:I = 0x4
 
 .field public static final DISPLAY_SHOW_CUSTOM:I = 0x10
@@ -38,6 +36,9 @@
 
 .field public static final NAVIGATION_MODE_TABS:I = 0x2
 
+
+# instance fields
+.field protected mMeasureWithLargestChild:Z
 
 # direct methods
 .method public constructor <init>()V

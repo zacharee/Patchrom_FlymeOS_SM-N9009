@@ -1184,7 +1184,6 @@
     return v7
 
     :cond_flyme_0
-
     iget-object v9, p0, Lcom/android/internal/telephony/SMSDispatcher;->mPremiumSmsRule:Ljava/util/concurrent/atomic/AtomicInteger;
 
     invoke-virtual {v9}, Ljava/util/concurrent/atomic/AtomicInteger;->get()I

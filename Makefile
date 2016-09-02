@@ -54,13 +54,13 @@ vendor_remove_files := recovery-from-boot.bak
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/pri-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := Bluetooth BadgeProvider ClipboardSaveService ClipboardUIService FilterInstaller FilterManager FilterProvider FlashAnnotate FlashAnnotateSvc \
-                     KeyChain SecHTMLViewer UserDictionaryProvider BackupRestoreConfirmation minimode-res MultiWindowTrayService NfcNci \
-                     NSFusedLocation OCRSeg PopupuiReceiver ResourceManager SamsungCamera2 SamsungCameraFilter SamsungTTS SmartcardManager \
-		     SmartcardService SmartClipProvider SmartClipServiceHMR SNote4.1Preload SPenKeeper SPenSdk3 Stk TimeService SPrintSpooler \
-		     SharedStorageBackup  ExternalStorageProvider InputDevices ProxyHandler Shell DefaultContainerService WritingBuddyService \
-		     MtpApplication SecSettingsProvider GearManagerStub GlanceView SettingSearchProvider ShareShotService WfdBroker BestFace \
-                     Eraser MusicCommonUtility PicAction Pinboard Samsungservice2_xxhdpi SecMediaProvider
+vendor_saved_apps := BasicDreams Bluetooth FilterManager FilterProvider FlashAnnotate FlashAnnotateSvc \
+                     KeyChain UserDictionaryProvider BackupRestoreConfirmation minimode-res MultiWindowTrayService NfcNci \
+                     PopupuiReceiver ResourceManager SamsungCamera2 SamsungTTS \
+                     SmartClipProvider SmartClipServiceHMR SNote4.1Preload SPenKeeper SPenSdk3 Stk TimeService \
+                     SharedStorageBackup  ExternalStorageProvider InputDevices ProxyHandler Shell DefaultContainerService WritingBuddyService \
+                     MtpApplication SecSettingsProvider GearManagerStub GlanceView SettingSearchProvider ShareShotService WfdBroker BestFace \
+                     Eraser MusicCommonUtility PicAction Pinboard Samsungservice2_xxhdpi
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -100,7 +100,7 @@ board_saved_files := lib/libwebviewchromium.so bin/bootanimation bin/shutdownani
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-board_remove_apps := LogReport MediaProvider
+board_remove_apps := NfcNci
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -112,7 +112,7 @@ board_remove_apps := LogReport MediaProvider
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode board system apk).
 #-----------------------------------------------------------------------------
-board_modify_apps := TelephonyProvider
+board_modify_apps := TelephonyProvider TeleService SystemUI
 
 ##############################################################################
 # The value decides which jar you want to modify, when the jar is based on the board framework jar.

@@ -1648,6 +1648,8 @@
 
     iput v1, v0, Landroid/graphics/Rect;->bottom:I
 
+    invoke-static/range {p0 .. p1}, Landroid/view/WindowManager$LayoutParams$FlymeInjector;->readFromParcel(Landroid/view/WindowManager$LayoutParams;Landroid/os/Parcel;)V
+
     invoke-virtual {p1}, Landroid/os/Parcel;->readLong()J
 
     move-result-wide v0
@@ -1677,8 +1679,6 @@
     move-result v0
 
     iput v0, p0, Landroid/view/WindowManager$LayoutParams;->multiWindowFlags:I
-
-    invoke-static/range {p0 .. p1}, Landroid/view/WindowManager$LayoutParams$FlymeInjector;->readFromParcel(Landroid/view/WindowManager$LayoutParams;Landroid/os/Parcel;)V
 
     return-void
 
@@ -2427,7 +2427,6 @@
 
     .line 2378
     :cond_24
-
     invoke-static {p0, p1, v0}, Landroid/view/WindowManager$LayoutParams$FlymeInjector;->copyFrom(Landroid/view/WindowManager$LayoutParams;Landroid/view/WindowManager$LayoutParams;I)I
 
     move-result v2
@@ -3488,6 +3487,8 @@
 
     iget v0, v0, Landroid/graphics/Rect;->bottom:I
 
+    invoke-static/range {p0 .. p1}, Landroid/view/WindowManager$LayoutParams$FlymeInjector;->writeToParcel(Landroid/view/WindowManager$LayoutParams;Landroid/os/Parcel;)V
+
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
 
     iget-wide v0, p0, Landroid/view/WindowManager$LayoutParams;->screenDimDuration:J
@@ -3509,8 +3510,6 @@
     iget v0, p0, Landroid/view/WindowManager$LayoutParams;->multiWindowFlags:I
 
     invoke-virtual {p1, v0}, Landroid/os/Parcel;->writeInt(I)V
-
-    invoke-static/range {p0 .. p1}, Landroid/view/WindowManager$LayoutParams$FlymeInjector;->writeToParcel(Landroid/view/WindowManager$LayoutParams;Landroid/os/Parcel;)V
 
     return-void
 

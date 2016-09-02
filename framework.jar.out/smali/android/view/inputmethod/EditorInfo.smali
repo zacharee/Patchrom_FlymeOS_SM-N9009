@@ -79,7 +79,7 @@
 
 .field public static final IME_MASK_ACTION:I = 0xff
 
-.field public static final IME_NULL:I
+.field public static final IME_NULL:I = 0x0
 
 
 # instance fields

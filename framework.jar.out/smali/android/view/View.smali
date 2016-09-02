@@ -28351,6 +28351,18 @@
     .restart local v8    # "bottom":I
     move-object/from16 v0, p0
 
+    invoke-direct {v0, v6}, Landroid/view/View;->mzSetScrollBarPaddingTop(I)I
+
+    move-result v6
+
+    move-object/from16 v0, p0
+
+    invoke-direct {v0, v8}, Landroid/view/View;->mzSetScrollBarPaddingBottom(I)I
+
+    move-result v8
+
+    move-object/from16 v0, p0
+
     iget-boolean v2, v0, Landroid/view/View;->mNeededToChangedScrollBarPosition:Z
 
     if-eqz v2, :cond_8
@@ -28372,18 +28384,6 @@
     invoke-virtual {v2, v5, v6, v7, v8}, Landroid/widget/ScrollBarDrawable;->setBounds(IIII)V
 
     :cond_8
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v6}, Landroid/view/View;->mzSetScrollBarPaddingTop(I)I
-
-    move-result v6
-
-    move-object/from16 v0, p0
-
-    invoke-direct {v0, v8}, Landroid/view/View;->mzSetScrollBarPaddingBottom(I)I
-
-    move-result v8
-
     move-object/from16 v2, p0
 
     move-object/from16 v3, p1

@@ -377,66 +377,6 @@
 
     aput-object v2, v0, v1
 
-    const/16 v1, 0xe
-
-    const-string v2, "dd_primaryMimeType"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0xf
-
-    const-string v2, "dd_fileName"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x10
-
-    const-string v2, "dd_vendor"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x11
-
-    const-string v2, "dd_description"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x12
-
-    const-string v2, "dd_contentSize"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x13
-
-    const-string v2, "dd_objUrl"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x14
-
-    const-string v2, "dd_majorVersion"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x15
-
-    const-string/jumbo v2, "range_start"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x16
-
-    const-string/jumbo v2, "range_end"
-
-    aput-object v2, v0, v1
-
-    const/16 v1, 0x17
-
-    const-string/jumbo v2, "range_first_end"
-
-    aput-object v2, v0, v1
-
     const/16 v1, 0x18
 
     const-string v2, "\'placeholder\' AS local_uri"

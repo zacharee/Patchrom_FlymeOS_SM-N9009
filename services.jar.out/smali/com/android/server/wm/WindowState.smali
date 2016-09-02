@@ -1208,7 +1208,6 @@
     .end local v8    # "e":Landroid/os/RemoteException;
     :cond_4
     :goto_8
-
     invoke-static/range {p0 .. p0}, Lcom/android/server/wm/WindowState$Injector;->newInstanceWindowStateExt(Lcom/android/server/wm/WindowState;)V
 
     return-void

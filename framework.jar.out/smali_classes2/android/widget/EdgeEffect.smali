@@ -426,7 +426,6 @@
     return v6
 
     :cond_flyme_0
-
     const/4 v6, 0x0
 
     const/high16 v9, 0x3f800000    # 1.0f

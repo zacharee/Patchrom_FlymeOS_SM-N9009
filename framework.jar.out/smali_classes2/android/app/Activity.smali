@@ -639,7 +639,6 @@
     return-void
 
     :cond_flyme_0
-
     new-instance v1, Lcom/android/internal/app/WindowDecorActionBar;
 
     invoke-direct {v1, p0}, Lcom/android/internal/app/WindowDecorActionBar;-><init>(Landroid/app/Activity;)V
@@ -6334,13 +6333,13 @@
 
     iput-boolean v0, p0, Landroid/app/Activity;->mCalled:Z
 
-    invoke-static/range {p0 .. p0}, Landroid/app/Activity$FlymeInject;->mzAccessControl(Landroid/app/Activity;)V
-
     invoke-virtual {p0}, Landroid/app/Activity;->getWindow()Landroid/view/Window;
 
     move-result-object v0
 
     invoke-virtual {v0}, Landroid/view/Window;->arrangeScaleStackBound()V
+
+    invoke-static/range {p0 .. p0}, Landroid/app/Activity$FlymeInject;->mzAccessControl(Landroid/app/Activity;)V
 
     return-void
 .end method

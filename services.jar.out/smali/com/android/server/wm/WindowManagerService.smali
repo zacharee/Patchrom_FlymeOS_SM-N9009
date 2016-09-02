@@ -37715,6 +37715,10 @@
 
     iput-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
 
+    move-object/from16 v0, p0
+
+    iget-object v3, v0, Lcom/android/server/wm/WindowManagerService;->mDragState:Lcom/android/server/wm/DragState;
+
     move/from16 v0, p4
 
     int-to-float v4, v0
@@ -53251,7 +53255,6 @@
     goto :goto_flyme_0
 
     :cond_flyme_0
-
     :try_start_0
     iget v1, v6, Lcom/android/server/wm/WindowState;->mSystemUiVisibility:I
 

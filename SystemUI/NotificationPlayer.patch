@@ -1,0 +1,69 @@
+--- a/SystemUI/smali/com/android/systemui/media/NotificationPlayer.smali	2016-08-31 10:38:55.115707000 +0800
++++ b/SystemUI/smali/com/android/systemui/media/NotificationPlayer.smali	2016-08-31 10:39:05.536915000 +0800
+@@ -20,6 +20,8 @@
+ # instance fields
+ .field private mAudioManagerWithAudioFocus:Landroid/media/AudioManager;
+ 
++.field private mBinder:Landroid/os/IBinder;
++
+ .field private mCmdQueue:Ljava/util/LinkedList;
+     .annotation system Ldalvik/annotation/Signature;
+         value = {
+@@ -37,6 +39,17 @@
+ 
+ .field private mLooper:Landroid/os/Looper;
+ 
++.field private mOnCompletionListener:Ljava/util/Vector;
++    .annotation system Ldalvik/annotation/Signature;
++        value = {
++            "Ljava/util/Vector",
++            "<",
++            "Landroid/app/INotificationPlayerOnCompletionListener;",
++            ">;"
++        }
++    .end annotation
++.end field
++
+ .field private mPlayer:Landroid/media/MediaPlayer;
+ 
+ .field private final mQueueAudioFocusLock:Ljava/lang/Object;
+@@ -85,6 +98,18 @@
+ 
+     iput v0, p0, Lcom/android/systemui/media/NotificationPlayer;->mState:I
+ 
++    new-instance v0, Landroid/os/Binder;
++
++    invoke-direct {v0}, Landroid/os/Binder;-><init>()V
++
++    iput-object v0, p0, Lcom/android/systemui/media/NotificationPlayer;->mBinder:Landroid/os/IBinder;
++
++    new-instance v0, Ljava/util/Vector;
++
++    invoke-direct {v0}, Ljava/util/Vector;-><init>()V
++
++    iput-object v0, p0, Lcom/android/systemui/media/NotificationPlayer;->mOnCompletionListener:Ljava/util/Vector;
++
+     .line 267
+     if-eqz p1, :cond_2e
+ 
+@@ -697,6 +722,20 @@
+     throw v1
+ .end method
+ 
++.method public setOnCompletionListener(Landroid/app/INotificationPlayerOnCompletionListener;)Landroid/os/IBinder;
++    .locals 1
++    .param p1, "l"    # Landroid/app/INotificationPlayerOnCompletionListener;
++
++    .prologue
++    iget-object v0, p0, Lcom/android/systemui/media/NotificationPlayer;->mOnCompletionListener:Ljava/util/Vector;
++
++    invoke-virtual {v0, p1}, Ljava/util/Vector;->addElement(Ljava/lang/Object;)V
++
++    iget-object v0, p0, Lcom/android/systemui/media/NotificationPlayer;->mBinder:Landroid/os/IBinder;
++
++    return-object v0
++.end method
++
+ .method public setUsesWakeLock(Landroid/content/Context;)V
+     .registers 6
+     .param p1, "context"    # Landroid/content/Context;

@@ -10327,12 +10327,14 @@
 
     iget-boolean v4, v0, Landroid/view/ViewRootImpl;->mStopped:Z
 
-    if-nez v4, :cond_flyme_0
+    if-eqz v4, :cond_59
 
     if-eqz v35, :cond_5e
 
     .line 1957
     :cond_59
+    if-nez v4, :cond_flyme_0
+
     :goto_flyme_0
     and-int/lit8 v4, v56, 0x1
 

@@ -911,6 +911,8 @@
 
     invoke-static {v1, v2}, Landroid/app/ContextImpl;->registerService(Ljava/lang/String;Landroid/app/ContextImpl$ServiceFetcher;)V
 
+    invoke-static {}, Landroid/app/ContextImpl;->registeFlymeManager()V
+
     .line 1047
     const-string/jumbo v1, "motion_recognition"
 
@@ -988,8 +990,6 @@
     invoke-direct {v2}, Landroid/app/ContextImpl$89;-><init>()V
 
     invoke-static {v1, v2}, Landroid/app/ContextImpl;->registerService(Ljava/lang/String;Landroid/app/ContextImpl$ServiceFetcher;)V
-
-    invoke-static {}, Landroid/app/ContextImpl;->registeFlymeManager()V
 
     .line 1143
     :cond_1

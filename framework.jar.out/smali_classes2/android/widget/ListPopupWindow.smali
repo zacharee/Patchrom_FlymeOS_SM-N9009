@@ -2200,7 +2200,6 @@
     return-void
 
     :cond_flyme_0
-
     iget-object v0, p0, Landroid/widget/ListPopupWindow;->mPopup:Landroid/widget/PopupWindow;
 
     invoke-virtual {v0, p1}, Landroid/widget/PopupWindow;->setInputMethodMode(I)V
@@ -2372,7 +2371,6 @@
 
     .line 732
     :cond_0
-
     invoke-static/range {p0 .. p1}, Landroid/widget/ListPopupWindow$FlymeInjector;->mzSetSelection(Landroid/widget/ListPopupWindow;I)V
 
     return-void

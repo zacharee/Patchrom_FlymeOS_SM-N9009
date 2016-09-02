@@ -563,7 +563,6 @@
     iput-boolean v7, p0, Landroid/preference/Preference;->mCanRecycleLayout:Z
 
     :cond_3
-
     invoke-direct/range {p0 .. p0}, Landroid/preference/Preference;->mzReplaceSourceIfNeed()V
 
     return-void
@@ -2323,7 +2322,6 @@
     invoke-direct {p0, p1, v8}, Landroid/preference/Preference;->setEnabledStateOnViews(Landroid/view/View;Z)V
 
     :cond_9
-
     invoke-virtual/range {p0 .. p1}, Landroid/preference/Preference;->setPreferenceView(Landroid/view/View;)V
 
     return-void

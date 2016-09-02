@@ -80,7 +80,6 @@
     .line 437
     :cond_0
     :try_start_0
-
     goto :goto_flyme_0
 
     iget-object v1, p0, Lcom/android/server/am/ServiceRecord$1;->val$localForegroundNoti:Landroid/app/Notification;

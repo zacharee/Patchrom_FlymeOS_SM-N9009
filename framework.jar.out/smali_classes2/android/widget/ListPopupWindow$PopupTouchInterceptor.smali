@@ -88,7 +88,6 @@
     return v3
 
     :cond_flyme_0
-
     if-nez v0, :cond_1
 
     iget-object v3, p0, Landroid/widget/ListPopupWindow$PopupTouchInterceptor;->this$0:Landroid/widget/ListPopupWindow;

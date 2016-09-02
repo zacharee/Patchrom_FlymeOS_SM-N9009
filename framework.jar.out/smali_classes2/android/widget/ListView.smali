@@ -342,13 +342,13 @@
 
     invoke-virtual {v0}, Landroid/content/res/TypedArray;->recycle()V
 
+    invoke-static/range {p0 .. p0}, Landroid/widget/ListView$FlymeInjector;->initExtFlymeFields(Landroid/widget/ListView;)V
+
     invoke-static {p1}, Landroid/util/GeneralUtil;->isDeviceDefault(Landroid/content/Context;)Z
 
     move-result v6
 
     iput-boolean v6, p0, Landroid/widget/ListView;->mIsDeviceDefaultTheme:Z
-
-    invoke-static/range {p0 .. p0}, Landroid/widget/ListView$FlymeInjector;->initExtFlymeFields(Landroid/widget/ListView;)V
 
     return-void
 .end method
@@ -8876,14 +8876,13 @@
 
     invoke-static {p0, p3}, Landroid/widget/ListView$FlymeInjector;->mzDrawDivider(Landroid/widget/ListView;I)Z
 
-    move-result v1
+    move-result p0
 
-    if-nez v1, :cond_flyme_0
+    if-nez p0, :cond_flyme_0
 
     return-void
 
     :cond_flyme_0
-
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     return-void

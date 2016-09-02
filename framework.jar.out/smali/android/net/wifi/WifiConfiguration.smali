@@ -692,6 +692,8 @@
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->mIpConfiguration:Landroid/net/IpConfiguration;
 
+    invoke-direct/range {p0 .. p0}, Landroid/net/wifi/WifiConfiguration;->initFlymeExtFields()V
+
     new-instance v1, Ljava/util/BitSet;
 
     invoke-direct {v1}, Ljava/util/BitSet;-><init>()V
@@ -775,8 +777,6 @@
     iput-object v3, p0, Landroid/net/wifi/WifiConfiguration;->expiration:Ljava/lang/String;
 
     iput v2, p0, Landroid/net/wifi/WifiConfiguration;->simnum:I
-
-    invoke-direct/range {p0 .. p0}, Landroid/net/wifi/WifiConfiguration;->initFlymeExtFields()V
 
     return-void
 .end method
@@ -1190,6 +1190,8 @@
 
     iput-boolean v1, p0, Landroid/net/wifi/WifiConfiguration;->dirty:Z
 
+    invoke-direct/range {p0 .. p1}, Landroid/net/wifi/WifiConfiguration;->initFlymeExtFields(Landroid/net/wifi/WifiConfiguration;)V
+
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->samsungSpecificFlags:Ljava/util/BitSet;
 
     invoke-virtual {v1}, Ljava/util/BitSet;->clone()Ljava/lang/Object;
@@ -1331,8 +1333,6 @@
     iget-object v1, p1, Landroid/net/wifi/WifiConfiguration;->expiration:Ljava/lang/String;
 
     iput-object v1, p0, Landroid/net/wifi/WifiConfiguration;->expiration:Ljava/lang/String;
-
-    invoke-direct/range {p0 .. p1}, Landroid/net/wifi/WifiConfiguration;->initFlymeExtFields(Landroid/net/wifi/WifiConfiguration;)V
 
     const/4 v1, 0x0
 

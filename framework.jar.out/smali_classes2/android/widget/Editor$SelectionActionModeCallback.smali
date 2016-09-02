@@ -109,12 +109,11 @@
 
     invoke-virtual/range {p0 .. p2}, Landroid/widget/Editor$SelectionActionModeCallback;->onCreateActionModeMz(Landroid/view/ActionMode;Landroid/view/Menu;)Z
 
-    move-result v5
+    move-result v3
 
-    return v5
+    return v3
 
     :cond_flyme_0
-
     const/4 v10, 0x2
 
     const/4 v7, 0x1
@@ -783,7 +782,6 @@
     return-void
 
     :cond_flyme_0
-
     iget-object v0, p0, Landroid/widget/Editor$SelectionActionModeCallback;->this$0:Landroid/widget/Editor;
 
     iget-boolean v0, v0, Landroid/widget/Editor;->mPreserveDetachedSelection:Z

@@ -38352,7 +38352,6 @@
     return-void
 
     :cond_flyme_0
-
     if-eqz v8, :cond_0
 
     invoke-virtual {v8, v7}, Landroid/os/DropBoxManager;->isTagEnabled(Ljava/lang/String;)Z

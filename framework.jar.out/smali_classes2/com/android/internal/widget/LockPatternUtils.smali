@@ -6615,7 +6615,6 @@
     .locals 10
 
     .prologue
-    .line 1662
     const-string v6, "lockscreen.password_type"
 
     const-wide/16 v8, 0x0
@@ -6624,7 +6623,6 @@
 
     move-result-wide v4
 
-    .line 1663
     .local v4, "mode":J
     const-string v6, "lockscreen.password_type_alternate"
 
@@ -6634,7 +6632,6 @@
 
     move-result-wide v2
 
-    .line 1664
     .local v2, "backupMode":J
     const-wide/32 v6, 0x40000
 
@@ -6664,18 +6661,11 @@
 
     cmp-long v6, v4, v6
 
-    if-eqz v6, :cond_0
-
-    const-wide/32 v6, 0x70000
-
-    cmp-long v6, v4, v6
-
-    if-nez v6, :cond_4
+    if-nez v6, :cond_3
 
     :cond_0
     const/4 v1, 0x1
 
-    .line 1670
     .local v1, "passwordEnabled":Z
     :goto_0
     const-wide/32 v6, 0x40000
@@ -6706,61 +6696,50 @@
 
     cmp-long v6, v2, v6
 
-    if-nez v6, :cond_5
+    if-nez v6, :cond_4
 
     :cond_1
     const/4 v0, 0x1
 
-    .line 1676
     .local v0, "backupEnabled":Z
     :goto_1
     invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->savedPasswordExists()Z
 
     move-result v6
 
-    if-eqz v6, :cond_6
+    if-eqz v6, :cond_5
 
-    if-nez v1, :cond_3
+    if-nez v1, :cond_2
 
     invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->usingBiometricWeak()Z
 
     move-result v6
 
-    if-nez v6, :cond_2
+    if-eqz v6, :cond_5
 
-    invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->usingSignatureUnlock()Z
-
-    move-result v6
-
-    if-eqz v6, :cond_6
+    if-eqz v0, :cond_5
 
     :cond_2
-    if-eqz v0, :cond_6
-
-    :cond_3
     const/4 v6, 0x1
 
     :goto_2
     return v6
 
-    .line 1664
     .end local v0    # "backupEnabled":Z
     .end local v1    # "passwordEnabled":Z
-    :cond_4
+    :cond_3
     const/4 v1, 0x0
 
     goto :goto_0
 
-    .line 1670
     .restart local v1    # "passwordEnabled":Z
-    :cond_5
+    :cond_4
     const/4 v0, 0x0
 
     goto :goto_1
 
-    .line 1676
     .restart local v0    # "backupEnabled":Z
-    :cond_6
+    :cond_5
     const/4 v6, 0x0
 
     goto :goto_2

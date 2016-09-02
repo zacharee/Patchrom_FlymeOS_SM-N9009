@@ -4642,6 +4642,8 @@
 
     .line 6559
     :goto_0
+    const/4 v2, 0x1
+
     return v2
 
     .line 6539

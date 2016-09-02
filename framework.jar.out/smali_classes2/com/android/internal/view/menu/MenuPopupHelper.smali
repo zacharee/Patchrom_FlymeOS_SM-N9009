@@ -932,7 +932,6 @@
     invoke-direct/range {p0 .. p1}, Lcom/android/internal/view/menu/MenuPopupHelper;->mzAddOnGlobalLayoutListener(Landroid/view/View;)V
 
     :cond_flyme_0
-
     return-void
 .end method
 
@@ -976,7 +975,6 @@
     return-void
 
     :cond_flyme_0
-
     invoke-virtual {p1, p0}, Landroid/view/View;->removeOnAttachStateChangeListener(Landroid/view/View$OnAttachStateChangeListener;)V
 
     return-void
@@ -1065,12 +1063,11 @@
 
     if-eqz v0, :cond_flyme_0
 
-    const/4 v4, 0x1
+    const/4 v2, 0x1
 
-    return v4
+    return v2
 
     :cond_flyme_0
-
     const/4 v0, 0x0
 
     const/4 v4, 0x1

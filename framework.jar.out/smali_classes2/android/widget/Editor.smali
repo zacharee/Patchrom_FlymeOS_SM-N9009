@@ -346,6 +346,8 @@
 
     iput-object p1, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
 
+    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->initExtFlymeFields(Landroid/widget/Editor;)V
+
     iget-object v2, p0, Landroid/widget/Editor;->mTextView:Landroid/widget/TextView;
 
     invoke-virtual {v2}, Landroid/widget/TextView;->getResources()Landroid/content/res/Resources;
@@ -423,8 +425,6 @@
     move-result-object v2
 
     iput-object v2, p0, Landroid/widget/Editor;->mCaller:Ljava/lang/CharSequence;
-
-    invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->initExtFlymeFields(Landroid/widget/Editor;)V
 
     return-void
 
@@ -5801,23 +5801,18 @@
 
     iget-boolean v5, p0, Landroid/widget/Editor;->mNewSelectionActionMode:Z
 
-    if-eqz v5, :cond_4
+    if-eqz v5, :cond_3
 
     :cond_3
-    invoke-virtual {p0}, Landroid/widget/Editor;->stopSelectionActionMode()V
-
-    :cond_4
-
     invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->mzIsCursorVisible(Landroid/widget/Editor;)Z
 
     move-result v5
 
-    if-eqz v5, :cond_flyme_0
+    if-eqz v5, :cond_4
 
     invoke-direct {p0, p1, p5}, Landroid/widget/Editor;->drawCursor(Landroid/graphics/Canvas;I)V
 
-    :cond_flyme_0
-
+    :cond_4
     const/4 p3, 0x0
 
     :cond_5
@@ -7403,7 +7398,6 @@
     iput-object v8, p0, Landroid/widget/Editor;->mSelectionModifierCursorController:Landroid/widget/Editor$SelectionModifierCursorController;
 
     :cond_3
-
     invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->updateBackground(Landroid/widget/Editor;)V
 
     return-void
@@ -7997,12 +7991,11 @@
 
     invoke-virtual/range {p0 .. p0}, Landroid/widget/Editor;->startSelectionActionModeMz()Z
 
-    move-result v7
+    move-result v2
 
-    return v7
+    return v2
 
     :cond_flyme_0
-
     const/4 v9, 0x0
 
     const/4 v6, 0x1

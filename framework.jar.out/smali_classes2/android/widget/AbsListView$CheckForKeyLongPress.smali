@@ -112,7 +112,6 @@
     return-void
 
     :cond_flyme_0
-
     invoke-virtual {p0}, Landroid/widget/AbsListView$CheckForKeyLongPress;->sameWindow()Z
 
     move-result v3

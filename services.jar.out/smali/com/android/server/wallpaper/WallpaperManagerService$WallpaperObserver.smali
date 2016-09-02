@@ -75,8 +75,6 @@
 
     iput-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->mWallpaperFile:Ljava/io/File;
 
-    invoke-direct/range {p0 .. p0}, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->initLockWallpaperFile()V
-
     new-instance v0, Ljava/io/File;
 
     iget-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->mWallpaperDir:Ljava/io/File;
@@ -86,6 +84,25 @@
     invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
 
     iput-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->mWallpaperFile_2:Ljava/io/File;
+
+    invoke-direct/range {p0 .. p0}, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->initLockWallpaperFile()V
+
+    return-void
+.end method
+
+.method private initLockWallpaperFile()V
+    .locals 3
+
+    .prologue
+    new-instance v0, Ljava/io/File;
+
+    iget-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->mWallpaperDir:Ljava/io/File;
+
+    const-string v2, "lock_wallpaper"
+
+    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
+
+    iput-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->mLockWallpaperFile:Ljava/io/File;
 
     return-void
 .end method
@@ -260,23 +277,6 @@
     .catchall {:try_start_0 .. :try_end_0} :catchall_0
 
     throw v0
-.end method
-
-.method private initLockWallpaperFile()V
-    .locals 3
-
-    .prologue
-    new-instance v0, Ljava/io/File;
-
-    iget-object v1, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->mWallpaperDir:Ljava/io/File;
-
-    const-string v2, "lock_wallpaper"
-
-    invoke-direct {v0, v1, v2}, Ljava/io/File;-><init>(Ljava/io/File;Ljava/lang/String;)V
-
-    iput-object v0, p0, Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperObserver;->mLockWallpaperFile:Ljava/io/File;
-
-    return-void
 .end method
 
 .method notifyLockWallpaperChanged(Ljava/io/File;)V

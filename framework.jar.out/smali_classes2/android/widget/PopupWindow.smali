@@ -1148,9 +1148,9 @@
     .prologue
     invoke-direct/range {p0 .. p5}, Landroid/widget/PopupWindow;->mzFindDropDownPosition(Landroid/view/View;Landroid/view/WindowManager$LayoutParams;III)Z
 
-    move-result v13
+    move-result v6
 
-    return v13
+    return v6
 
     invoke-virtual/range {p1 .. p1}, Landroid/view/View;->getHeight()I
 
@@ -2508,6 +2508,8 @@
     iput-object v0, p1, Landroid/view/WindowManager$LayoutParams;->packageName:Ljava/lang/String;
 
     :cond_0
+    invoke-static/range {p0 .. p1}, Landroid/widget/PopupWindow$FlymeInjector;->unChangeNavigationBar(Landroid/widget/PopupWindow;Landroid/view/WindowManager$LayoutParams;)V
+
     iget-boolean v0, p0, Landroid/widget/PopupWindow;->mShowForAllUsers:Z
 
     if-eqz v0, :cond_1
@@ -2519,8 +2521,6 @@
     iput v0, p1, Landroid/view/WindowManager$LayoutParams;->privateFlags:I
 
     :cond_1
-    invoke-static/range {p0 .. p1}, Landroid/widget/PopupWindow$FlymeInjector;->unChangeNavigationBar(Landroid/widget/PopupWindow;Landroid/view/WindowManager$LayoutParams;)V
-
     iget-object v0, p0, Landroid/widget/PopupWindow;->mPopupView:Landroid/view/View;
 
     iget-boolean v1, p0, Landroid/widget/PopupWindow;->mLayoutInsetDecor:Z

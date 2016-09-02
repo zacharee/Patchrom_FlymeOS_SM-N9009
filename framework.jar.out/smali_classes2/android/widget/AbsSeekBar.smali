@@ -389,6 +389,8 @@
 
     iput v3, p0, Landroid/widget/AbsSeekBar;->mScaledTouchSlop:I
 
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->initExtFlymeFields(Landroid/widget/AbsSeekBar;)V
+
     const-string v3, "#b4bcc0"
 
     invoke-static {v3}, Landroid/graphics/Color;->parseColor(Ljava/lang/String;)I
@@ -439,8 +441,6 @@
     move-result-object v3
 
     sput-object v3, Landroid/widget/AbsSeekBar;->OVERLAP_ACTIVATED_COLOR:Landroid/content/res/ColorStateList;
-
-    invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->initExtFlymeFields(Landroid/widget/AbsSeekBar;)V
 
     return-void
 .end method
@@ -2420,8 +2420,6 @@
 
     .line 306
     :cond_0
-    invoke-static/range {p0 .. p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzDrawThumb(Landroid/widget/AbsSeekBar;Landroid/graphics/Canvas;)V
-
     iget-object v0, p0, Landroid/widget/AbsSeekBar;->mThumb:Landroid/graphics/drawable/Drawable;
 
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
@@ -2445,6 +2443,8 @@
     int-to-float v1, v1
 
     invoke-virtual {p1, v0, v1}, Landroid/graphics/Canvas;->translate(FF)V
+
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzDrawThumb(Landroid/widget/AbsSeekBar;Landroid/graphics/Canvas;)V
 
     goto :goto_0
 .end method
@@ -4321,7 +4321,6 @@
 
     .end local v1    # "state":[I
     :cond_3
-
     invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->setThumbWidth(Landroid/widget/AbsSeekBar;)V
 
     return-void

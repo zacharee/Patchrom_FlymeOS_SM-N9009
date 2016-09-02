@@ -383,6 +383,8 @@
 
     goto/16 :goto_flyme_0
 
+    nop
+
     .line 703
     :pswitch_data_0
     .packed-switch 0x1

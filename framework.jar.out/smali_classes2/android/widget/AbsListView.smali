@@ -5923,7 +5923,6 @@
 
     .end local v2    # "resolved":Z
     :cond_5
-
     invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->initExtFlymeFields(Landroid/widget/AbsListView;)V
 
     return-void
@@ -6710,7 +6709,6 @@
     return-void
 
     :cond_flyme_0
-
     const/4 v4, -0x1
 
     const/4 v3, 0x0
@@ -8308,9 +8306,9 @@
     :pswitch_3
     invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnTouchUpForOverScroll(Landroid/widget/AbsListView;)Z
 
-    move-result v18
+    move-result v17
 
-    if-nez v18, :cond_flyme_0
+    if-nez v17, :cond_flyme_0
 
     move-object/from16 v0, p0
 
@@ -10669,7 +10667,6 @@
     return v7
 
     :cond_flyme_0
-
     if-nez v5, :cond_0
 
     iget v7, p0, Landroid/widget/AbsListView;->mTouchSlop:I
@@ -23043,7 +23040,6 @@
 
     .line 2638
     :cond_2
-
     invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnLayout2(Landroid/widget/AbsListView;)V
 
     return-void
@@ -24138,7 +24134,6 @@
 
     .line 3155
     :cond_1
-
     invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnSizeChanged(Landroid/widget/AbsListView;)V
 
     return-void
@@ -24364,7 +24359,6 @@
     move-result-object v6
 
     .local v6, "vtev":Landroid/view/MotionEvent;
-
     invoke-static/range {p0 .. p1}, Landroid/widget/AbsListView$FlymeInjector;->mzOnTouchEvent(Landroid/widget/AbsListView;Landroid/view/MotionEvent;)V
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
@@ -25345,7 +25339,6 @@
     return v6
 
     :cond_flyme_0
-
     const/4 v1, 0x3
 
     const/4 v7, 0x0
@@ -25526,6 +25519,8 @@
     .line 3964
     invoke-virtual {v0, v4}, Landroid/view/View;->getHitRect(Landroid/graphics/Rect;)V
 
+    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzPointToPosition(Landroid/widget/AbsListView;)V
+
     .line 3965
     if-eqz v3, :cond_2
 
@@ -25537,8 +25532,6 @@
 
     .line 3967
     :cond_2
-    invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzPointToPosition(Landroid/widget/AbsListView;)V
-
     invoke-virtual {v4, p1, p2}, Landroid/graphics/Rect;->contains(II)Z
 
     move-result v6
@@ -25746,7 +25739,6 @@
     invoke-virtual {p0}, Landroid/widget/AbsListView;->refreshDrawableState()V
 
     :cond_3
-
     invoke-static/range {p0 .. p2}, Landroid/widget/AbsListView$FlymeInjector;->mzPositionSelector(Landroid/widget/AbsListView;ILandroid/view/View;)Z
 
     return-void
