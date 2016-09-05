@@ -3320,6 +3320,8 @@
 
     invoke-direct {p0}, Lcom/android/server/BatteryService;->updateBatteryWarningLevelLocked()V
 
+    invoke-static {}, Lcom/android/server/BatteryService$FlymeInjector;->onBootPhase()V
+
     monitor-exit v4
 
     .end local v0    # "obs":Landroid/database/ContentObserver;

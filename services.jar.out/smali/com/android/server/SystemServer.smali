@@ -6,7 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/SystemServer$AdbPortObserver;
+        Lcom/android/server/SystemServer$AdbPortObserver;,
+        Lcom/android/server/SystemServer$FlymeInjector;
     }
 .end annotation
 
@@ -1675,7 +1676,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->i(Ljava/lang/String;Ljava/lang/String;)I
 
-    new-instance v77, Lcom/android/server/InputMethodManagerService;
+    new-instance v77, Lcom/android/server/MzInputMethodManagerService;
 
     move-object/from16 v0, v77
 
@@ -2027,6 +2028,9 @@
     const-string v4, "network_management"
 
     invoke-static {v4, v7}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
+
+    invoke-static/range {p0 .. p0}, Lcom/android/server/SystemServer$FlymeInjector;->addNetworkManagementServiceFlyme(Lcom/android/server/SystemServer;)V
+
     :try_end_16
     .catch Ljava/lang/Throwable; {:try_start_16 .. :try_end_16} :catch_c
 
@@ -2283,6 +2287,8 @@
     .end local v47    # "connectivity":Lcom/android/server/ConnectivityService;
     .restart local v46    # "connectivity":Lcom/android/server/ConnectivityService;
     :goto_14
+    invoke-static/range {p0 .. p0}, Lcom/android/server/SystemServer$FlymeInjector;->addSambaService(Lcom/android/server/SystemServer;)V
+
     :try_start_21
     const-string v4, "SystemServer"
 
@@ -3027,6 +3033,8 @@
     invoke-virtual {v4, v5}, Lcom/android/server/SystemServiceManager;->startService(Ljava/lang/Class;)Lcom/android/server/SystemService;
 
     :cond_1e
+    goto/16 :goto_flyme_0
+
     if-nez v64, :cond_1f
 
     if-nez v58, :cond_1f
@@ -3114,6 +3122,7 @@
     .end local v74    # "gestureService":Lcom/android/server/gesture/GestureService;
     .restart local v73    # "gestureService":Lcom/android/server/gesture/GestureService;
     :cond_20
+    :goto_flyme_0
     :goto_29
     move-object/from16 v0, p0
 
@@ -3657,6 +3666,14 @@
     check-cast v92, Lcom/android/server/MmsServiceBroker;
 
     .restart local v92    # "mmsService":Lcom/android/server/MmsServiceBroker;
+    move-object/from16 v0, p0
+
+    move-object/from16 v4, v127
+
+    move-object/from16 v5, v102
+
+    invoke-static {v0, v4, v5}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymeServices(Lcom/android/server/SystemServer;Lcom/android/server/wm/WindowManagerService;Lcom/android/server/wallpaper/WallpaperManagerService;)V
+
     :try_start_4b
     invoke-virtual/range {v118 .. v118}, Lcom/android/server/VibratorService;->systemReady()V
     :try_end_4b

@@ -16068,6 +16068,8 @@
 
     iput-object v11, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mYiPhoneWindowManager:Lcom/yios/internal/policy/impl/YiPhoneWindowManager;
 
+    invoke-static/range {p0 .. p1}, Lcom/android/internal/policy/impl/PhoneWindowManager$FlymeInjector;->initFlymeExtraFields(Lcom/android/internal/policy/impl/PhoneWindowManager;Landroid/content/Context;)V
+
     return-void
 
     .end local v2    # "deviceKeyHandlerClass":Ljava/lang/String;
@@ -28409,6 +28411,39 @@
     .end packed-switch
 .end method
 
+.method public createForceHideWallpaperExitAnimation(Z)Landroid/view/animation/Animation;
+    .locals 2
+    .param p1, "goingToNotificationShade"    # Z
+
+    .prologue
+    if-nez p1, :cond_flyme_0
+
+    invoke-static/range {p0 .. p0}, Lcom/android/internal/policy/impl/PhoneWindowManager$FlymeInjector;->getForceHideWallpaperExitAnimation(Lcom/android/internal/policy/impl/PhoneWindowManager;)Landroid/view/animation/Animation;
+
+    move-result-object v0
+
+    return-object v0
+
+    :cond_flyme_0
+
+    if-eqz p1, :cond_0
+
+    const/4 v0, 0x0
+
+    :goto_0
+    return-object v0
+
+    :cond_0
+    iget-object v0, p0, Lcom/android/internal/policy/impl/PhoneWindowManager;->mContext:Landroid/content/Context;
+
+    const v1, #android:anim@lock_screen_wallpaper_exit#t
+
+    invoke-static {v0, v1}, Landroid/view/animation/AnimationUtils;->loadAnimation(Landroid/content/Context;I)Landroid/view/animation/Animation;
+
+    move-result-object v0
+
+    goto :goto_0
+.end method
 
 .method flymeInvokeMethodRequestTransientBars(Landroid/view/WindowManagerPolicy$WindowState;)V
     .locals 0
