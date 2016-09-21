@@ -1,0 +1,15 @@
+--- a/SettingsProvider/smali/com/android/providers/settings/DatabaseHelper.smali	2016-09-12 21:25:01.001596000 +0800
++++ b/SettingsProvider/smali/com/android/providers/settings/DatabaseHelper.smali	2016-09-12 21:51:35.006200999 +0800
+@@ -2137,6 +2137,12 @@
+ 
+     invoke-direct {p0, v0, v2, v3}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
+ 
++    const-string v2, "privacy_guard_default"
++
++    const v3, 0x7f04003f
++
++    invoke-direct {p0, v0, v2, v3}, Lcom/android/providers/settings/DatabaseHelper;->loadBooleanSetting(Landroid/database/sqlite/SQLiteStatement;Ljava/lang/String;I)V
++
+     .line 2493
+     const-string v2, "sleep_timeout"
+ 

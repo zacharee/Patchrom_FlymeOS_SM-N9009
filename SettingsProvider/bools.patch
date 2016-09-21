@@ -1,0 +1,8 @@
+--- a/SettingsProvider/res/values/bools.xml	2016-09-12 21:52:33.723545000 +0800
++++ b/SettingsProvider/res/values/bools.xml.xml	2016-09-12 21:26:05.273716000 +0800
+@@ -63,4 +63,5 @@
+     <bool name="cmcc_test_def_accelerometer_rotation">false</bool>
+     <bool name="cmcc_test_def_vibrate_when_ring">false</bool>
+     <bool name="cmcc_test_def_quick_wakeup_switch">false</bool>
++    <bool name="def_privacy_guard">false</bool>
+ </resources>

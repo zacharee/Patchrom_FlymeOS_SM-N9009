@@ -1,0 +1,11 @@
+--- a/Mms/res/xml/mms_config.xml	2016-09-13 12:44:43.227840000 +0800
++++ b/Mms/res/xml/mms_config.xml	2016-09-14 00:26:28.612754997 +0800
+@@ -7,7 +7,7 @@
+     <int name="defaultSMSMessagesPerThread">500</int>
+     <int name="defaultMMSMessagesPerThread">50</int>
+     <int name="minMessageCountPerThread">10</int>
+-    <int name="maxMessageCountPerThread">5000</int>
++    <int name="maxMessageCountPerThread">1000</int>
+     <string name="uaProfUrl">http://218.249.47.94/Xianghe/MTK_Phone_KK_UAprofile.xml</string>
+     <int name="recipientLimit">-1</int>
+     <int name="smsToMmsTextThreshold">4</int>

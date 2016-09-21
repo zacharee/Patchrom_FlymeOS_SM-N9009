@@ -21,6 +21,8 @@
 
 .field final mKeyguardWallpaperFile:Ljava/io/File;
 
+.field final mKeyguardWallpaperInfoFile:Ljava/io/File;
+
 .field final mWallpaper:Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperData;
 
 .field final mWallpaperDir:Ljava/io/File;

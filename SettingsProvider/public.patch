@@ -1,0 +1,10 @@
+--- a/SettingsProvider/res/values/public.xml	2016-09-12 21:52:46.297829000 +0800
++++ b/SettingsProvider/res/values/public.xml	2016-09-12 21:26:55.999067000 +0800
+@@ -65,6 +65,7 @@
+     <public type="bool" name="cmcc_test_def_accelerometer_rotation" id="0x7f04003c" />
+     <public type="bool" name="cmcc_test_def_vibrate_when_ring" id="0x7f04003d" />
+     <public type="bool" name="cmcc_test_def_quick_wakeup_switch" id="0x7f04003e" />
++    <public type="bool" name="def_privacy_guard" id="0x7f04003f" />
+     <public type="integer" name="def_screen_off_timeout" id="0x7f050000" />
+     <public type="integer" name="def_sleep_timeout" id="0x7f050001" />
+     <public type="integer" name="def_screen_brightness" id="0x7f050002" />
