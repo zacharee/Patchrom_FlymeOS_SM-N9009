@@ -18,6 +18,16 @@
 
 
 # static fields
+.field public static final ACTION_FRAME_VS_WES_RECEIVED_ACTION:Ljava/lang/String; = "android.net.wifi.ACTION_FRAME_VS_WES_RECEIVED_ACTION"
+
+.field public static final ACTION_MSAP_GAS_REQ_STATUS:Ljava/lang/String; = "android.net.wifi.MSAP_GAS_REQ_STATUS"
+
+.field public static final ACTION_MSAP_GAS_RSP_AVAILABLE:Ljava/lang/String; = "android.net.wifi.MSAP_GAS_RSP_AVAILABLE"
+
+.field public static final ACTION_MSAP_VENUE_SERVER_ADDED:Ljava/lang/String; = "android.net.wifi.MSAP_VENUE_SERVER_ADDED"
+
+.field public static final ACTION_MSAP_VENUE_SERVER_DELETED:Ljava/lang/String; = "android.net.wifi.MSAP_VENUE_SERVER_DELETED"
+
 .field public static final ACTION_WIFI_AP_DEVICE_STATE_CHANGE:Ljava/lang/String; = "com.meizu.action.wifi_ap_device_state_change"
 
 .field public static final ACTION_WIFI_AP_WPS_EVENT:Ljava/lang/String; = "com.meizu.action.wifi_ap_wps_event"
@@ -37,16 +47,6 @@
 .field public static final EXTRA_STA_ADDRESS:Ljava/lang/String; = "sta_address"
 
 .field public static final EXTRA_STA_STATE:Ljava/lang/String; = "sta_state"
-
-.field public static final ACTION_FRAME_VS_WES_RECEIVED_ACTION:Ljava/lang/String; = "android.net.wifi.ACTION_FRAME_VS_WES_RECEIVED_ACTION"
-
-.field public static final ACTION_MSAP_GAS_REQ_STATUS:Ljava/lang/String; = "android.net.wifi.MSAP_GAS_REQ_STATUS"
-
-.field public static final ACTION_MSAP_GAS_RSP_AVAILABLE:Ljava/lang/String; = "android.net.wifi.MSAP_GAS_RSP_AVAILABLE"
-
-.field public static final ACTION_MSAP_VENUE_SERVER_ADDED:Ljava/lang/String; = "android.net.wifi.MSAP_VENUE_SERVER_ADDED"
-
-.field public static final ACTION_MSAP_VENUE_SERVER_DELETED:Ljava/lang/String; = "android.net.wifi.MSAP_VENUE_SERVER_DELETED"
 
 .field public static final ACTION_PICK_WIFI_NETWORK:Ljava/lang/String; = "android.net.wifi.PICK_WIFI_NETWORK"
 

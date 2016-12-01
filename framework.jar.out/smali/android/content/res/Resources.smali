@@ -123,12 +123,6 @@
 
 
 # instance fields
-.field mFlymeThemeChanges:I
-
-.field mFlymeThemeResource:Landroid/content/res/flymetheme/FlymeThemeResource;
-
-.field mIsFlymeThemeChange:Z
-
 .field private appAndWidgetStringNamesMap:Ljava/util/Map;
     .annotation system Ldalvik/annotation/Signature;
         value = {
@@ -162,6 +156,12 @@
         }
     .end annotation
 .end field
+
+.field mFlymeThemeChanges:I
+
+.field mFlymeThemeResource:Landroid/content/res/flymetheme/FlymeThemeResource;
+
+.field mIsFlymeThemeChange:Z
 
 .field private final mAccessLock:Ljava/lang/Object;
 
@@ -7770,15 +7770,6 @@
     .end annotation
 
     .prologue
-    invoke-static {p0, p2}, Landroid/content/res/Resources$FlymeInjector;->getFlymeThemeColor(Landroid/content/res/Resources;I)Landroid/content/res/ColorStateList;
-
-    move-result-object v0
-
-    if-eqz v0, :cond_7
-
-    return-object v0
-
-    :cond_7
     const/4 v0, 0x0
 
     invoke-virtual {p0, p1, p2, v0}, Landroid/content/res/Resources;->twLoadColorStateList(Landroid/util/TypedValue;ILandroid/content/res/Resources$Theme;)Landroid/content/res/ColorStateList;
@@ -7789,7 +7780,7 @@
 .end method
 
 .method loadDrawable(Landroid/util/TypedValue;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
-    .registers 16
+    .locals 12
     .param p1, "value"    # Landroid/util/TypedValue;
     .param p2, "id"    # I
     .param p3, "theme"    # Landroid/content/res/Resources$Theme;
@@ -7805,13 +7796,13 @@
 
     const/16 v2, 0x1c
 
-    if-lt v1, v2, :cond_1d
+    if-lt v1, v2, :cond_0
 
     iget v1, p1, Landroid/util/TypedValue;->type:I
 
     const/16 v2, 0x1f
 
-    if-gt v1, v2, :cond_1d
+    if-gt v1, v2, :cond_0
 
     .line 2297
     const/4 v4, 0x1
@@ -7828,10 +7819,10 @@
 
     .line 2308
     .local v6, "key":J
-    :goto_12
+    :goto_0
     iget-boolean v1, p0, Landroid/content/res/Resources;->mPreloading:Z
 
-    if-nez v1, :cond_2c
+    if-nez v1, :cond_1
 
     .line 2309
     invoke-direct {p0, v5, v6, v7, p3}, Landroid/content/res/Resources;->getCachedDrawable(Landroid/util/ArrayMap;JLandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
@@ -7840,18 +7831,18 @@
 
     .line 2310
     .local v0, "cachedDrawable":Landroid/graphics/drawable/Drawable;
-    if-eqz v0, :cond_2c
+    if-eqz v0, :cond_1
 
     .line 2340
     .end local v0    # "cachedDrawable":Landroid/graphics/drawable/Drawable;
-    :goto_1c
+    :goto_1
     return-object v0
 
     .line 2301
     .end local v4    # "isColorDrawable":Z
     .end local v5    # "caches":Landroid/util/ArrayMap;, "Landroid/util/ArrayMap<Ljava/lang/String;Landroid/util/LongSparseArray<Ljava/lang/ref/WeakReference<Landroid/graphics/drawable/Drawable$ConstantState;>;>;>;"
     .end local v6    # "key":J
-    :cond_1d
+    :cond_0
     const/4 v4, 0x0
 
     .line 2302
@@ -7875,11 +7866,11 @@
     or-long v6, v2, v10
 
     .restart local v6    # "key":J
-    goto :goto_12
+    goto :goto_0
 
     .line 2318
-    :cond_2c
-    if-eqz v4, :cond_4b
+    :cond_1
+    if-eqz v4, :cond_3
 
     .line 2319
     sget-object v1, Landroid/content/res/Resources;->sPreloadedColorDrawables:Landroid/util/LongSparseArray;
@@ -7892,8 +7883,8 @@
 
     .line 2325
     .local v9, "cs":Landroid/graphics/drawable/Drawable$ConstantState;
-    :goto_36
-    if-eqz v9, :cond_5c
+    :goto_2
+    if-eqz v9, :cond_4
 
     .line 2326
     invoke-virtual {v9, p0, p3}, Landroid/graphics/drawable/Drawable$ConstantState;->newDrawable(Landroid/content/res/Resources;Landroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
@@ -7902,8 +7893,8 @@
 
     .line 2335
     .local v8, "dr":Landroid/graphics/drawable/Drawable;
-    :goto_3c
-    if-eqz v8, :cond_49
+    :goto_3
+    if-eqz v8, :cond_2
 
     .line 2336
     iget v1, p1, Landroid/util/TypedValue;->changingConfigurations:I
@@ -7919,16 +7910,16 @@
     .line 2337
     invoke-direct/range {v1 .. v8}, Landroid/content/res/Resources;->cacheDrawable(Landroid/util/TypedValue;Landroid/content/res/Resources$Theme;ZLandroid/util/ArrayMap;JLandroid/graphics/drawable/Drawable;)V
 
-    :cond_49
+    :cond_2
     move-object v0, v8
 
     .line 2340
-    goto :goto_1c
+    goto :goto_1
 
     .line 2321
     .end local v8    # "dr":Landroid/graphics/drawable/Drawable;
     .end local v9    # "cs":Landroid/graphics/drawable/Drawable$ConstantState;
-    :cond_4b
+    :cond_3
     sget-object v1, Landroid/content/res/Resources;->sPreloadedDrawables:[Landroid/util/LongSparseArray;
 
     iget-object v2, p0, Landroid/content/res/Resources;->mConfiguration:Landroid/content/res/Configuration;
@@ -7946,11 +7937,11 @@
     check-cast v9, Landroid/graphics/drawable/Drawable$ConstantState;
 
     .restart local v9    # "cs":Landroid/graphics/drawable/Drawable$ConstantState;
-    goto :goto_36
+    goto :goto_2
 
     .line 2327
-    :cond_5c
-    if-eqz v4, :cond_66
+    :cond_4
+    if-eqz v4, :cond_5
 
     .line 2328
     new-instance v8, Landroid/graphics/drawable/ColorDrawable;
@@ -7960,17 +7951,17 @@
     invoke-direct {v8, v1}, Landroid/graphics/drawable/ColorDrawable;-><init>(I)V
 
     .restart local v8    # "dr":Landroid/graphics/drawable/Drawable;
-    goto :goto_3c
+    goto :goto_3
 
     .line 2330
     .end local v8    # "dr":Landroid/graphics/drawable/Drawable;
-    :cond_66
+    :cond_5
     invoke-static {p0, p1, p2, p3}, Landroid/content/res/Resources$FlymeInjector;->loadDrawableForCookie(Landroid/content/res/Resources;Landroid/util/TypedValue;ILandroid/content/res/Resources$Theme;)Landroid/graphics/drawable/Drawable;
 
     move-result-object v8
 
     .restart local v8    # "dr":Landroid/graphics/drawable/Drawable;
-    goto :goto_3c
+    goto :goto_3
 .end method
 
 .method loadXmlResourceParser(ILjava/lang/String;)Landroid/content/res/XmlResourceParser;
@@ -8576,6 +8567,7 @@
     return-object v2
 
     :cond_flyme_0
+
     :try_start_0
     iget-object v2, p0, Landroid/content/res/Resources;->mAssets:Landroid/content/res/AssetManager;
 
@@ -9259,7 +9251,7 @@
 
     invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v3, "rList-"
+    const-string/jumbo v3, "rList-"
 
     invoke-virtual {v2, v3}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -9431,7 +9423,7 @@
 
     invoke-direct {v7}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v19, "rList-"
+    const-string/jumbo v19, "rList-"
 
     move-object/from16 v0, v19
 
@@ -10510,6 +10502,15 @@
     .end annotation
 
     .prologue
+    invoke-static {p0, p2}, Landroid/content/res/Resources$FlymeInjector;->getFlymeThemeColor(Landroid/content/res/Resources;I)Landroid/content/res/ColorStateList;
+
+    move-result-object v0
+
+    if-eqz v0, :cond_flyme_0
+
+    return-object v0
+
+    :cond_flyme_0
     iget v8, p1, Landroid/util/TypedValue;->assetCookie:I
 
     int-to-long v8, v8

@@ -226,6 +226,7 @@
     goto :goto_flyme_0
 
     :cond_flyme_0
+
     new-instance v4, Ljava/lang/RuntimeException;
 
     new-instance v5, Ljava/lang/StringBuilder;
@@ -1290,7 +1291,6 @@
     goto/16 :goto_flyme_0
 
     :cond_flyme_0
-
     new-instance v5, Ljava/lang/RuntimeException;
 
     new-instance v6, Ljava/lang/StringBuilder;

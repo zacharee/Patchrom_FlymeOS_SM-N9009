@@ -7498,12 +7498,14 @@
 
     invoke-static {v4, v5, v0}, Landroid/util/Slog;->wtf(Ljava/lang/String;Ljava/lang/String;Ljava/lang/Throwable;)I
 
+    .line 1220
     move-object/from16 v0, p0
 
     move-object/from16 v1, v40
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/BroadcastQueue;->logBroadcastReceiverDiscardLocked(Lcom/android/server/am/BroadcastRecord;)V
 
+    .line 1221
     move-object/from16 v0, v40
 
     iget v9, v0, Lcom/android/server/am/BroadcastRecord;->resultCode:I
@@ -7528,19 +7530,23 @@
 
     invoke-virtual/range {v7 .. v13}, Lcom/android/server/am/BroadcastQueue;->finishReceiverLocked(Lcom/android/server/am/BroadcastRecord;ILjava/lang/String;Landroid/os/Bundle;ZZ)Z
 
+    .line 1223
     .end local v8    # "targetProcess":Ljava/lang/String;
     invoke-virtual/range {p0 .. p0}, Lcom/android/server/am/BroadcastQueue;->scheduleBroadcastsLocked()V
 
+    .line 1225
     const/4 v4, 0x0
 
     move-object/from16 v0, v40
 
     iput v4, v0, Lcom/android/server/am/BroadcastRecord;->state:I
 
+    .line 1226
     monitor-exit v48
 
     goto/16 :goto_3
 
+    .line 1268
     .end local v22    # "e":Ljava/lang/RuntimeException;
     .restart local v8    # "targetProcess":Ljava/lang/String;
     .restart local v18    # "action":Ljava/lang/String;
@@ -7551,6 +7557,7 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->v(Ljava/lang/String;Ljava/lang/String;)I
 
+    .line 1275
     .end local v18    # "action":Ljava/lang/String;
     :cond_38
     const-string v4, "sys.quickboot.enable"
@@ -7655,6 +7662,7 @@
 
     if-nez v4, :cond_3c
 
+    .line 1286
     :cond_3a
     const-string v4, "BroadcastQueue"
 
@@ -7724,14 +7732,14 @@
 
     invoke-static {v4, v5}, Landroid/util/Slog;->w(Ljava/lang/String;Ljava/lang/String;)I
 
-    .line 1220
+    .line 1290
     move-object/from16 v0, p0
 
     move-object/from16 v1, v40
 
     invoke-virtual {v0, v1}, Lcom/android/server/am/BroadcastQueue;->logBroadcastReceiverDiscardLocked(Lcom/android/server/am/BroadcastRecord;)V
 
-    .line 1221
+    .line 1291
     move-object/from16 v0, v40
 
     iget v11, v0, Lcom/android/server/am/BroadcastRecord;->resultCode:I

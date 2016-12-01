@@ -4074,16 +4074,9 @@
 
     .line 815
     .local v1, "dr":Landroid/graphics/drawable/Drawable;
-    invoke-static/range {p1 .. p1}, Landroid/app/ApplicationPackageManager$FlymeInjector;->isFlymeCalendarPkg(Ljava/lang/String;)Z
-
-    move-result v9
-
-    if-eqz v9, :cond_flyme_0
-
     if-nez v1, :cond_0
 
     .line 818
-    :cond_flyme_0
     if-nez p3, :cond_2
 
     .line 820

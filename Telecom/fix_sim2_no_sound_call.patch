@@ -1,0 +1,20 @@
+--- a/Telecom/smali/com/android/server/telecom/Call.smali	2016-11-27 16:27:17.906072000 +0800
++++ b/Telecom/smali/com/android/server/telecom/Call.smali	2016-11-27 16:29:02.518072992 +0800
+@@ -1504,7 +1504,7 @@
+     return-object v0
+ .end method
+ 
+-.method final getExtras()Landroid/os/Bundle;
++.method public final getExtras()Landroid/os/Bundle;
+     .locals 1
+ 
+     .prologue
+@@ -1782,7 +1782,7 @@
+     return-object v0
+ .end method
+ 
+-.method final getTargetPhoneAccount()Landroid/telecom/PhoneAccountHandle;
++.method public final getTargetPhoneAccount()Landroid/telecom/PhoneAccountHandle;
+     .locals 1
+ 
+     .prologue

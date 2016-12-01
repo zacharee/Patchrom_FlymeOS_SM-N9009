@@ -21,9 +21,9 @@
 
 
 # instance fields
-.field private mIsThemeLight:Z
-
 .field private mCntPreferenceCategory:I
+
+.field private mIsThemeLight:Z
 
 .field private mHandler:Landroid/os/Handler;
 
@@ -592,6 +592,7 @@
     return v0
 
     :cond_flyme_0
+
     const/4 v0, 0x0
 
     return v0

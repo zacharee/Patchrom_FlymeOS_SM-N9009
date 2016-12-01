@@ -1,0 +1,11 @@
+--- a/Telecom/smali/com/meizu/server/telecom/utils/MzTelecomUtils.smali	2016-10-21 14:48:41.828405231 +0800
++++ b/Telecom/smali/com/meizu/server/telecom/utils/MzTelecomUtils.smali	2016-10-21 14:49:00.448405231 +0800
+@@ -127,6 +127,8 @@
+ 
+     move-result-object v4
+ 
++    if-eqz v4, :cond_0
++
+     invoke-interface {v4}, Ljava/lang/CharSequence;->toString()Ljava/lang/String;
+ 
+     move-result-object v4

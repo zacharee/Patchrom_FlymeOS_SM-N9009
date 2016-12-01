@@ -21288,6 +21288,7 @@
     return-object v5
 
     :cond_flyme_0
+
     invoke-virtual {p0}, Ljava/lang/String;->length()I
 
     move-result v0

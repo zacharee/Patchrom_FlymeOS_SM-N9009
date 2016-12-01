@@ -38352,6 +38352,7 @@
     return-void
 
     :cond_flyme_0
+
     if-eqz v8, :cond_0
 
     invoke-virtual {v8, v7}, Landroid/os/DropBoxManager;->isTagEnabled(Ljava/lang/String;)Z
@@ -39056,7 +39057,6 @@
     goto/16 :goto_1
 
     :cond_flyme_0
-
     invoke-direct/range {p0 .. p0}, Lcom/android/server/am/ActivityManagerService;->mzBroadcastRecentTasksChanged()V
 
     return-void

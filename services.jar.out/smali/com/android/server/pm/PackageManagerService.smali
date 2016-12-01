@@ -31635,6 +31635,7 @@
     return v3
 
     .line 14716
+    :cond_0
     :goto_0
     return v3
 
@@ -31705,6 +31706,7 @@
     goto :goto_0
 
     :cond_flyme_0
+
     aget v5, v2, v1
 
     invoke-static {p1, v5}, Lcom/android/server/pm/InjectorPMS;->removeActiveAdminX(Ljava/lang/String;I)V

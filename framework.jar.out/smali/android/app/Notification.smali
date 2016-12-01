@@ -1010,8 +1010,6 @@
 
     iput v5, p0, Landroid/app/Notification;->color:I
 
-    invoke-static/range {p0 .. p1}, Landroid/app/Notification$FlymeInject;->initNotificationExt(Landroid/app/Notification;Landroid/os/Parcel;)V
-
     .line 1544
     invoke-virtual {p1}, Landroid/os/Parcel;->readInt()I
 
@@ -1119,6 +1117,8 @@
 
     .restart local v4    # "version":I
     :cond_f
+    invoke-static/range {p0 .. p0}, Landroid/app/Notification$FlymeInject;->initNotificationExt(Landroid/app/Notification;)V
+
     return-void
 .end method
 
@@ -1819,8 +1819,6 @@
     invoke-virtual {p1}, Landroid/app/Notification;->lightenPayload()V
 
     :cond_b
-    invoke-static/range {p0 .. p1}, Landroid/app/Notification$FlymeInject;->cloneIntoFlyme(Landroid/app/Notification;Landroid/app/Notification;)V
-
     iget v5, p0, Landroid/app/Notification;->twQuickPanelEvent:I
 
     iput v5, p1, Landroid/app/Notification;->twQuickPanelEvent:I
@@ -1844,6 +1842,8 @@
     iget-wide v6, p0, Landroid/app/Notification;->threadId:J
 
     iput-wide v6, p1, Landroid/app/Notification;->threadId:J
+
+    invoke-static/range {p0 .. p1}, Landroid/app/Notification$FlymeInject;->cloneIntoFlyme(Landroid/app/Notification;Landroid/app/Notification;)V
 
     return-void
 .end method
@@ -2864,8 +2864,6 @@
 
     invoke-virtual {p1, v3}, Landroid/os/Parcel;->writeInt(I)V
 
-    invoke-static/range {p0 .. p2}, Landroid/app/Notification$FlymeInject;->writeToParcelFlyme(Landroid/app/Notification;Landroid/os/Parcel;I)V
-
     .line 1883
     iget v3, p0, Landroid/app/Notification;->twQuickPanelEvent:I
 
@@ -3052,5 +3050,7 @@
 
     .line 1908
     :cond_e
+    invoke-static/range {p0 .. p2}, Landroid/app/Notification$FlymeInject;->writeToParcelFlyme(Landroid/app/Notification;Landroid/os/Parcel;I)V
+
     return-void
 .end method

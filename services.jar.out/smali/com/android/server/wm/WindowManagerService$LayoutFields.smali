@@ -349,6 +349,7 @@
     return p1
 .end method
 
+# virtual methods
 .method mzGetFieldSyswin()Z
     .locals 1
 

@@ -7641,11 +7641,27 @@
     invoke-virtual {v2, v8}, Lcom/android/server/notification/NotificationManagerService$WorkerHandler;->post(Ljava/lang/Runnable;)Z
 
     .line 2301
+    move-object/from16 v12, p8
+
+    array-length v2, v12
+
+    if-eqz v2, :cond_flyme_99
+
+    :goto_99
     const/4 v2, 0x0
 
     aput p6, p8, v2
 
     goto/16 :goto_3
+
+    :cond_flyme_99
+    const/4 v0, 0x1
+
+    new-array v9, v0, [I
+
+    move-object/from16 p8, v9
+
+    goto/16 :goto_99
 .end method
 
 .method getLpnetManagerLocked()Lcom/android/server/LpnetManagerService;

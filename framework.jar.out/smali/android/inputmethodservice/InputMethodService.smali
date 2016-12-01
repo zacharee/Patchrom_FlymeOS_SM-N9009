@@ -1141,6 +1141,7 @@
     goto :goto_0
 
     :cond_flyme_0
+
     invoke-static/range {p0 .. p2}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->hideInputDelayIfNeeded(Landroid/inputmethodservice/InputMethodService;Landroid/view/inputmethod/InputConnection;Landroid/view/inputmethod/EditorInfo;)V
 
     return-void
@@ -3140,8 +3141,6 @@
 
     invoke-virtual {v0, v1, v2}, Landroid/view/Window;->setLayout(II)V
 
-    invoke-static/range {p0 .. p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->initMzHandler(Landroid/inputmethodservice/InputMethodService;)V
-
     new-instance v10, Landroid/content/IntentFilter;
 
     invoke-direct {v10}, Landroid/content/IntentFilter;-><init>()V
@@ -3164,6 +3163,8 @@
     const-string v1, "mBR.registerReceiver()"
 
     invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+
+    invoke-static/range {p0 .. p0}, Landroid/inputmethodservice/InputMethodService$FlymeInjector;->initMzHandler(Landroid/inputmethodservice/InputMethodService;)V
 
     return-void
 .end method
@@ -5663,7 +5664,7 @@
 
     move-result-object v5
 
-    const-string v6, "sidesync_tablet_connect"
+    const-string/jumbo v6, "sidesync_tablet_connect"
 
     invoke-static {v5, v6, v8}, Landroid/provider/Settings$System;->getInt(Landroid/content/ContentResolver;Ljava/lang/String;I)I
 

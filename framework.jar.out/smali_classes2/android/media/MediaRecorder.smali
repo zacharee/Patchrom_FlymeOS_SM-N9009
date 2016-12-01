@@ -58,9 +58,9 @@
 
 
 # instance fields
-.field private mIsVideoRecord:Z
-
 .field private mAudioSource:I
+
+.field private mIsVideoRecord:Z
 
 .field private mEventHandler:Landroid/media/MediaRecorder$EventHandler;
 
@@ -1627,7 +1627,7 @@
 
     invoke-direct {v0}, Ljava/lang/StringBuilder;-><init>()V
 
-    const-string v1, "video-param-encoding-bitrate="
+    const-string/jumbo v1, "video-param-encoding-bitrate="
 
     invoke-virtual {v0, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

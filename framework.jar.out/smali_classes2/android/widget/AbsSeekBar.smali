@@ -11,13 +11,13 @@
 .end annotation
 
 # static fields
-.field public static final SEEK_BAR_SCROLL_MODE_COMMON:I = 0x0
-
-.field public static final SEEK_BAR_SCROLL_MODE_SLOW:I = 0x1
-
 .field private static DEFAULT_ACTIVATED_COLOR:Landroid/content/res/ColorStateList; = null
 
 .field private static DEFAULT_NORMAL_COLOR:Landroid/content/res/ColorStateList; = null
+
+.field public static final SEEK_BAR_SCROLL_MODE_COMMON:I = 0x0
+
+.field public static final SEEK_BAR_SCROLL_MODE_SLOW:I = 0x1
 
 .field private static final NO_ALPHA:I = 0xff
 
@@ -3500,13 +3500,13 @@
 
     iput v3, p0, Landroid/widget/AbsSeekBar;->mTouchDownX:F
 
+    invoke-static/range {p0 .. p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzInitTouchDownStates(Landroid/widget/AbsSeekBar;Landroid/view/MotionEvent;)V
+
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getY()F
 
     move-result v3
 
     iput v3, p0, Landroid/widget/AbsSeekBar;->mTouchDownY:F
-
-    invoke-static/range {p0 .. p1}, Landroid/widget/AbsSeekBar$FlymeInjector;->mzInitTouchDownStates(Landroid/widget/AbsSeekBar;Landroid/view/MotionEvent;)V
 
     goto :goto_0
 
@@ -4321,6 +4321,7 @@
 
     .end local v1    # "state":[I
     :cond_3
+
     invoke-static/range {p0 .. p0}, Landroid/widget/AbsSeekBar$FlymeInjector;->setThumbWidth(Landroid/widget/AbsSeekBar;)V
 
     return-void

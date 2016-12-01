@@ -1,0 +1,66 @@
+--- a/SystemUI/smali/com/android/systemui/floattouch/Simulate.smali	2016-10-09 12:16:17.894644000 +0800
++++ b/SystemUI/smali/com/android/systemui/floattouch/Simulate.smali	2016-10-09 12:16:36.418644000 +0800
+@@ -70,27 +70,52 @@
+ .end method
+ 
+ .method public static expandNotifications(Landroid/content/Context;)V
+-    .locals 2
++    .locals 4
+     .param p0, "context"    # Landroid/content/Context;
+ 
+     .prologue
+-    .line 50
+-    const-string v0, "SmartTouch"
++    .line 51
++    const-string v2, "SmartTouch"
+ 
+-    const-string v1, "simulate expandNotifications"
++    const-string v3, "simulate expandNotifications"
+ 
+-    invoke-static {v0, v1}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
++    invoke-static {v2, v3}, Landroid/util/Log;->d(Ljava/lang/String;Ljava/lang/String;)I
+ 
+-    .line 51
+-    invoke-static {p0}, Lcom/android/systemui/floattouch/Simulate;->expandNotificationsPanel(Landroid/content/Context;)V
++    .line 53
++    :try_start_7
++    const-string v2, "statusbar"
+ 
+-    .line 52
+-    const-string v0, "expand_statusbar"
++    invoke-virtual {p0, v2}, Landroid/content/Context;->getSystemService(Ljava/lang/String;)Ljava/lang/Object;
+ 
+-    invoke-static {p0, v0}, Lcom/android/systemui/SystemUIMobEventUtils;->onEventSmartTouch(Landroid/content/Context;Ljava/lang/String;)V
++    move-result-object v1
+ 
+-    .line 53
++    check-cast v1, Landroid/app/StatusBarManager;
++
++    .line 54
++    .local v1, "statusBarManager":Landroid/app/StatusBarManager;
++    invoke-virtual {v1}, Landroid/app/StatusBarManager;->expandNotificationsPanel()V
++    :try_end_12
++    .catch Ljava/lang/Exception; {:try_start_7 .. :try_end_12} :catch_18
++
++    .line 58
++    .end local v1    # "statusBarManager":Landroid/app/StatusBarManager;
++    :goto_12
++    const-string v2, "expand_statusbar"
++
++    invoke-static {p0, v2}, Lcom/android/systemui/SystemUIMobEventUtils;->onEventSmartTouch(Landroid/content/Context;Ljava/lang/String;)V
++
++    .line 59
+     return-void
++
++    .line 55
++    :catch_18
++    move-exception v0
++
++    .line 56
++    .local v0, "e":Ljava/lang/Exception;
++    invoke-virtual {v0}, Ljava/lang/Exception;->printStackTrace()V
++
++    goto :goto_12
+ .end method
+ 
+ .method private static expandNotificationsPanel(Landroid/content/Context;)V

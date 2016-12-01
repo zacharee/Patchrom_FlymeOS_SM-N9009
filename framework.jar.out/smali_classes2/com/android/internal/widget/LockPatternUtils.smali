@@ -6615,7 +6615,8 @@
     .locals 10
 
     .prologue
-    const-string v6, "lockscreen.password_type"
+    .line 1637
+    const-string/jumbo v6, "lockscreen.password_type"
 
     const-wide/16 v8, 0x0
 
@@ -6623,8 +6624,9 @@
 
     move-result-wide v4
 
+    .line 1638
     .local v4, "mode":J
-    const-string v6, "lockscreen.password_type_alternate"
+    const-string/jumbo v6, "lockscreen.password_type_alternate"
 
     const-wide/16 v8, 0x0
 
@@ -6632,6 +6634,7 @@
 
     move-result-wide v2
 
+    .line 1639
     .local v2, "backupMode":J
     const-wide/32 v6, 0x40000
 
@@ -6666,6 +6669,7 @@
     :cond_0
     const/4 v1, 0x1
 
+    .line 1645
     .local v1, "passwordEnabled":Z
     :goto_0
     const-wide/32 v6, 0x40000
@@ -6701,6 +6705,7 @@
     :cond_1
     const/4 v0, 0x1
 
+    .line 1651
     .local v0, "backupEnabled":Z
     :goto_1
     invoke-virtual {p0}, Lcom/android/internal/widget/LockPatternUtils;->savedPasswordExists()Z
@@ -6725,6 +6730,7 @@
     :goto_2
     return v6
 
+    .line 1639
     .end local v0    # "backupEnabled":Z
     .end local v1    # "passwordEnabled":Z
     :cond_3
@@ -6732,12 +6738,14 @@
 
     goto :goto_0
 
+    .line 1645
     .restart local v1    # "passwordEnabled":Z
     :cond_4
     const/4 v0, 0x0
 
     goto :goto_1
 
+    .line 1651
     .restart local v0    # "backupEnabled":Z
     :cond_5
     const/4 v6, 0x0

@@ -534,6 +534,7 @@
     throw v3
 
     :cond_flyme_0
+
     const-wide/16 v6, 0x10
 
     const-string v3, "WebViewFactory.getProvider()"
@@ -933,6 +934,7 @@
     goto :goto_0
 
     :cond_flyme_0
+
     const/4 v5, 0x0
 
     goto :goto_flyme_0

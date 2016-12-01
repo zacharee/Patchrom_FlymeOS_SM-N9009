@@ -4350,9 +4350,9 @@
 
     .line 1273
     :goto_32
-    :try_start_4e
     invoke-static/range {p0 .. p0}, Lcom/android/server/SystemServer$FlymeInjector;->addFlymePppoeAndSambaService(Lcom/android/server/SystemServer;)V
 
+    :try_start_4e
     const-string v6, "SystemServer"
 
     const-string v7, "Connectivity Service"
@@ -7160,10 +7160,30 @@
 
     move-result-object v67
 
+    .line 1605
+    #.local v67, "constructor":Ljava/lang/reflect/Constructor;
+    #const-string v7, "SecExternalDisplayService"
+
+    #const/4 v6, 0x1
+
+    #new-array v6, v6, [Ljava/lang/Object;
+
+    #const/4 v10, 0x0
+
+    #aput-object v5, v6, v10
+
+    #move-object/from16 v0, v67
+
+    #invoke-virtual {v0, v6}, Ljava/lang/reflect/Constructor;->newInstance([Ljava/lang/Object;)Ljava/lang/Object;
+
+    #move-result-object v6
+
+    #check-cast v6, Landroid/os/IBinder;
+
+    #invoke-static {v7, v6}, Landroid/os/ServiceManager;->addService(Ljava/lang/String;Landroid/os/IBinder;)V
     :try_end_85
     .catch Ljava/lang/Throwable; {:try_start_85 .. :try_end_85} :catch_39
 
-    .line 1605
     .local v67, "constructor":Ljava/lang/reflect/Constructor;
     goto/16 :goto_44
 

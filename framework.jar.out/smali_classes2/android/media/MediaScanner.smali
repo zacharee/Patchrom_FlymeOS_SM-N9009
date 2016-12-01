@@ -6869,7 +6869,7 @@
 
 # virtual methods
 .method public checkDefaultSounds(Ljava/lang/String;)V
-    .locals 22
+    .locals 8
     .param p1, "volumeName"    # Ljava/lang/String;
 
     .prologue
@@ -6911,7 +6911,7 @@
     invoke-static {v2, v6}, Landroid/util/Slog;->d(Ljava/lang/String;Ljava/lang/String;)I
 
     .line 2702
-    :cond_0
+    :goto_0
     return-void
 
     .line 2653
@@ -6972,228 +6972,6 @@
     move-object/from16 v2, p0
 
     invoke-direct/range {v2 .. v7}, Landroid/media/MediaScanner;->SettingDefaultSoundAgain(Landroid/content/ContentResolver;Landroid/net/Uri;Landroid/net/Uri;Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2671
-    const-string v12, "com.android.settings.phoneprofile"
-
-    .line 2672
-    .local v12, "AUTHORITY":Ljava/lang/String;
-    const-string/jumbo v13, "profile"
-
-    .line 2673
-    .local v13, "PROFILE_TABLE":Ljava/lang/String;
-    const-string v2, "content://com.android.settings.phoneprofile/profile"
-
-    invoke-static {v2}, Landroid/net/Uri;->parse(Ljava/lang/String;)Landroid/net/Uri;
-
-    move-result-object v7
-
-    .line 2674
-    .local v7, "PROFILE_CONTENT_URI":Landroid/net/Uri;
-    const/16 v18, 0x0
-
-    .local v18, "i":I
-    :goto_0
-    const/4 v2, 0x5
-
-    move/from16 v0, v18
-
-    if-ge v0, v2, :cond_0
-
-    .line 2675
-    const/4 v8, 0x0
-
-    new-instance v2, Ljava/lang/StringBuilder;
-
-    invoke-direct {v2}, Ljava/lang/StringBuilder;-><init>()V
-
-    const-string v6, "_id="
-
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    add-int/lit8 v6, v18, 0x1
-
-    invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(I)Ljava/lang/StringBuilder;
-
-    move-result-object v2
-
-    invoke-virtual {v2}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
-
-    move-result-object v9
-
-    const/4 v10, 0x0
-
-    const/4 v11, 0x0
-
-    move-object v6, v3
-
-    invoke-virtual/range {v6 .. v11}, Landroid/content/ContentResolver;->query(Landroid/net/Uri;[Ljava/lang/String;Ljava/lang/String;[Ljava/lang/String;Ljava/lang/String;)Landroid/database/Cursor;
-
-    move-result-object v15
-
-    .line 2676
-    .local v15, "cursor":Landroid/database/Cursor;
-    if-eqz v15, :cond_5
-
-    invoke-interface {v15}, Landroid/database/Cursor;->moveToFirst()Z
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    .line 2677
-    const-string/jumbo v2, "profile_ringtone"
-
-    invoke-interface {v15, v2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-interface {v15, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v19
-
-    .line 2678
-    .local v19, "ringtone":Ljava/lang/String;
-    const-string/jumbo v2, "profile_gsm_ringtone"
-
-    invoke-interface {v15, v2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-interface {v15, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v17
-
-    .line 2679
-    .local v17, "gsmRingtone":Ljava/lang/String;
-    const-string/jumbo v2, "profile_video_ringtone"
-
-    invoke-interface {v15, v2}, Landroid/database/Cursor;->getColumnIndex(Ljava/lang/String;)I
-
-    move-result v2
-
-    invoke-interface {v15, v2}, Landroid/database/Cursor;->getString(I)Ljava/lang/String;
-
-    move-result-object v21
-
-    .line 2680
-    .local v21, "videoRingtone":Ljava/lang/String;
-    new-instance v20, Landroid/content/ContentValues;
-
-    invoke-direct/range {v20 .. v20}, Landroid/content/ContentValues;-><init>()V
-
-    .line 2681
-    .local v20, "ringtoneValues":Landroid/content/ContentValues;
-    const-string/jumbo v2, "ringtone"
-
-    invoke-static {v3, v2}, Landroid/provider/Settings$System;->getString(Landroid/content/ContentResolver;Ljava/lang/String;)Ljava/lang/String;
-
-    move-result-object v16
-
-    .line 2683
-    .local v16, "defaultRing":Ljava/lang/String;
-    invoke-static/range {v19 .. v19}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_2
-
-    .line 2684
-    const-string/jumbo v2, "profile_ringtone"
-
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2686
-    :cond_2
-    invoke-static/range {v17 .. v17}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_3
-
-    .line 2687
-    const-string/jumbo v2, "profile_gsm_ringtone"
-
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2689
-    :cond_3
-    invoke-static/range {v21 .. v21}, Landroid/text/TextUtils;->isEmpty(Ljava/lang/CharSequence;)Z
-
-    move-result v2
-
-    if-eqz v2, :cond_4
-
-    .line 2690
-    const-string/jumbo v2, "profile_video_ringtone"
-
-    move-object/from16 v0, v20
-
-    move-object/from16 v1, v16
-
-    invoke-virtual {v0, v2, v1}, Landroid/content/ContentValues;->put(Ljava/lang/String;Ljava/lang/String;)V
-
-    .line 2692
-    :cond_4
-    invoke-virtual/range {v20 .. v20}, Landroid/content/ContentValues;->size()I
-
-    move-result v2
-
-    if-eqz v2, :cond_5
-
-    .line 2693
-    add-int/lit8 v2, v18, 0x1
-
-    int-to-long v8, v2
-
-    invoke-static {v7, v8, v9}, Landroid/content/ContentUris;->withAppendedId(Landroid/net/Uri;J)Landroid/net/Uri;
-
-    move-result-object v14
-
-    .line 2694
-    .local v14, "_uri":Landroid/net/Uri;
-    move-object/from16 v0, p0
-
-    iget-object v2, v0, Landroid/media/MediaScanner;->mContext:Landroid/content/Context;
-
-    invoke-virtual {v2}, Landroid/content/Context;->getContentResolver()Landroid/content/ContentResolver;
-
-    move-result-object v2
-
-    const/4 v6, 0x0
-
-    const/4 v8, 0x0
-
-    move-object/from16 v0, v20
-
-    invoke-virtual {v2, v14, v0, v6, v8}, Landroid/content/ContentResolver;->update(Landroid/net/Uri;Landroid/content/ContentValues;Ljava/lang/String;[Ljava/lang/String;)I
-
-    .line 2697
-    .end local v14    # "_uri":Landroid/net/Uri;
-    .end local v16    # "defaultRing":Ljava/lang/String;
-    .end local v17    # "gsmRingtone":Ljava/lang/String;
-    .end local v19    # "ringtone":Ljava/lang/String;
-    .end local v20    # "ringtoneValues":Landroid/content/ContentValues;
-    .end local v21    # "videoRingtone":Ljava/lang/String;
-    :cond_5
-    if-eqz v15, :cond_6
-
-    .line 2698
-    invoke-interface {v15}, Landroid/database/Cursor;->close()V
-
-    .line 2674
-    :cond_6
-    add-int/lit8 v18, v18, 0x1
 
     goto/16 :goto_0
 .end method
@@ -7392,7 +7170,7 @@
     .prologue
     .line 1986
     :try_start_0
-    invoke-direct/range {p0 .. p0}, Landroid/media/MediaScanner;->mzSetLocaleIfNeeded()V
+    invoke-direct/range {p0 .. p0}, Landroid/media/MediaScanner;->initSetLocale()V
 
     invoke-static {}, Ljava/lang/System;->currentTimeMillis()J
 
@@ -9271,7 +9049,7 @@
     .prologue
     .line 2099
     :try_start_0
-    invoke-direct/range {p0 .. p0}, Landroid/media/MediaScanner;->mzSetLocaleIfNeeded()V
+    invoke-direct/range {p0 .. p0}, Landroid/media/MediaScanner;->initSetLocale()V
 
     invoke-static {p1}, Landroid/media/MediaScanner;->encodeStringResource(Ljava/lang/String;)Ljava/lang/String;
 
@@ -9485,6 +9263,86 @@
     :goto_0
     return-void
 
+    .restart local v0    # "country":Ljava/lang/String;
+    .restart local v1    # "language":Ljava/lang/String;
+    :cond_1
+    invoke-virtual {p0, v1}, Landroid/media/MediaScanner;->setLocale(Ljava/lang/String;)V
+
+    goto :goto_0
+.end method
+
+.method private initSetLocale()V
+    .locals 5
+
+    .prologue
+    .line 1898
+    iget-object v3, p0, Landroid/media/MediaScanner;->mContext:Landroid/content/Context;
+
+    invoke-virtual {v3}, Landroid/content/Context;->getResources()Landroid/content/res/Resources;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Landroid/content/res/Resources;->getConfiguration()Landroid/content/res/Configuration;
+
+    move-result-object v3
+
+    iget-object v2, v3, Landroid/content/res/Configuration;->locale:Ljava/util/Locale;
+
+    .line 1899
+    .local v2, "locale":Ljava/util/Locale;
+    if-eqz v2, :cond_0
+
+    .line 1900
+    invoke-virtual {v2}, Ljava/util/Locale;->getLanguage()Ljava/lang/String;
+
+    move-result-object v1
+
+    .line 1901
+    .local v1, "language":Ljava/lang/String;
+    invoke-virtual {v2}, Ljava/util/Locale;->getCountry()Ljava/lang/String;
+
+    move-result-object v0
+
+    .line 1903
+    .local v0, "country":Ljava/lang/String;
+    if-eqz v1, :cond_0
+
+    .line 1904
+    if-eqz v0, :cond_1
+
+    .line 1905
+    new-instance v3, Ljava/lang/StringBuilder;
+
+    invoke-direct {v3}, Ljava/lang/StringBuilder;-><init>()V
+
+    invoke-virtual {v3, v1}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    const-string v4, "_"
+
+    invoke-virtual {v3, v4}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3, v0}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
+
+    move-result-object v3
+
+    invoke-virtual {v3}, Ljava/lang/StringBuilder;->toString()Ljava/lang/String;
+
+    move-result-object v3
+
+    invoke-virtual {p0, v3}, Landroid/media/MediaScanner;->setLocale(Ljava/lang/String;)V
+
+    .line 1911
+    .end local v0    # "country":Ljava/lang/String;
+    .end local v1    # "language":Ljava/lang/String;
+    :cond_0
+    :goto_0
+    return-void
+
+    .line 1907
     .restart local v0    # "country":Ljava/lang/String;
     .restart local v1    # "language":Ljava/lang/String;
     :cond_1

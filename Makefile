@@ -40,7 +40,7 @@ vendor_modify_images := boot
 # The default value is app or pri-app which not need to configure.
 # You can configure the directory name which relative to the vendor/system directory.
 #-----------------------------------------------------------------------------
-vendor_remove_dirs := chn_sipdb container finder_cp preloadedkiosk res wallpaper
+vendor_remove_dirs := chn_sipdb container preloadedkiosk res wallpaper preloadedsso tts
 
 ##############################################################################
 # The value decides the file which you want to remove in the vendor directory for the ota package.
@@ -54,13 +54,12 @@ vendor_remove_files := recovery-from-boot.bak
 # The default value is Bluetooth.
 # You can configure the apk name in the vendor/system/app or vendor/system/pri-app directory.
 #-----------------------------------------------------------------------------
-vendor_saved_apps := BasicDreams Bluetooth FilterManager FilterProvider FlashAnnotate FlashAnnotateSvc \
-                     KeyChain UserDictionaryProvider BackupRestoreConfirmation minimode-res MultiWindowTrayService NfcNci \
-                     PopupuiReceiver ResourceManager SamsungCamera2 SamsungTTS \
-                     SmartClipProvider SmartClipServiceHMR SNote4.1Preload SPenKeeper SPenSdk3 Stk TimeService \
+vendor_saved_apps := Bluetooth FilterManager FilterProvider FlashAnnotate FlashAnnotateSvc SamsungCameraFilter SecQuickMemoApp_H OCRSeg\
+                     KeyChain UserDictionaryProvider BackupRestoreConfirmation minimode-res MultiWindowTrayService NfcNci AnimatedScene\
+                     PopupuiReceiver ResourceManager EasyOneHand2 FilterInstaller GestureService \
+                     SmartClipProvider SmartClipServiceHMR SNote4.1Preload SPenKeeper SPenSdk3 Stk \
                      SharedStorageBackup  ExternalStorageProvider InputDevices ProxyHandler Shell DefaultContainerService WritingBuddyService \
-                     MtpApplication SecSettingsProvider GearManagerStub GlanceView SettingSearchProvider ShareShotService WfdBroker BestFace \
-                     Eraser MusicCommonUtility PicAction Pinboard Samsungservice2_xxhdpi
+                     MtpApplication BestFace Eraser PicAction Pinboard SamsungCamera2 ClipboardSaveService ClipboardUIService
 
 ##############################################################################
 # The value decides which vendor apk you want to modify.
@@ -69,7 +68,7 @@ vendor_saved_apps := BasicDreams Bluetooth FilterManager FilterProvider FlashAnn
 # You need ro decode FMRadio.apk to the project directory(use apktool d FMRadio.apk) first,
 # and then you can make it by:   make FMRadio
 #-----------------------------------------------------------------------------
-#vendor_modify_apps := FMRadio
+#vendor_modify_apps := SecSettingsProvider SecSettings
 
 ##############################################################################
 # The value decides which vendor jar you want to modify.
@@ -100,7 +99,7 @@ board_saved_files := lib/libwebviewchromium.so bin/bootanimation bin/shutdownani
 # The default value is nothing.
 # You can configure the board system apk name in the value.
 #-----------------------------------------------------------------------------
-board_remove_apps := NfcNci
+board_remove_apps := NfcNci SettingsProvider
 
 ##############################################################################
 # The value decides which apk you want to modify, when the apk is based on the board system apk.
@@ -112,7 +111,7 @@ board_remove_apps := NfcNci
 # The command idtoname how to use: first use "apktool d source/system/framework/framework-res.apk other/TMP/framework-res",
 # and then use "idtoname other/TMP/framework-res/res/values/public_master.xml XXXX/smali"(XXXX is the directory where you decode board system apk).
 #-----------------------------------------------------------------------------
-board_modify_apps := TelephonyProvider TeleService SystemUI
+board_modify_apps := TelephonyProvider TeleService MediaProvider SystemUI Telecom
 
 ##############################################################################
 # The value decides which jar you want to modify, when the jar is based on the board framework jar.
@@ -147,6 +146,8 @@ board_modify_apps := TelephonyProvider TeleService SystemUI
 override_property += \
     ro.flyme.romer=bo1318 \
     ro.product.model_romer=SM-N9009_bo1318
+    ro.telephony.call_ring.multiple=1
+    ro.multisim.set_audio_params=true
 
 ##############################################################################
 # The value decides which property you will remove from the build.prop.

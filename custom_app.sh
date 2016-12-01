@@ -21,12 +21,28 @@ function applyPatch () {
     done
 }
 
+# add missed columns
 if [ "$1" = "TelephonyProvider" ];then
     echo ">>>> in custom_app for $1 to add missed column sub_state"
     applyPatch $1 $2
 fi
 
+# fix AbstractMethodError
 if [ "$1" = "SystemUI" ];then
     echo ">>>> in custom_app for $1 to apply patch"
     applyPatch $1 $2
 fi
+
+# add missed columns
+if [ "$1" = "MediaProvider" ];then
+    echo ">>>> in custom_app for $1 to apply patch"
+    applyPatch $1 $2
+fi
+
+# fix no sound when calling
+if [ "$1" = "Telecom" ];then
+    echo ">>>> in custom_app for $1 to apply patch"
+    applyPatch $1 $2
+    cp -rf overlay/Telecom/smali/* $app_dir/smali/
+fi
+

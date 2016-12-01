@@ -570,8 +570,6 @@
 
     iget-object v3, v0, Lcom/android/server/notification/NotificationManagerService$7;->this$0:Lcom/android/server/notification/NotificationManagerService;
 
-    move-object/from16 v0, p0
-
     iget-object v4, v0, Lcom/android/server/notification/NotificationManagerService$7;->val$notification:Landroid/app/Notification;
 
     move-object/from16 v0, v16

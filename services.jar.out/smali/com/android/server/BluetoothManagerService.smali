@@ -1634,9 +1634,9 @@
     .line 1988
     .end local v3    # "intentRadio1":Landroid/content/Intent;
     :cond_3
-    :goto_2
     invoke-virtual/range {p0 .. p2}, Lcom/android/server/BluetoothManagerService;->mzChangeBluetoothName(II)V
 
+    :goto_2
     return-void
 
     .line 1883
@@ -6011,7 +6011,6 @@
     return v5
 
     :cond_flyme_0
-
     .line 813
     :cond_3
     iget-object v5, p0, Lcom/android/server/BluetoothManagerService;->mReceiver:Landroid/content/BroadcastReceiver;

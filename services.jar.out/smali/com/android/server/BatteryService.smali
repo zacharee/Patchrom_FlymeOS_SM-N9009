@@ -5298,9 +5298,9 @@
     .locals 3
 
     .prologue
-    sget-boolean v0, Lcom/android/server/BatteryService$MzInjector;->mEnableScreen:Z
+    sget-boolean v1, Lcom/android/server/BatteryService$MzInjector;->mEnableScreen:Z
 
-    if-nez v0, :cond_flyme_0
+    if-nez v1, :cond_flyme_0
 
     return-void
 
@@ -5328,7 +5328,7 @@
 
     move-result v1
 
-    if-eqz v1, :cond_1
+    if-nez v1, :cond_1
 
     invoke-static/range {p0 .. p0}, Lcom/android/server/BatteryService$MzInjector;->writeMessageToFileIfNoPowerLocked(Lcom/android/server/BatteryService;)V
 

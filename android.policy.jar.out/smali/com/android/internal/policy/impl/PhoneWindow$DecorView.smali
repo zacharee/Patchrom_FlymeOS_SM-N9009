@@ -28,15 +28,15 @@
 
 
 # instance fields
-.field private mMzDragInStatusBar:Z
-
-.field private mMzStatusBarRect:Landroid/graphics/Rect;
-
 .field boundaryTouchX:F
 
 .field initialTouchX:F
 
 .field initialTouchY:F
+
+.field private mMzDragInStatusBar:Z
+
+.field private mMzStatusBarRect:Landroid/graphics/Rect;
 
 .field private mActionMode:Landroid/view/ActionMode;
 
@@ -1706,6 +1706,7 @@
     return v5
 
     :cond_flyme_0
+
     if-nez v2, :cond_0
 
     .end local v1    # "cb":Landroid/view/Window$Callback;
@@ -4460,6 +4461,7 @@
     return v1
 
     :cond_flyme_0
+
     if-ne v0, v1, :cond_0
 
     iget-object v2, p0, Lcom/android/internal/policy/impl/PhoneWindow$DecorView;->mActionMode:Landroid/view/ActionMode;

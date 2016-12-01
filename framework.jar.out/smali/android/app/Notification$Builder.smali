@@ -359,6 +359,7 @@
     .end local v4    # "styleClass":Ljava/lang/Class;, "Ljava/lang/Class<+Landroid/app/Notification$Style;>;"
     :cond_0
     :goto_0
+
     invoke-static/range {p0 .. p0}, Landroid/app/Notification$FlymeInject;->initNotificationBuilderExt(Landroid/app/Notification$Builder;)V
 
     return-void
@@ -738,7 +739,7 @@
 
     const v1, #android:id@icon#t
 
-    const-string v0, "setBackgroundResource"
+    const-string/jumbo v0, "setBackgroundResource"
 
     const v4, #android:drawable@notification_icon_legacy_bg#t
 
@@ -1151,7 +1152,7 @@
 
     const v3, #android:id@chronometer#t
 
-    const-string v4, "setStarted"
+    const-string/jumbo v4, "setStarted"
 
     const/4 v5, 0x1
 
@@ -1459,7 +1460,7 @@
 
     const v3, #android:id@time#t
 
-    const-string v4, "setTime"
+    const-string/jumbo v4, "setTime"
 
     move-object/from16 v0, p0
 
@@ -2408,7 +2409,7 @@
 
     invoke-virtual/range {v0 .. v6}, Landroid/widget/RemoteViews;->setDrawableParameters(IZIILandroid/graphics/PorterDuff$Mode;I)V
 
-    const-string v0, "setBackgroundResource"
+    const-string/jumbo v0, "setBackgroundResource"
 
     const v2, #android:drawable@notification_icon_legacy_bg#t
 
@@ -2728,7 +2729,7 @@
     .prologue
     const v0, #android:id@icon#t
 
-    const-string v1, "setBackgroundResource"
+    const-string/jumbo v1, "setBackgroundResource"
 
     const/4 v2, 0x0
 
@@ -2767,13 +2768,13 @@
 
     invoke-virtual {p1, v1, v2}, Landroid/widget/RemoteViews;->setImageViewResource(II)V
 
-    const-string v0, "setBackgroundResource"
+    const-string/jumbo v0, "setBackgroundResource"
 
     invoke-virtual {p1, v1, v0, v2}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 
     invoke-virtual {p1, v7, v6}, Landroid/widget/RemoteViews;->setViewVisibility(II)V
 
-    const-string v0, "setBackgroundResource"
+    const-string/jumbo v0, "setBackgroundResource"
 
     invoke-virtual {p1, v7, v0, v2}, Landroid/widget/RemoteViews;->setInt(ILjava/lang/String;I)V
 

@@ -72,11 +72,11 @@
 .end method
 
 .method public abstract enqueueNotificationWithTag(Ljava/lang/String;Ljava/lang/String;Ljava/lang/String;ILandroid/app/Notification;[II)V
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+    #.annotation system Ldalvik/annotation/Throws;
+    #    value = {
+    #        Landroid/os/RemoteException;
+    #    }
+    #.end annotation
 .end method
 
 .method public abstract enqueueToast(Ljava/lang/String;Landroid/app/ITransientNotification;I)V

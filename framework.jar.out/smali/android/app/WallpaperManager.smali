@@ -1041,10 +1041,16 @@
     .end annotation
 
     .prologue
-    const v0, #android:drawable@default_wallpaper#t
+    .line 1089
+    iget-object v0, p0, Landroid/app/WallpaperManager;->mContext:Landroid/content/Context;
 
-    invoke-virtual {p0, v0}, Landroid/app/WallpaperManager;->setResource(I)V
+    invoke-static {v0}, Landroid/app/WallpaperManager$FlymeInject;->mzOpenDefaultWallpaper(Landroid/content/Context;)Ljava/io/InputStream;
 
+    move-result-object v0
+
+    invoke-virtual {p0, v0}, Landroid/app/WallpaperManager;->setStream(Ljava/io/InputStream;)V
+
+    .line 1090
     return-void
 .end method
 
@@ -1250,11 +1256,11 @@
     .line 590
     new-instance v17, Ljava/io/BufferedInputStream;
 
-    const v5, #android:drawable@default_wallpaper#t
+    move-object/from16 v0, p0
 
-    move-object/from16 v0, v22
+    iget-object v5, v0, Landroid/app/WallpaperManager;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v5}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+    invoke-static {v5}, Landroid/app/WallpaperManager$FlymeInject;->mzOpenDefaultWallpaper(Landroid/content/Context;)Ljava/io/InputStream;
 
     move-result-object v5
 
@@ -1361,11 +1367,11 @@
     new-instance v17, Ljava/io/BufferedInputStream;
 
     .end local v17    # "is":Ljava/io/InputStream;
-    const v5, #android:drawable@default_wallpaper#t
+    move-object/from16 v0, p0
 
-    move-object/from16 v0, v22
+    iget-object v5, v0, Landroid/app/WallpaperManager;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v5}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+    invoke-static {v5}, Landroid/app/WallpaperManager$FlymeInject;->mzOpenDefaultWallpaper(Landroid/content/Context;)Ljava/io/InputStream;
 
     move-result-object v5
 
@@ -1599,11 +1605,11 @@
     new-instance v17, Ljava/io/BufferedInputStream;
 
     .end local v17    # "is":Ljava/io/InputStream;
-    const v5, #android:drawable@default_wallpaper#t
+    move-object/from16 v0, p0
 
-    move-object/from16 v0, v22
+    iget-object v5, v0, Landroid/app/WallpaperManager;->mContext:Landroid/content/Context;
 
-    invoke-virtual {v0, v5}, Landroid/content/res/Resources;->openRawResource(I)Ljava/io/InputStream;
+    invoke-static {v5}, Landroid/app/WallpaperManager$FlymeInject;->mzOpenDefaultWallpaper(Landroid/content/Context;)Ljava/io/InputStream;
 
     move-result-object v5
 

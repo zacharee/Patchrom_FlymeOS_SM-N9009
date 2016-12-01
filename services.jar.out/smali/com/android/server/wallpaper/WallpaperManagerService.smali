@@ -39,8 +39,6 @@
 
 
 # instance fields
-.field mFlymeWallpaperService:Lcom/android/server/wallpaper/FlymeWallpaperService;
-
 .field public final REQUEST_BACKUP_WALLPAPER:Ljava/lang/String;
 
 .field public final REQUEST_RESTORE_WALLPAPER:Ljava/lang/String;
@@ -52,6 +50,8 @@
 .field private mBackupRunning:Z
 
 .field private mBackupStatus:Lcom/android/server/wallpaper/WallpaperManagerService$WallpaperBackupRequestReciever;
+
+.field mFlymeWallpaperService:Lcom/android/server/wallpaper/FlymeWallpaperService;
 
 .field final mContext:Landroid/content/Context;
 

@@ -544,7 +544,7 @@
 
     const-string v0, "AutoCompleteTextView"
 
-    const-string v1, "performCompletion: no selected item"
+    const-string/jumbo v1, "performCompletion: no selected item"
 
     invoke-static {v0, v1}, Landroid/util/Log;->w(Ljava/lang/String;Ljava/lang/String;)I
 

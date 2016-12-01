@@ -12,10 +12,10 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/webkit/WebView$1;,
+        Landroid/webkit/WebView$SmartClipHandler;,
         Landroid/webkit/WebView$ReaderTitleAndNumCallBack;,
         Landroid/webkit/WebView$ReaderCallBack;,
         Landroid/webkit/WebView$ReaderModeListener;,
-        Landroid/webkit/WebView$SmartClipHandler;,
         Landroid/webkit/WebView$FindListenerDistributor;,
         Landroid/webkit/WebView$PrivateAccess;,
         Landroid/webkit/WebView$HitTestResult;,

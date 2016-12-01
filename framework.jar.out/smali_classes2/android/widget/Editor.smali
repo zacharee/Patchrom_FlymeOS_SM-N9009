@@ -45,13 +45,13 @@
 
 
 # static fields
-.field public static final HIDE_OPTION:I = 0x2711
-
-.field public static final SHOW_OPTION:I = 0x2712
-
 .field public static final ACTION_SEC_TRANSLATE:Ljava/lang/String; = "com.sec.android.app.translator.TRANSLATE_FOR_NON_ACTIVITY"
 
 .field public static final ACTION_SEC_TRANSLATE_RESULT:Ljava/lang/String; = "com.sec.android.app.translator.TRANSLATE_RESULT"
+
+.field public static final HIDE_OPTION:I = 0x2711
+
+.field public static final SHOW_OPTION:I = 0x2712
 
 .field static final BLINK:I = 0x1f4
 
@@ -99,6 +99,8 @@
 
 
 # instance fields
+.field private mActionModeMenu:Landroid/view/Menu;
+
 .field public mCursorOffsetX:I
 
 .field public mEnableDragSelection:Z
@@ -118,8 +120,6 @@
 .field public mSelectonActionModeRunnable:Ljava/lang/Runnable;
 
 .field public mStartActionModeResult:Z
-
-.field private mActionModeMenu:Landroid/view/Menu;
 
 .field mBlink:Landroid/widget/Editor$Blink;
 
@@ -5808,11 +5808,13 @@
 
     move-result v5
 
-    if-eqz v5, :cond_4
-
-    invoke-direct {p0, p1, p5}, Landroid/widget/Editor;->drawCursor(Landroid/graphics/Canvas;I)V
+    if-eqz v5, :cond_flyme_0
 
     :cond_4
+    invoke-direct {p0, p1, p5}, Landroid/widget/Editor;->drawCursor(Landroid/graphics/Canvas;I)V
+
+    :cond_flyme_0
+
     const/4 p3, 0x0
 
     :cond_5
@@ -7398,6 +7400,7 @@
     iput-object v8, p0, Landroid/widget/Editor;->mSelectionModifierCursorController:Landroid/widget/Editor$SelectionModifierCursorController;
 
     :cond_3
+
     invoke-static/range {p0 .. p0}, Landroid/widget/Editor$FlymeInjector;->updateBackground(Landroid/widget/Editor;)V
 
     return-void

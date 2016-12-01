@@ -613,11 +613,11 @@
     .param p5, "notification"    # Landroid/app/Notification;
     .param p6, "idReceived"    # [I
     .param p7, "userId"    # I
-    .annotation system Ldalvik/annotation/Throws;
-        value = {
-            Landroid/os/RemoteException;
-        }
-    .end annotation
+    #.annotation system Ldalvik/annotation/Throws;
+    #    value = {
+    #        Landroid/os/RemoteException;
+    #    }
+    #.end annotation
 
     .prologue
     .line 637
@@ -716,7 +716,9 @@
     .line 660
     invoke-virtual {v0}, Landroid/os/Parcel;->recycle()V
 
-    throw v2
+    return-void
+
+    #throw v2
 .end method
 
 .method public enqueueToast(Ljava/lang/String;Landroid/app/ITransientNotification;I)V

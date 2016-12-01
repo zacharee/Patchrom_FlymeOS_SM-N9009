@@ -1,0 +1,11 @@
+--- a/TelephonyProvider/smali/com/android/providers/telephony/MmsSmsDatabaseHelper.smali	2016-10-08 15:24:03.074582311 +0800
++++ b/TelephonyProvider/smali/com/android/providers/telephony/MmsSmsDatabaseHelper.smali	2016-10-08 15:24:57.914582311 +0800
+@@ -964,7 +964,7 @@
+     invoke-static {p1, v0}, Lcom/android/providers/telephony/MmsSmsDatabaseHelper;->createSmsTableTemplate(Landroid/database/sqlite/SQLiteDatabase;Ljava/lang/String;)V
+ 
+     .line 1562
+-    const-string v0, "CREATE TABLE raw (_id INTEGER PRIMARY KEY,date INTEGER,reference_number INTEGER,count INTEGER,sequence INTEGER,destination_port INTEGER,address TEXT,sms_id INTEGER DEFAULT 0,sub_id INTEGER DEFAULT -1, pdu TEXT,sim_id INTEGER DEFAULT 0);"
++    const-string v0, "CREATE TABLE raw (_id INTEGER PRIMARY KEY,date INTEGER,reference_number INTEGER,count INTEGER,sequence INTEGER,destination_port INTEGER,address TEXT,sms_id INTEGER DEFAULT 0,sub_id INTEGER DEFAULT -1, pdu TEXT,sim_id INTEGER DEFAULT 0,format TEXT);"
+ 
+     invoke-virtual {p1, v0}, Landroid/database/sqlite/SQLiteDatabase;->execSQL(Ljava/lang/String;)V
+ 

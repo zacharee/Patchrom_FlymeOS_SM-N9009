@@ -878,8 +878,6 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
-
     iput-object v1, p0, Landroid/content/Intent;->mMultiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
 
     const/4 v0, 0x0
@@ -891,6 +889,8 @@
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/content/Intent;->mWindowScale:F
+
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -917,8 +917,6 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
-
     iput-object v1, p0, Landroid/content/Intent;->mMultiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
 
     const/4 v0, 0x0
@@ -936,6 +934,8 @@
     invoke-direct {v0, p1, p2}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     iput-object v0, p0, Landroid/content/Intent;->mComponent:Landroid/content/ComponentName;
+
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -1081,8 +1081,6 @@
     iput-object v0, p0, Landroid/content/Intent;->mClipData:Landroid/content/ClipData;
 
     :cond_4
-    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;Landroid/content/Intent;)V
-
     iget-object v0, p1, Landroid/content/Intent;->mMultiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
 
     iput-object v0, p0, Landroid/content/Intent;->mMultiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
@@ -1107,6 +1105,8 @@
     iget v0, p1, Landroid/content/Intent;->mWindowScale:F
 
     iput v0, p0, Landroid/content/Intent;->mWindowScale:F
+
+    invoke-static/range {p0 .. p1}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -1183,8 +1183,6 @@
     iput-object v0, p0, Landroid/content/Intent;->mCategories:Landroid/util/ArraySet;
 
     :cond_0
-    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
-
     iget-object v0, p1, Landroid/content/Intent;->mMultiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
 
     iput-object v0, p0, Landroid/content/Intent;->mMultiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
@@ -1210,6 +1208,8 @@
 
     iput v0, p0, Landroid/content/Intent;->mWindowScale:F
 
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
+
     return-void
 .end method
 
@@ -1226,8 +1226,6 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
-
     iput-object v1, p0, Landroid/content/Intent;->mMultiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
 
     const/4 v0, 0x0
@@ -1239,6 +1237,8 @@
     const/4 v0, 0x0
 
     iput v0, p0, Landroid/content/Intent;->mWindowScale:F
+
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     invoke-virtual {p0, p1}, Landroid/content/Intent;->readFromParcel(Landroid/os/Parcel;)V
 
@@ -1258,8 +1258,6 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
-
     iput-object v1, p0, Landroid/content/Intent;->mMultiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
 
     const/4 v0, 0x0
@@ -1273,6 +1271,8 @@
     iput v0, p0, Landroid/content/Intent;->mWindowScale:F
 
     invoke-virtual {p0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
+
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -1291,8 +1291,6 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
-
     iput-object v1, p0, Landroid/content/Intent;->mMultiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
 
     const/4 v0, 0x0
@@ -1308,6 +1306,8 @@
     invoke-virtual {p0, p1}, Landroid/content/Intent;->setAction(Ljava/lang/String;)Landroid/content/Intent;
 
     iput-object p2, p0, Landroid/content/Intent;->mData:Landroid/net/Uri;
+
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     return-void
 .end method
@@ -1338,8 +1338,6 @@
 
     iput v0, p0, Landroid/content/Intent;->mContentUserHint:I
 
-    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
-
     iput-object v1, p0, Landroid/content/Intent;->mMultiWindowStyle:Lcom/samsung/android/multiwindow/MultiWindowStyle;
 
     const/4 v0, 0x0
@@ -1361,6 +1359,8 @@
     invoke-direct {v0, p3, p4}, Landroid/content/ComponentName;-><init>(Landroid/content/Context;Ljava/lang/Class;)V
 
     iput-object v0, p0, Landroid/content/Intent;->mComponent:Landroid/content/ComponentName;
+
+    invoke-static/range {p0 .. p0}, Landroid/content/Intent$FlymeInjector;->createFlymeIntent(Landroid/content/Intent;)V
 
     return-void
 .end method

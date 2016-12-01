@@ -188,6 +188,16 @@
 
 
 # instance fields
+.field protected AIR_VIEW_WINSET:Z
+
+.field private HOVERSCROLL_DELAY:I
+
+.field private HOVERSCROLL_SPEED:F
+
+.field private QC_ICON_HIDE_DELAY:I
+
+.field private USE_SET_INTEGRATOR_HAPTIC:Z
+
 .field protected mActionItemListener:Landroid/view/ActionMode$OnActionItemDragListener;
 
 .field mCanNfcShare:Z
@@ -263,16 +273,6 @@
 .field mShadowBuilder:Landroid/widget/AbsListView$ListViewDragShadowBuilder;
 
 .field protected mShouldDelaySpringBack:Z
-
-.field protected AIR_VIEW_WINSET:Z
-
-.field private HOVERSCROLL_DELAY:I
-
-.field private HOVERSCROLL_SPEED:F
-
-.field private QC_ICON_HIDE_DELAY:I
-
-.field private USE_SET_INTEGRATOR_HAPTIC:Z
 
 .field private mAccessibilityDelegate:Landroid/widget/AbsListView$ListItemAccessibilityDelegate;
 
@@ -23040,6 +23040,7 @@
 
     .line 2638
     :cond_2
+
     invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnLayout2(Landroid/widget/AbsListView;)V
 
     return-void
@@ -24134,6 +24135,7 @@
 
     .line 3155
     :cond_1
+
     invoke-static/range {p0 .. p0}, Landroid/widget/AbsListView$FlymeInjector;->mzOnSizeChanged(Landroid/widget/AbsListView;)V
 
     return-void
@@ -24359,6 +24361,7 @@
     move-result-object v6
 
     .local v6, "vtev":Landroid/view/MotionEvent;
+
     invoke-static/range {p0 .. p1}, Landroid/widget/AbsListView$FlymeInjector;->mzOnTouchEvent(Landroid/widget/AbsListView;Landroid/view/MotionEvent;)V
 
     invoke-virtual {p1}, Landroid/view/MotionEvent;->getActionMasked()I
@@ -25739,6 +25742,7 @@
     invoke-virtual {p0}, Landroid/widget/AbsListView;->refreshDrawableState()V
 
     :cond_3
+
     invoke-static/range {p0 .. p2}, Landroid/widget/AbsListView$FlymeInjector;->mzPositionSelector(Landroid/widget/AbsListView;ILandroid/view/View;)Z
 
     return-void

@@ -321,13 +321,10 @@
     .param p9, "distSdCm"    # I
 
     .prologue
-    .line 242
     invoke-direct {p0}, Ljava/lang/Object;-><init>()V
 
-    .line 243
     iput-object p1, p0, Landroid/net/wifi/ScanResult;->wifiSsid:Landroid/net/wifi/WifiSsid;
 
-    .line 244
     if-eqz p1, :cond_0
 
     invoke-virtual {p1}, Landroid/net/wifi/WifiSsid;->toString()Ljava/lang/String;
@@ -337,33 +334,24 @@
     :goto_0
     iput-object v0, p0, Landroid/net/wifi/ScanResult;->SSID:Ljava/lang/String;
 
-    .line 245
     iput-object p2, p0, Landroid/net/wifi/ScanResult;->BSSID:Ljava/lang/String;
 
-    .line 246
     iput-object p3, p0, Landroid/net/wifi/ScanResult;->capabilities:Ljava/lang/String;
 
-    .line 247
     iput p4, p0, Landroid/net/wifi/ScanResult;->level:I
 
-    .line 248
     iput p5, p0, Landroid/net/wifi/ScanResult;->frequency:I
 
-    .line 249
     iput-wide p6, p0, Landroid/net/wifi/ScanResult;->timestamp:J
 
-    .line 250
     iput p8, p0, Landroid/net/wifi/ScanResult;->distanceCm:I
 
-    .line 251
     iput p9, p0, Landroid/net/wifi/ScanResult;->distanceSdCm:I
 
     invoke-direct/range {p0 .. p0}, Landroid/net/wifi/ScanResult;->setHexSSID()V
 
-    .line 252
     return-void
 
-    .line 244
     :cond_0
     const-string v0, "<unknown ssid>"
 

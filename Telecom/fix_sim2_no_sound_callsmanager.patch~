@@ -1,0 +1,161 @@
+--- CallsManager.smali	2016-11-27 16:27:17.950072000 +0800
++++ CallsManager_edit.smali	2016-11-27 21:37:18.618072992 +0800
+@@ -4761,3 +4761,158 @@
+ 
+     goto :goto_0
+ .end method
++
++.method public final isInCall()Z
++    .registers 6
++
++    .prologue
++    const/4 v1, 0x1
++
++    const/4 v2, 0x0
++
++    .line 622
++    iget-object v0, p0, Lcom/android/server/telecom/CallsManager;->mCalls:Ljava/util/Set;
++
++    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
++
++    move-result-object v3
++
++    :cond_8
++    invoke-interface {v3}, Ljava/util/Iterator;->hasNext()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_39
++
++    invoke-interface {v3}, Ljava/util/Iterator;->next()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/android/server/telecom/Call;
++
++    .line 623
++    invoke-virtual {v0}, Lcom/android/server/telecom/Call;->isActive()Z
++
++    move-result v4
++
++    if-eqz v4, :cond_23
++
++    .line 624
++    const-string v0, "isInCall()...Active"
++
++    new-array v2, v2, [Ljava/lang/Object;
++
++    invoke-static {p0, v0, v2}, Lcom/android/server/telecom/Log;->i(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
++
++    move v0, v1
++
++    .line 633
++    :goto_22
++    return v0
++
++    .line 627
++    :cond_23
++    invoke-virtual {v0}, Lcom/android/server/telecom/Call;->isAlive()Z
++
++    move-result v4
++
++    if-nez v4, :cond_30
++
++    invoke-virtual {v0}, Lcom/android/server/telecom/Call;->getState()I
++
++    move-result v0
++
++    const/4 v4, 0x4
++
++    if-ne v0, v4, :cond_8
++
++    .line 628
++    :cond_30
++    const-string v0, "isInCall()...Alive or Ringing"
++
++    new-array v2, v2, [Ljava/lang/Object;
++
++    invoke-static {p0, v0, v2}, Lcom/android/server/telecom/Log;->i(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
++
++    move v0, v1
++
++    .line 629
++    goto :goto_22
++
++    .line 632
++    :cond_39
++    const-string v0, "isInCall()...false"
++
++    new-array v1, v2, [Ljava/lang/Object;
++
++    invoke-static {p0, v0, v1}, Lcom/android/server/telecom/Log;->i(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
++
++    move v0, v2
++
++    .line 633
++    goto :goto_22
++.end method
++
++.method public final isRinging()Z
++    .registers 5
++
++    .prologue
++    const/4 v1, 0x0
++
++    .line 637
++    iget-object v0, p0, Lcom/android/server/telecom/CallsManager;->mCalls:Ljava/util/Set;
++
++    invoke-interface {v0}, Ljava/util/Set;->iterator()Ljava/util/Iterator;
++
++    move-result-object v2
++
++    :cond_7
++    invoke-interface {v2}, Ljava/util/Iterator;->hasNext()Z
++
++    move-result v0
++
++    if-eqz v0, :cond_23
++
++    invoke-interface {v2}, Ljava/util/Iterator;->next()Ljava/lang/Object;
++
++    move-result-object v0
++
++    check-cast v0, Lcom/android/server/telecom/Call;
++
++    .line 638
++    invoke-virtual {v0}, Lcom/android/server/telecom/Call;->getState()I
++
++    move-result v0
++
++    const/4 v3, 0x4
++
++    if-ne v0, v3, :cond_7
++
++    .line 639
++    const-string v0, "Ringing"
++
++    new-array v1, v1, [Ljava/lang/Object;
++
++    invoke-static {p0, v0, v1}, Lcom/android/server/telecom/Log;->i(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
++
++    .line 640
++    const/4 v0, 0x1
++
++    .line 644
++    :goto_22
++    return v0
++
++    .line 643
++    :cond_23
++    const-string v0, "isRinging()...false"
++
++    new-array v2, v1, [Ljava/lang/Object;
++
++    invoke-static {p0, v0, v2}, Lcom/android/server/telecom/Log;->i(Ljava/lang/Object;Ljava/lang/String;[Ljava/lang/Object;)V
++
++    move v0, v1
++
++    .line 644
++    goto :goto_22
++.end method
++

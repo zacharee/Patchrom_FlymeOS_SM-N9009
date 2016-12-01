@@ -81,6 +81,7 @@
     return-void
 
     :cond_flyme_0
+
     const-string v1, "shutdown"
 
     const/4 v2, 0x0

@@ -9,11 +9,12 @@
 
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/widget/ListView$ArrowScrollFocusResult;,
+        Landroid/widget/ListView$1;,
         Landroid/widget/ListView$FlymeInjector;,
         Landroid/widget/ListView$DividerFilter;,
         Landroid/widget/ListView$MzScrollSelectionRunnable;,
         Landroid/widget/ListView$OnDragSelectListener;,
+        Landroid/widget/ListView$ArrowScrollFocusResult;,
         Landroid/widget/ListView$FocusSelector;,
         Landroid/widget/ListView$FixedViewInfo;
     }
@@ -8876,13 +8877,14 @@
 
     invoke-static {p0, p3}, Landroid/widget/ListView$FlymeInjector;->mzDrawDivider(Landroid/widget/ListView;I)Z
 
-    move-result p0
+    move-result v1
 
-    if-nez p0, :cond_flyme_0
+    if-nez v1, :cond_flyme_0
 
     return-void
 
     :cond_flyme_0
+
     invoke-virtual {v0, p1}, Landroid/graphics/drawable/Drawable;->draw(Landroid/graphics/Canvas;)V
 
     return-void

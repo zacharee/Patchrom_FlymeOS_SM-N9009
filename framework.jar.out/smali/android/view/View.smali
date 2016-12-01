@@ -11,8 +11,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Landroid/view/View$FlymeInjector;,
         Landroid/view/View$MoreInfoHPW;,
+        Landroid/view/View$FlymeInjector;,
         Landroid/view/View$SendViewStateChangedAccessibilityEvent;,
         Landroid/view/View$MatchLabelForPredicate;,
         Landroid/view/View$MatchIdPredicate;,
@@ -835,6 +835,12 @@
 
 
 # instance fields
+.field private final DEBUG_ELASTIC:Z
+
+.field private final isElasticEnabled:Z
+
+.field isPenSideButton:Z
+
 .field protected mDragSurface:Landroid/view/Surface;
 
 .field private mIgnoreIm:Z
@@ -848,13 +854,6 @@
 .field protected mvScrollBarPaddingBottom:I
 
 .field protected mvScrollBarPaddingTop:I
-
-.field private final DEBUG_ELASTIC:Z
-
-.field private final isElasticEnabled:Z
-
-.field isPenSideButton:Z
-
 .field private mAccessibilityCursorPosition:I
 
 .field mAccessibilityDelegate:Landroid/view/View$AccessibilityDelegate;
@@ -29808,7 +29807,7 @@
 
     move-result-object v1
 
-    const-string v2, "when two views of different type have the same id in the same hierarchy. "
+    const-string/jumbo v2, "when two views of different type have the same id in the same hierarchy. "
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -29840,7 +29839,7 @@
 
     move-result-object v1
 
-    const-string v2, "other views do not use the same id."
+    const-string/jumbo v2, "other views do not use the same id."
 
     invoke-virtual {v1, v2}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -40063,7 +40062,7 @@
 
     move-result-object v5
 
-    const-string v6, "method onStartNestedScroll"
+    const-string/jumbo v6, "method onStartNestedScroll"
 
     invoke-virtual {v5, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 
@@ -40587,7 +40586,7 @@
     .end local v5    # "typename":Ljava/lang/String;
     :cond_0
     :goto_11
-    const-string v6, "}"
+    const-string/jumbo v6, "}"
 
     invoke-virtual {v2, v6}, Ljava/lang/StringBuilder;->append(Ljava/lang/String;)Ljava/lang/StringBuilder;
 

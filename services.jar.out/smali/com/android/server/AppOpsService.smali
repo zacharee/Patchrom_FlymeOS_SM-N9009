@@ -999,6 +999,7 @@
     const/16 p1, 0x3e9
 
     goto :goto_flyme_0
+
     :try_end_1
     .catchall {:try_start_1 .. :try_end_1} :catchall_0
 

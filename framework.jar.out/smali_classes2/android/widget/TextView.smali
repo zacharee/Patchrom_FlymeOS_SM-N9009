@@ -13,12 +13,13 @@
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
         Landroid/widget/TextView$7;,
-        Landroid/widget/TextView$FlymeInjector;,
-        Landroid/widget/TextView$MzInputShownChangeListener;,
         Landroid/widget/TextView$StylusEventListener;,
         Landroid/widget/TextView$TouchMonitorListener;,
         Landroid/widget/TextView$PenSelectVibrator;,
         Landroid/widget/TextView$MoreInfoHPW;,
+        Landroid/widget/TextView$4;,
+        Landroid/widget/TextView$FlymeInjector;,
+        Landroid/widget/TextView$MzInputShownChangeListener;,
         Landroid/widget/TextView$ChangeWatcher;,
         Landroid/widget/TextView$Marquee;,
         Landroid/widget/TextView$CharWrapper;,
@@ -32,10 +33,6 @@
 
 
 # static fields
-.field static final ID_COPY_ALL:I
-
-.field static final ID_START_SELECTING:I = #android:id@startSelectingText#t
-
 .field private static final ACTION_DELETE_TEXT:I = 0x2
 
 .field private static final ACTION_INIT:I = 0x0
@@ -49,6 +46,10 @@
 .field private static final ACTION_TYPING_TEXT:I = 0x1
 
 .field private static final ACTION_UNDOING:I = 0x4
+
+.field static final ID_COPY_ALL:I
+
+.field static final ID_START_SELECTING:I = #android:id@startSelectingText#t
 
 .field private static final ANIMATED_SCROLL_GAP:I = 0xfa
 
@@ -154,6 +155,12 @@
 
 
 # instance fields
+.field private final HOVER_INTERVAL:I
+
+.field private TOUCH_DELTA:F
+
+.field private fromResLock:Z
+
 .field mAutoLinkMaskIncludeDateTime:Z
 
 .field private mCurrentCursorVisible:Z
@@ -171,12 +178,6 @@
 .field mTempCoords:[I
 
 .field private mTempCurosrRect:Landroid/graphics/Rect;
-
-.field private final HOVER_INTERVAL:I
-
-.field private TOUCH_DELTA:F
-
-.field private fromResLock:Z
 
 .field private mAllowTransformationLengthChange:Z
 
@@ -24785,7 +24786,6 @@
     iput-boolean v1, p0, Landroid/widget/TextView;->mPreDrawListenerDetached:Z
 
     :cond_3
-
     const/4 v0, 0x1
 
     invoke-static {p0, v0}, Landroid/widget/TextView$FlymeInjector;->updateCurrentCursorVisbilityOnFocusOrInputTypeChanged(Landroid/widget/TextView;Z)V
@@ -31543,6 +31543,7 @@
     return v9
 
     :cond_flyme_0
+
     move v9, v10
 
     :cond_1

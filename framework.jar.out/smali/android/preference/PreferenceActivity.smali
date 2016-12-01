@@ -2957,7 +2957,7 @@
     .local v10, "e":Ljava/lang/Exception;
     const-string v28, "PreferenceActivity"
 
-    const-string v29, "mPreferenceActivityLayoutResID not found."
+    const-string/jumbo v29, "mPreferenceActivityLayoutResID not found."
 
     invoke-static/range {v28 .. v29}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 
@@ -2970,7 +2970,7 @@
     .restart local v10    # "e":Ljava/lang/Exception;
     const-string v28, "PreferenceActivity"
 
-    const-string v29, "mPreferenceHeaderItemLayoutResID not found."
+    const-string/jumbo v29, "mPreferenceHeaderItemLayoutResID not found."
 
     invoke-static/range {v28 .. v29}, Landroid/util/Log;->e(Ljava/lang/String;Ljava/lang/String;)I
 

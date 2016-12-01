@@ -111,6 +111,7 @@
     .end local v4    # "newName":Ljava/lang/String;
     :cond_1
     :goto_0
+
     iget-object v6, p0, Lcom/android/server/BluetoothManagerService$2;->this$0:Lcom/android/server/BluetoothManagerService;
 
     invoke-virtual {v6, p2}, Lcom/android/server/BluetoothManagerService;->mzProcessMeizuDeviceNamaChange(Landroid/content/Intent;)V

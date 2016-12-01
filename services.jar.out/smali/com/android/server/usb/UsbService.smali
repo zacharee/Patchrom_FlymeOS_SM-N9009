@@ -1403,6 +1403,7 @@
 
     .line 181
     :cond_1
+
     invoke-direct/range {p0 .. p0}, Lcom/android/server/usb/UsbService;->mzUsbDeviceSystemReady()V
 
     return-void

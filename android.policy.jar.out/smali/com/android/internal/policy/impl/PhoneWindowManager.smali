@@ -30252,6 +30252,7 @@
 
     goto :goto_5
 .end method
+
 .method public addStartingWindow(Landroid/os/IBinder;Ljava/lang/String;ILandroid/content/res/CompatibilityInfo;Ljava/lang/CharSequence;IIII)Landroid/view/View;
     .locals 13
     .param p1, "appToken"    # Landroid/os/IBinder;

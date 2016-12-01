@@ -6,8 +6,8 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
-        Lcom/android/server/net/NetworkPolicyManagerService$MzInjector;,
-        Lcom/android/server/net/NetworkPolicyManagerService$VideoCallBroadcastReceiver;
+        Lcom/android/server/net/NetworkPolicyManagerService$VideoCallBroadcastReceiver;,
+	Lcom/android/server/net/NetworkPolicyManagerService$MzInjector;
     }
 .end annotation
 

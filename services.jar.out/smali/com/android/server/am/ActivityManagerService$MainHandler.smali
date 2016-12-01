@@ -3376,6 +3376,7 @@
 
     check-cast v5, Ljava/lang/String;
 
+    # invokes: Lcom/android/server/am/ActivityManagerService;->showUserSwitchDialog(ILjava/lang/String;)V
     invoke-virtual {v10, v11, v5}, Lcom/android/server/am/ActivityManagerService;->mzShowUserSwitchDialog(ILjava/lang/String;)V
 
     goto/16 :goto_0

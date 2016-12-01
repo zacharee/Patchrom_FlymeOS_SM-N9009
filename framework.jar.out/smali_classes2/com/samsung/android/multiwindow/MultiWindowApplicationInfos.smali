@@ -15,6 +15,8 @@
 
 
 # static fields
+.field private static final CONFIG_FILE:Ljava/lang/String; = "/system/etc/multiwindowblacklist.txt"
+
 .field private static final SUPPORTEDSCALE_ALL_APPLICATIONS:Z
 
 .field private static final SUPPORTED_ALL_APPLICATIONS:Z
@@ -59,6 +61,17 @@
 .end field
 
 .field mMaxPenWindowCount:I
+
+.field private mMultiWindowBlackList:Ljava/util/List;
+    .annotation system Ldalvik/annotation/Signature;
+        value = {
+            "Ljava/util/List",
+            "<",
+            "Ljava/lang/String;",
+            ">;"
+        }
+    .end annotation
+.end field
 
 .field mNoTitleActivityList:Ljava/util/ArrayList;
     .annotation system Ldalvik/annotation/Signature;
@@ -687,7 +700,7 @@
     .param p1, "activityInfo"    # Landroid/content/pm/ActivityInfo;
 
     .prologue
-    const/4 v0, 0x0
+    const/4 v0, 0x1
 
     .line 241
     if-eqz p1, :cond_0
@@ -741,39 +754,88 @@
 .end method
 
 .method public isSupportApp(Ljava/lang/String;)Z
-    .locals 1
-    .param p1, "packageName"    # Ljava/lang/String;
+    .locals 4
 
-    .prologue
-    .line 139
-    iget-object v0, p0, Lcom/samsung/android/multiwindow/MultiWindowApplicationInfos;->mSupportAppList:Ljava/util/ArrayList;
+    iget-object v2, p0, Lcom/samsung/android/multiwindow/MultiWindowApplicationInfos;->mMultiWindowBlackList:Ljava/util/List;
 
-    invoke-virtual {v0, p1}, Ljava/util/ArrayList;->contains(Ljava/lang/Object;)Z
+    if-nez v2, :cond_1
 
-    move-result v0
+    new-instance v2, Ljava/util/ArrayList;
 
-    if-nez v0, :cond_0
+    invoke-direct {v2}, Ljava/util/ArrayList;-><init>()V
 
-    const-string v0, "android"
+    iput-object v2, p0, Lcom/samsung/android/multiwindow/MultiWindowApplicationInfos;->mMultiWindowBlackList:Ljava/util/List;
 
-    invoke-virtual {v0, p1}, Ljava/lang/String;->equals(Ljava/lang/Object;)Z
+    new-instance v2, Ljava/io/File;
 
-    move-result v0
+    const-string v3, "/system/etc/multiwindowblacklist.txt"
+
+    invoke-direct {v2, v3}, Ljava/io/File;-><init>(Ljava/lang/String;)V
+
+    invoke-virtual {v2}, Ljava/io/File;->exists()Z
+
+    move-result v2
+
+    if-eqz v2, :cond_1
+
+    :try_start_0
+    new-instance v1, Ljava/io/BufferedReader;
+
+    new-instance v2, Ljava/io/FileReader;
+
+    const-string v3, "/system/etc/multiwindowblacklist.txt"
+
+    invoke-direct {v2, v3}, Ljava/io/FileReader;-><init>(Ljava/lang/String;)V
+
+    invoke-direct {v1, v2}, Ljava/io/BufferedReader;-><init>(Ljava/io/Reader;)V
+
+    :cond_0
+    :goto_0
+    invoke-virtual {v1}, Ljava/io/BufferedReader;->readLine()Ljava/lang/String;
+
+    move-result-object v0
 
     if-eqz v0, :cond_1
 
-    .line 140
-    :cond_0
-    const/4 v0, 0x1
+    invoke-virtual {v0}, Ljava/lang/String;->trim()Ljava/lang/String;
 
-    .line 142
-    :goto_0
-    return v0
+    move-result-object v0
 
-    :cond_1
-    const/4 v0, 0x0
+    invoke-virtual {v0}, Ljava/lang/String;->length()I
+
+    move-result v2
+
+    if-lez v2, :cond_0
+
+    iget-object v2, p0, Lcom/samsung/android/multiwindow/MultiWindowApplicationInfos;->mMultiWindowBlackList:Ljava/util/List;
+
+    invoke-interface {v2, v0}, Ljava/util/List;->add(Ljava/lang/Object;)Z
+    :try_end_0
+    .catch Ljava/lang/Exception; {:try_start_0 .. :try_end_0} :catch_0
 
     goto :goto_0
+
+    :catch_0
+    move-exception v2
+
+    :cond_1
+    iget-object v2, p0, Lcom/samsung/android/multiwindow/MultiWindowApplicationInfos;->mMultiWindowBlackList:Ljava/util/List;
+
+    invoke-interface {v2, p1}, Ljava/util/List;->contains(Ljava/lang/Object;)Z
+
+    move-result v2
+
+    if-nez v2, :cond_2
+
+    const/4 v2, 0x1
+
+    :goto_1
+    return v2
+
+    :cond_2
+    const/4 v2, 0x0
+
+    goto :goto_1
 .end method
 
 .method public isSupportComponentList(Ljava/lang/String;)Z
@@ -1029,18 +1091,11 @@
 .end method
 
 .method public isSupportScaleApp(Landroid/content/pm/ActivityInfo;)Z
-    .locals 1
-    .param p1, "activityInfo"    # Landroid/content/pm/ActivityInfo;
+    .locals 0
 
-    .prologue
-    .line 166
-    const/4 v0, 0x0
+    const/4 p0, 0x1
 
-    invoke-virtual {p0, p1, v0}, Lcom/samsung/android/multiwindow/MultiWindowApplicationInfos;->isSupportScaleApp(Landroid/content/pm/ActivityInfo;Landroid/content/Context;)Z
-
-    move-result v0
-
-    return v0
+    return p0
 .end method
 
 .method public isSupportScaleApp(Landroid/content/pm/ActivityInfo;Landroid/content/Context;)Z

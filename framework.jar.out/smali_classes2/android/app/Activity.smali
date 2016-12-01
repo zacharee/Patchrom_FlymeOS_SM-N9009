@@ -27,16 +27,6 @@
 
 
 # static fields
-.field mAccessControlManager:Lmeizu/security/AccessControlManager;
-
-.field private mActionBarToTop:Z
-
-.field mActionModeHeaderHidden:Z
-
-.field mDisableStatusBarIconTheme:Z
-
-.field mTopRegionMainColor:Ljava/lang/Integer;
-
 .field private static final DEBUG:Z = false
 
 .field private static final DEBUG_LIFECYCLE:Z = false
@@ -78,6 +68,16 @@
 .field private final DEBUG_ELASTIC:Z
 
 .field private final isElasticEnabled:Z
+
+.field mAccessControlManager:Lmeizu/security/AccessControlManager;
+
+.field private mActionBarToTop:Z
+
+.field mActionModeHeaderHidden:Z
+
+.field mDisableStatusBarIconTheme:Z
+
+.field mTopRegionMainColor:Ljava/lang/Integer;
 
 .field mActionBar:Landroid/app/ActionBar;
 
@@ -639,6 +639,7 @@
     return-void
 
     :cond_flyme_0
+
     new-instance v1, Lcom/android/internal/app/WindowDecorActionBar;
 
     invoke-direct {v1, p0}, Lcom/android/internal/app/WindowDecorActionBar;-><init>(Landroid/app/Activity;)V

@@ -6,9 +6,9 @@
 # annotations
 .annotation system Ldalvik/annotation/MemberClasses;
     value = {
+        Landroid/widget/ScrollView$HoverScrollHandler;,
         Landroid/widget/ScrollView$FlymeInjector;,
         Landroid/widget/ScrollView$MzDelaySpringBack;,
-        Landroid/widget/ScrollView$HoverScrollHandler;,
         Landroid/widget/ScrollView$SavedState;
     }
 .end annotation
@@ -59,6 +59,14 @@
 
 
 # instance fields
+.field private HOVERSCROLL_DELAY:I
+
+.field private HOVERSCROLL_SPEED:F
+
+.field private QC_ICON_HIDE_DELAY:I
+
+.field private USE_SET_INTEGRATOR_HAPTIC:Z
+
 .field mCurrentOverScrollDistance:I
 
 .field mDelaySpringBack:Ljava/lang/Runnable;
@@ -80,14 +88,6 @@
 .field mRestoreOffset:I
 
 .field protected mShouldDelaySpringBack:Z
-
-.field private HOVERSCROLL_DELAY:I
-
-.field private HOVERSCROLL_SPEED:F
-
-.field private QC_ICON_HIDE_DELAY:I
-
-.field private USE_SET_INTEGRATOR_HAPTIC:Z
 
 .field private mActivePointerId:I
 
@@ -5756,6 +5756,7 @@
 
     .line 2520
     :cond_4
+
     invoke-static/range {p0 .. p1}, Landroid/widget/ScrollView$FlymeInjector;->mzDraw(Landroid/widget/ScrollView;Landroid/graphics/Canvas;)V
 
     return-void
@@ -7073,6 +7074,7 @@
     invoke-interface {v9, v0}, Landroid/view/ViewParent;->requestDisallowInterceptTouchEvent(Z)V
 
     :cond_flyme_0
+
     const/4 v0, 0x0
 
     invoke-virtual {p0, v0}, Landroid/widget/ScrollView;->springBackDelay(I)V
@@ -8351,6 +8353,7 @@
     sub-int/2addr v4, v2
 
     :goto_flyme_0
+
     const/4 v2, 0x0
 
     move-object/from16 v0, p0

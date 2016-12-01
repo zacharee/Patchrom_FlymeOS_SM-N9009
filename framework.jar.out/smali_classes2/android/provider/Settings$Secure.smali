@@ -2192,13 +2192,13 @@
 
     const/16 v1, 0x37
 
-    const-string v2, "ui_night_mode"
+    const-string/jumbo v2, "ui_night_mode"
 
     aput-object v2, v0, v1
 
     const/16 v1, 0x38
 
-    const-string v2, "sleep_timeout"
+    const-string/jumbo v2, "sleep_timeout"
 
     aput-object v2, v0, v1
 
